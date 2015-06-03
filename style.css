@@ -1,0 +1,450 @@
+/*-----------------------------------------------------------------------------*/
+/*-------------------------------global reset----------------------------------*/
+
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, samp,
+small, strong, sub, sup, tt, var,
+b, i,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figcaption, figure, footer, header, hgroup, 
+menu, nav, output, section, summary,
+time, mark, audio, video {
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font:inherit;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section { 
+    display:block;
+}
+
+body {
+    line-height:1;
+}
+
+/* 列表 表格 表单 */
+ol, ul {
+    list-style:none;
+}
+
+table {
+    border-collapse:collapse;
+    border-spacing:0;
+}
+
+input, select {
+    vertical-align:middle;
+}
+
+/* 链接 图片 */
+a {
+    margin:0;
+    padding:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 大引用 小引用 */
+blockquote, q {
+    quotes:none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content:'';
+    content:none;
+}
+
+/* reset webkit search input styles */                            /*研究一下！*/
+input[type=search] {
+	-webkit-appearance: none;
+	outline: none;
+}
+input[type="search"]::-webkit-search-decoration, 
+input[type="search"]::-webkit-search-cancel-button {
+	display: none;
+}
+
+/*-------------------------------general style---------------------------------*/
+
+/* 标题 */
+h1, h2, h3, h4, h5, h6 {
+	line-height: 1.4em;
+	margin: 20px 0.4em;
+	color: #FC5648;
+}
+h1 {
+	font-size: 2em;
+}
+h2 {
+	font-size: 1.6em;
+}
+h3 {
+	font-size: 1.4em;
+}
+h4 {
+	font-size: 1.2em;
+}
+h5 {
+	font-size: 1.1em;
+}
+h6 {
+	font-size: 1em;
+}
+
+body {
+	/* background: #0d1424 url(...) no-repeat center top; */
+	line-height:		1.7em; /* 我觉着不错 */
+	background-color: #1ABC9C; 
+	color: #666;
+	font: 100%/1.7em 'Lantinghei SC', "Microsoft Yahei", 'Hiragino Sans GB', 
+	'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+}
+#pagewrap {
+	/* content(670)+sidebar(280), 共980，左右float后中间余30 */
+	width: 980px;
+	margin: 0 auto;
+}
+p {
+	margin: 0 0 1.2em;
+	padding: 0;
+}
+
+/* 链接 */
+a {
+	color: #51aded;
+	text-decoration: none;
+	/* border-bottom: 2px solid #eaeaea; */
+}
+a:hover {
+	color:#666;
+	/* border-bottom: 2px solid #3bb9ff; */
+}
+
+/* 列表 */
+ul, ol {
+	margin: 1em 0 1.4em 24px;
+	padding: 0;
+	line-height: 140%;
+}
+li {
+	margin: 0 0 .5em 0;
+	padding: 0;
+}
+
+/*-----------------------------------header------------------------------------*/
+
+#header {
+	position: relative;
+	height: 160px;
+}
+#site-logo {
+	position: absolute;
+	top: 10px;
+}
+#site-logo img {
+	width: 60px;
+	height: 60px;
+	border-radius: 30px;
+}
+
+/* #site-description {
+	color: #E67E22;
+	position: absolute;
+	top: 70px;                                                                                         
+} */                                                                     /*待修改*/ 
+
+/*--------------------------------------search---------------------------------*/
+
+                                               /*这段copy的代码需要好好研究一下*/
+
+#search-form {
+	position: absolute;
+	right: 10px;
+	bottom: 6px;
+	z-index: 100;
+	width: 160px;
+}
+#search-form #search {
+	width: 70px;
+	float: right;
+	background: #fff;
+	border: none;
+	padding: 6px 10px;
+	/* border radius */
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	/* box shadow */
+	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	/* transition */
+	-webkit-transition: width .7s;
+	-moz-transition: width .7s;
+	transition: width .7s;
+}
+
+#search-form #search:focus {
+	width: 140px;
+}
+
+/*------------------------------------navigation-------------------------------*/
+
+                                               /*这段copy的代码需要好好研究一下*/
+
+#main-nav {
+	width: 100%;
+	background: #ccc;
+	margin: 0;
+	padding: 0;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	z-index: 100;
+	/* gradient */
+	background: #6a6a6a url(images/nav-bar-bg.png) repeat-x;
+	background: -webkit-gradient(linear, left top, left bottom, from(#b9b9b9), to(#6a6a6a));
+	background: -moz-linear-gradient(top,  #b9b9b9,  #6a6a6a);
+	background: linear-gradient(-90deg, #b9b9b9, #6a6a6a);
+	/* rounded corner */
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	/* box shadow */
+	-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.4);
+	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.4);
+	box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.4);
+}
+#main-nav li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	float: left;
+	position: relative;
+}
+#main-nav li:first-child {
+	margin-left: 10px;
+}
+#main-nav a {
+	line-height: 100%;
+	font-weight: bold;
+	color: #fff;
+	display: block;
+	padding: 14px 15px;
+	text-decoration: none;
+	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
+}
+#main-nav a:hover {
+	color: #fff;
+	background: #474747;
+	/* gradient */
+	background: -webkit-gradient(linear, left top, left bottom, from(#282828), to(#4f4f4f));
+	background: -moz-linear-gradient(top,  #282828,  #4f4f4f);
+	background: linear-gradient(-90deg, #282828, #4f4f4f);
+}
+
+/*-------------------------------------content---------------------------------*/
+
+#content {
+	background: #fff;
+	margin: 30px 0 30px;
+	padding: 20px 35px;
+	width: 600px;
+	float: left;
+	/* rounded corner */
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	/* box shadow */
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	box-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+
+/* 具体post信息 */
+.post {
+	margin-bottom: 40px;
+}
+.post-title {
+	margin: 0 0 5px;
+	padding: 0;
+}
+.post-meta {
+	margin: 0 0 10px;
+	font-size: 90%;
+}
+.post-image {
+	margin: 0 0 15px;
+}
+
+/*------------------------------------sidebar----------------------------------*/
+
+                                                  /* 倒数第二行的clear是什么鬼 */
+
+#sidebar {
+	width: 280px;
+	float: right;
+	margin: 30px 0 30px;
+}
+.widget {
+	background: #fff;
+	margin: 0 0 30px;
+	padding: 10px 20px;
+	/* rounded corner */
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	border-radius: 8px;
+	/* box shadow */
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	box-shadow: 0 1px 3px rgba(0,0,0,.4);
+}
+.widget-title {
+	margin: 0 0 5px;
+	padding: 0;	
+}
+.widget ul {
+	margin: 0;
+	padding: 0;
+}
+.widget li {
+	margin: 0;
+	padding: 6px 0;
+	list-style: none;
+	clear: both;
+	border-top: solid 1px #eee;
+}
+
+/*-----------------------------------footer------------------------------------*/
+
+#footer {
+	clear: both;
+	color: #666;
+	font-size: 85%;
+}
+#footer a{
+	color: #303030;
+}
+#footer a:hover{
+	color: #666;
+}
+
+/*------------------------------------icon-------------------------------------*/
+
+.external::after{
+	content: url(picture/icon/external.png);
+	display: inline-block;	
+	padding: 0px 5px;
+	vertical-align: middle;
+}
+#MAN::before{
+	content: url(picture/icon/man.png);
+	padding-right: 5px;
+	vertical-align: middle;
+}
+#Skill::before{
+	content: url(picture/icon/skill.png);
+	padding-right: 5px;
+	vertical-align: middle;
+}
+#lab::before{
+	content: url(../../picture/icon/lab.png);
+	padding-right: 5px;
+	vertical-align: middle;
+}
+.drawer::before{
+	content: url(../../picture/icon/drawer.png);
+	padding-right: 5px;
+	vertical-align: middle;
+}
+
+/*-----------------------------------button------------------------------------*/
+
+#download{                                                          /*这个得改*/
+	background-color: 	#579E2A;
+	border:				3px #519428;
+	color:				white;
+	font-weight:		bold;
+	padding: 			7px;
+}
+
+/* 返回顶部 */
+#backtotop a{
+	background: 		url(picture/backtotop1.png) no-repeat left top;
+	width:				64px;
+	height:				64px;
+	position:			fixed;
+	right:				20px;
+	bottom: 			20px;
+	border-bottom: 		none;                            /* 是不是可以去掉了？ */
+}
+
+/*------------------------------------others-----------------------------------*/
+
+/* 支持Firefox */
+::-moz-selection {
+	background-color: 	#DAF1CC;
+}
+/* 支持IE9+, Opera, Chrome, Safari */
+::selection {
+	background-color: 	#DAF1CC;
+}
+																		
+code{                                                                /*这个得改*/
+	display: block;
+	background: #E3EEEA;
+	border:	1px solid #6AC5AC;
+	border-left-width: 5px;
+	padding: 10px;
+}
+
+/* 未完成内容的标注 */
+.undo{
+	color: gray;
+}
+
+/* 简单粗暴的对齐方法 */
+.center{
+	text-align: center;
+}
+.left{
+	text-align: left;
+}
+.right{
+	text-align: right;
+}
+
+/* lab图标的border */
+.lab-icon a {
+	border-bottom: none;
+}
+.lab-icon a:hover {
+	border-bottom: 5px solid #00B38A;
+}
+
+/*------------------------------------clearfix---------------------------------*/
+
+.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix { display: inline-block; }
+.clearfix { display: block; zoom: 1; }
+                                                                   /*还没搞懂！*/
+
+/*-----------------------------------------------------------------------------*/
