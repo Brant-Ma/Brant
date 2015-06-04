@@ -164,12 +164,6 @@ li {
 	height: 60px;
 	border-radius: 30px;
 }
-#site-logo img:hover {
-	width: 70px;
-	height: 70px;
-	border-radius: 35px;
-	box-shadow: 0 0 10px #747474;
-}
 
 /* #site-description {
 	color: #E67E22;
@@ -438,11 +432,9 @@ code{                                                                /*这个得
 	text-align: right;
 }
 
-/* lab图标 */
+/* lab图标的border */
 .lab-icon a {
-	display: inline-block;
-	margin-right: 20px; 
-	border-bottom: 5px solid white;
+	border-bottom: none;
 }
 .lab-icon a:hover {
 	border-bottom: 5px solid #00B38A;
