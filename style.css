@@ -162,7 +162,7 @@ li {
 #site-logo img {
 	width: 60px;
 	height: 60px;
-	border:	2px solid #FC5648;
+	border:	2px solid white;
 	border-radius: 50%;
 }
 #site-logo img:hover {
@@ -347,7 +347,7 @@ li {
 	font-size: 85%;
 }
 #footer a{
-	color: #303030;
+	color: #333;
 }
 #footer a:hover{
 	color: #666;
