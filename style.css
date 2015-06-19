@@ -87,26 +87,23 @@ input[type="search"]::-webkit-search-cancel-button {
 /* 标题 */
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.4em;
-	margin: 20px 0.4em;
+	margin: 20px 0;
 	color: #FC5648;
 }
 h1 {
 	font-size: 2em;
 }
 h2 {
-	font-size: 1.6em;
+	font-size: 1.8em;
 }
 h3 {
-	font-size: 1.4em;
+	font-size: 1.6em;
 }
 h4 {
+	font-size: 1.4em;
+}
+h5, h6 {
 	font-size: 1.2em;
-}
-h5 {
-	font-size: 1.1em;
-}
-h6 {
-	font-size: 1em;
 }
 
 body {
@@ -147,6 +144,19 @@ ul, ol {
 li {
 	margin: 0 0 .5em 0;
 	padding: 0;
+}
+
+/* 内联装饰 */
+strong, b {
+	font-weight: bold;
+	color: #555;
+}
+
+mark {
+    background: #fffdd1;
+ 	border-bottom: 1px solid #ffedce;
+ 	padding: 2px;
+ 	margin: 0 5px;
 }
 
 /*-----------------------------------header------------------------------------*/
@@ -290,6 +300,8 @@ li {
 	margin-bottom: 40px;
 }
 .post-title {
+	font-weight: bold;
+	text-align: center;
 	margin: 0 0 5px;
 	padding: 0;
 }
@@ -355,31 +367,48 @@ li {
 
 /*------------------------------------icon-------------------------------------*/
 
+/* content为图片的伪元素无法设定图片尺寸 */
+
 .external::after{
 	content: url(picture/icon/external.png);
-	display: inline-block;	
+	display: inline-block;
 	padding: 0px 5px;
 	vertical-align: middle;
 }
 #MAN::before{
-	content: url(picture/icon/man.png);
-	padding-right: 5px;
-	vertical-align: middle;
+	content: "";
+	background: url(../../picture/icon/man.png) no-repeat;
+	background-size: 25px;
+	background-position: 0 center;
+	padding-right: 32px;
 }
 #Skill::before{
-	content: url(picture/icon/skill.png);
-	padding-right: 5px;
-	vertical-align: middle;
+	content: "";
+	background: url(../../picture/icon/skill.png) no-repeat;
+	background-size: 25px;
+	background-position: 0 center;
+	padding-right: 32px;
 }
-#lab::before{
-	content: url(../../picture/icon/lab.png);
-	padding-right: 5px;
-	vertical-align: middle;
+#Lab::before{
+	content: "";
+	background: url(../../picture/icon/lab.png) no-repeat;
+	background-size: 25px;
+	background-position: 0 center;
+	padding-right: 32px;
+}
+#Comment::before{
+	content: "";
+	background: url(../../picture/icon/comment.png) no-repeat;
+	background-size: 25px;
+	background-position: 0 center;
+	padding-right: 32px;
 }
 .drawer::before{
-	content: url(../../picture/icon/drawer.png);
-	padding-right: 5px;
-	vertical-align: middle;
+	content: "";
+	background: url(../../picture/icon/drawer.png) no-repeat;
+	background-size: 25px;
+	background-position: 0 center;
+	padding-right: 32px;
 }
 
 /*-----------------------------------button------------------------------------*/
@@ -446,6 +475,13 @@ code{                                                                /*这个得
 }
 .lab-icon a:hover {
 	border-bottom: 5px solid #00B38A;
+}
+
+/* app页的图片float */
+img.float{
+	float: left;
+	padding-right: 20px;
+	padding-bottom:	20px;
 }
 
 /*------------------------------------clearfix---------------------------------*/
