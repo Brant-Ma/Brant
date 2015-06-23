@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
+	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
+	
+	<title>N005 text-decoration与border-bottom的使用</title>                                                                                              <!--change title first-->
+
+	<!--main css-->
+	<link type="text/css" rel="stylesheet" href="../../style.css" />
+	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />																  
+
+	<!--media query css-->	
+	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
+
+	<!--favicon generator-->
+	<meta name="theme-color" content="#ffffff"/>
+	<meta name="msapplication-TileColor" content="#00aba9"/>
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+	<link rel="manifest" href="favicons/manifest.json"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="../../favicons/apple-touch-icon-57x57.png"/>
+	<link rel="apple-touch-icon" sizes="60x60" href="../../favicons/apple-touch-icon-60x60.png"/>
+	<link rel="apple-touch-icon" sizes="72x72" href="../../favicons/apple-touch-icon-72x72.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="../../favicons/apple-touch-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="114x114" href="../../favicons/apple-touch-icon-114x114.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="../../favicons/apple-touch-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="144x144" href="../../favicons/apple-touch-icon-144x144.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="../../favicons/apple-touch-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon-180x180.png"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-16x16.png" sizes="16x16"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-32x32.png" sizes="32x32"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-96x96.png" sizes="96x96"/>
+	<link rel="icon" type="image/png" href="../../favicons/android-chrome-192x192.png" sizes="192x192"/>	
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div id="pagewrap">
+
+	<header id="header">
+
+		<hgroup>
+			<h1 id="site-logo"><a href="http://7brant.me" title="Back Home"><img src="../../picture/logos/chopper.png" alt=""></a></h1>
+			<!--<h6 id="site-description">Not perfect, but unique.</h6>-->
+		</hgroup>
+
+		<nav>
+			<ul id="main-nav" class="clearfix">
+				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
+				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
+				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
+				<li><a href="http://7brant.me#lab">Lab</a></li>
+			</ul>
+		</nav>
+
+		<form id="search-form">
+			<input type="search" id="search" placeholder="Search">
+		</form>
+
+	</header>
+
+	<div id="content">
+		<article class="post clearfix">                                                                                                   <!--add article second-->      
+			
+			<header>
+				<h3 class="post-title">N005 text-decoration与border-bottom的使用</h3>
+			</header>
+
+			<hr /><br />
+
+			<p>作为构建网页间关系的基本方式，<a class="external" href="http://en.wikipedia.org/wiki/Hyperlink" target="_blank" title="hyperlink">超链接（hyperlink）</a>应用极为广泛，但涉及到<strong>下划线</strong>时，相似属性text-decoration和border-bottom却让我困惑了很久。通过研究终有所获，下面是一些结论和想法。</p>
+			
+			<h4>本质区别</h4>
+			<p><strong>text-decoration</strong>本质上是对文本的修饰。不仅可以是下划线（underline），还可以是上划线（overline）或者贯穿线（line-through）。由于链接默认是带有下划线的，所以可以将text-decoration设值none来清除下划线。</p>
+			<p><strong>border-botttom</strong>则是来源于盒模式。对border-bottom属性的设定实际上就是对border的具体设定，因此还可以配合padding-bottom一起使用。</p>
+		
+			<h4>效果差异</h4>
+			<p>由于二者的来源不同，实际的效果差异也是很明显的。下面分别对中英文和两种属性的显示效果进行对比展示：</p>
+			<p>
+			<table>
+				<tr class="thead">
+					<th></th>
+					<th>具体样式</th>
+					<th>实际效果</th>
+				</tr>
+				<tr class="odd">
+					<th>中：text-decoration</th>
+					<td>text-decoration:underline;</td>
+					<td><span id="a">前端开发</span></td>
+				</tr >
+				<tr class="even">
+					<th>中：border-bottom</th>
+					<td>text-decoration:none;<br />border-bottom:solid;</td>
+					<td><span id="b">前端开发</span></td>
+				</tr>
+				<tr  class="odd">
+					<th>英：text-decoration</th>
+					<td>text-decoration:underline;</td>
+					<td><span id="c">front-end development</span></td>
+				</tr>
+				<tr class="even">
+					<th>英：border-bottom</th>
+					<td>text-decoration:none;<br />border-bottom:solid;</td>
+					<td><span id="d">front-end development</span></td>
+				</tr>
+			</table>
+			</p>
+			<p>从上表可以看出，无论是中文还是英文，text-decoration控制下的下划线会显得与文字很拥挤，几乎是贴近的。而英文显示中更是糟糕，尤其是跟某些字母（<strong>g j p q y</strong>）搭配时会贯穿其下部。字体很小时可能影响程度更大。而border-bottom配合padding-bottom属性可以更好的控制这个距离，获取更佳的视觉效果。（但不能超过行距影响了下一行！）</p>
+		
+			<h4>如何取舍</h4>
+			<p>现在可以下结论了：为了获取最佳的下划线效果，<strong>我们要尽量避免使用装饰线，而选择用边框的替代方案。</strong></p>
+
+			<h4>参考文章</h4>
+			<ol>
+				<li>Dennis Deacon， <a class="external" href="http://www.dennisdeacon.com/web-design/text-decoration-vs-border-bottom/" target="_blank" title="text-decoration vs. border-bottom">Text-Decoration vs. Border-Bottom</a></li>
+				<li>stackoverflow， <a class="external" href="http://stackoverflow.com/questions/2467475/text-decoration-underline-vs-border-bottom" target="_blank" title="text-decoration">text-decoration: underline vs border-bottom</a></li>
+			</ol>
+
+			<br />
+
+			<h3 id="Comment">评论</h3>
+
+			<!--start Disqus loading-->
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+    			/* * * CONFIGURATION VARIABLES * * */
+    			var disqus_shortname = '7brant';
+    
+   				 /* * * DON'T EDIT BELOW THIS LINE * * */
+    			(function() {
+       				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			<!--end Disqus loading-->
+
+		</article>
+	</div>
+	<!--end content--> 
+	
+	
+	<aside id="sidebar">
+
+		<section class="widget">
+			<h4 class="widget-title">Profile</h4>
+			<ul>
+				<li>自述：马致远，前端开发攻城狮</li>
+				<li>标签：海贼控丨苏打粉丨射手座</li>
+			</ul>
+			<figure class="center">
+				<img src="../../picture/logos/QRcode.jpg" title="微信二维码" alt="QRcode">
+			</figure>
+			<ul>
+				<li>微信联系：扫码/搜索Brant-mzy</li>
+				<li>邮件联系：<a href="mailto:admin@7brant.me">admin@7brant.me</a></li>
+				<li>微博联系：<a href="http://weibo.com/brantma" target="_blank">橡皮擦爱吃鱼香茄子</a></li>	
+			</ul>
+		</section>
+		
+		<section class="widget clearfix">
+			<h4 class="widget-title">Books Wanted</h4>
+			<div class="center">
+				<script type="text/javascript" src="http://www.douban.com/service/badge/44394014/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=wishlist&amp;n=9&amp;hidelogo=on&amp;cat=book&amp;columns=3"></script>
+			</div>	
+		</section>
+								
+	</aside>
+	<!--end sidebar-->
+
+	<div id="backtotop"><a href="#" title="回到顶部"></a></div>
+	<!--end back to top-->
+
+	<footer id="footer">
+		<p>&copy; 2015 Brant <a href="http://www.miitbeian.gov.cn/" target="_blank"> 豫ICP备15007162号 </a> <br />本站点所有作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Creative Commons">知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可</p>
+	</footer>	
+	
+</div>
+<!--end pagewrap-->
+
+<!--start js-->
+
+	<!--start Disqus comment count-->
+	<script type="text/javascript">
+    	/* * * CONFIGURATION VARIABLES * * */
+    	var disqus_shortname = '7brant';
+    
+    	/* * * DON'T EDIT BELOW THIS LINE * * */
+    	(function () {
+        	var s = document.createElement('script'); s.async = true;
+        	s.type = 'text/javascript';
+        	s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    	}());
+	</script>
+	<!--end Disqus comment count-->
+
+<!--end js-->
+
+</body>
+</html>

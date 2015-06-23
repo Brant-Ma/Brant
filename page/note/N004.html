@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
+	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
+	
+	<title>N004 私人订制Error Pages</title>                                                                                                               <!--change title first-->
+
+	<!--main css-->
+	<link type="text/css" rel="stylesheet" href="../../style.css" />
+	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />
+
+	<!--media query css-->	
+	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
+
+	<!--favicon generator-->
+	<meta name="theme-color" content="#ffffff"/>
+	<meta name="msapplication-TileColor" content="#00aba9"/>
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+	<link rel="manifest" href="favicons/manifest.json"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="../../favicons/apple-touch-icon-57x57.png"/>
+	<link rel="apple-touch-icon" sizes="60x60" href="../../favicons/apple-touch-icon-60x60.png"/>
+	<link rel="apple-touch-icon" sizes="72x72" href="../../favicons/apple-touch-icon-72x72.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="../../favicons/apple-touch-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="114x114" href="../../favicons/apple-touch-icon-114x114.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="../../favicons/apple-touch-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="144x144" href="../../favicons/apple-touch-icon-144x144.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="../../favicons/apple-touch-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon-180x180.png"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-16x16.png" sizes="16x16"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-32x32.png" sizes="32x32"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-96x96.png" sizes="96x96"/>
+	<link rel="icon" type="image/png" href="../../favicons/android-chrome-192x192.png" sizes="192x192"/>	
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div id="pagewrap">
+
+	<header id="header">
+
+		<hgroup>
+			<h1 id="site-logo"><a href="http://7brant.me" title="Back Home"><img src="../../picture/logos/chopper.png" alt=""></a></h1>
+			<!--<h6 id="site-description">Not perfect, but unique.</h6>-->
+		</hgroup>
+
+		<nav>
+			<ul id="main-nav" class="clearfix">
+				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
+				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
+				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
+				<li><a href="http://7brant.me#lab">Lab</a></li>
+			</ul>
+		</nav>
+
+		<form id="search-form">
+			<input type="search" id="search" placeholder="Search">
+		</form>
+
+	</header>
+
+	<div id="content">
+		<article class="post clearfix">                                                                                                   <!--add article second-->      
+			
+			<header>
+				<h3 class="post-title">N004 私人订制Error Pages</h3>
+			</header>
+
+			<hr /><br />
+
+			<p>网站的开发即使再小心翼翼也难免会有疏漏，提供一些备选方案可以提升网页的可用性和用户体验。比如图片的alt属性就是在图片丢失的情况下用替换文本来改善阅读体验。</p>
+			<p><strong>错误页面（error pages）</strong>也是一种类似的存在。尽管在站点中出现的频次并不高，可是页面一旦出现错误，它的重要性将在一瞬间体现出来。在介绍错误页面制作方法之前，需要先了解一下状态代码的分类。</p>
+		
+			<h4>HTTP状态代码</h4>
+			<p>当用户通过浏览器向服务器发出某页面的访问请求时，服务器会向用户返回一个HTTP状态码，该状态码提供了关于请求的相关信息。最常见的状态码就是404和503了：</p>
+			<ul>
+				<li>404：请求的页面不存在。经历过诸如论坛删帖等页面离奇失踪事件的同学一定不会陌生</li>
+				<li>503：服务器暂时不可用。One Piece（安利时刻：<a class="external" href="http://www.ishuhui.com/archives/category/zaixianmanhua/op" target="_blank" title="鼠绘漫画网">鼠绘漫画网</a>）周四更新时服务器瞬间就过载了，那时候最心疼的就是F5</li>
+			</ul>
+			<p>HTTP状态码是很庞大的家族：1xx系列代表临时响应，2xx系列代表成功处理，3xx系列代表已重定向，4xx系列（最庞大）代表请求错误，5xx系列代表服务器错误。<a href="#google" title="状态代码说明">完整的状态代码</a>可以参考Google的一篇说明。</p>
+			
+			<h4>制作页面</h4>
+			<p>由于error pages本质上仍然是HTML页面，因此制作过程就是重新写一个...当然不用这么麻烦！<strong>重新做不必要的轮子是最大的资源浪费</strong>。这里重磅推荐一个1分钟产出报错页面的在线工具：</p>
+			<p><a class="external" href="https://better-error-pages.statuspage.io/#" target="_blank" title="Better Error Pages">Better Error Pages</a></p>
+			<p>这个网站提供3种风格的模板，3种页面类型（404，503，以及maintanence维护页），以及页面元素和背景颜色的微调控制，基本涵盖了日常报错页面的核心需求。操作过程也极其简单，填写邮箱（供用户报告错误以及工具更新提醒）和正确的域名就OK了。点击几次下一步后，就可以下载已经做好的HTML文件了。下面是我的404页面：</p>
+			<figure class="center">
+				<img src="../../picture/mans/n/N004-1.png" alt="404" />
+				<figcaption>404页面</figcaption>
+			</figure>
+			<p>真切的感受一下404页面的动态效果吧（由于域名下不存在的页面会报错404，于是我就瞎写了一个URL）：<a href="http://7brant.me/404效果" target="_blank" title="404效果"><mark>酷炫的展示时间到了</mark></a></p>
+
+			<h4>参考文章</h4>
+			<ol>
+				<li>Search Console Help from Google， <a id="google" class="external" href="https://support.google.com/webmasters/answer/40132?hl=zh-Hans" target="_blank" title="HTTP状态代码">完整的HTTP状态代码及相关解释</a></li>
+			</ol>
+
+			<br />
+
+			<h3 id="Comment">评论</h3>
+
+			<!--start Disqus loading-->
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+    			/* * * CONFIGURATION VARIABLES * * */
+    			var disqus_shortname = '7brant';
+    
+   				 /* * * DON'T EDIT BELOW THIS LINE * * */
+    			(function() {
+       				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			<!--end Disqus loading-->
+
+		</article>
+	</div>
+	<!--end content--> 
+	
+	
+	<aside id="sidebar">
+
+		<section class="widget">
+			<h4 class="widget-title">Profile</h4>
+			<ul>
+				<li>自述：马致远，前端开发攻城狮</li>
+				<li>标签：海贼控丨苏打粉丨射手座</li>
+			</ul>
+			<figure class="center">
+				<img src="../../picture/logos/QRcode.jpg" title="微信二维码" alt="QRcode">
+			</figure>
+			<ul>
+				<li>微信联系：扫码/搜索Brant-mzy</li>
+				<li>邮件联系：<a href="mailto:admin@7brant.me">admin@7brant.me</a></li>
+				<li>微博联系：<a href="http://weibo.com/brantma" target="_blank">橡皮擦爱吃鱼香茄子</a></li>	
+			</ul>
+		</section>
+		
+		<section class="widget clearfix">
+			<h4 class="widget-title">Books Wanted</h4>
+			<div class="center">
+				<script type="text/javascript" src="http://www.douban.com/service/badge/44394014/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=wishlist&amp;n=9&amp;hidelogo=on&amp;cat=book&amp;columns=3"></script>
+			</div>	
+		</section>
+								
+	</aside>
+	<!--end sidebar-->
+
+	<div id="backtotop"><a href="#" title="回到顶部"></a></div>
+	<!--end back to top-->
+
+	<footer id="footer">
+		<p>&copy; 2015 Brant <a href="http://www.miitbeian.gov.cn/" target="_blank"> 豫ICP备15007162号 </a> <br />本站点所有作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Creative Commons">知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可</p>
+	</footer>	
+	
+</div>
+<!--end pagewrap-->
+
+<!--start js-->
+
+	<!--start Disqus comment count-->
+	<script type="text/javascript">
+    	/* * * CONFIGURATION VARIABLES * * */
+    	var disqus_shortname = '7brant';
+    
+    	/* * * DON'T EDIT BELOW THIS LINE * * */
+    	(function () {
+        	var s = document.createElement('script'); s.async = true;
+        	s.type = 'text/javascript';
+        	s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    	}());
+	</script>
+	<!--end Disqus comment count-->
+
+<!--end js-->
+
+</body>
+</html>
