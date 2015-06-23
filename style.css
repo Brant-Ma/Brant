@@ -124,6 +124,13 @@ p {
 	padding: 0;
 }
 
+figure {
+	margin-bottom: 1.4em;
+}
+#sidebar figure {
+	margin-bottom: 0;
+}
+
 /* 链接 */
 a {
 	color: #51aded;
@@ -136,14 +143,15 @@ a:hover {
 }
 
 /* 列表 */
-ul, ol {
-	margin: 1em 0 1.4em 24px;
-	padding: 0;
-	line-height: 140%;
+ul {
+  	margin-left: 1.3em;
+  	margin-bottom: 1.2em;
+  	list-style: disc;
 }
-li {
-	margin: 0 0 .5em 0;
-	padding: 0;
+ol {
+	margin-left: 1.9em;	
+	margin-bottom: 1.2em;
+	list-style: decimal;
 }
 
 /* 内联装饰 */
