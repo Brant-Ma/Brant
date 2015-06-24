@@ -12,6 +12,9 @@
 	color:				#79B5A5;
 }
 /*..............................格式.............................*/
+table {
+	max-width: 			100%;
+}
 td,th{
 	padding: 			10px 20px;
 	text-align: 		center;

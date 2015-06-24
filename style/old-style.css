@@ -1,0 +1,250 @@
+/*----------------------------------------整体-------------------------------------*/
+body{
+	background:			url(picture/back0.png);
+	font-family:		"Microsoft YaHei", Arial, "微软雅黑", "Open Sans", "Hiragino Sans GB", STHeiti, "WenQuanYi Micro Hei", Helvetica, sans-serif;
+	font-size:			medium;
+	line-height:		1.7em;
+	margin:				0px;
+}
+/*----------------------------------------标题-------------------------------------*/
+h1{
+	color:				white;
+	font-family:		Comic Sans MS;
+	font-size:			150%;
+	font-weight:		normal;
+	padding:			10px 0px;
+	margin:				0px;
+	position:			absolute;
+	left:				240px;
+	top:				0px;
+}
+h2,h3{
+	color:				#fc5648;
+}
+h2{
+	font-size:			120%;
+	text-align:			center;
+	margin:				25px;
+	border-bottom: 		3px solid #fc5648;
+}
+h3{
+	font-size:			100%;
+}
+.home{
+	text-align:			left;
+	margin:				10px 10px 10px 0px;
+}
+/*----------------------------------------链接-------------------------------------*/
+a:link,a:visited{
+	color:				#51aded;  
+	text-decoration:	none;
+	border-bottom:		2px solid #eaeaea;
+}
+a:hover{
+	color:				#51aded;
+	text-decoration:	none;
+	border-bottom:		2px solid #3bb9ff;
+}
+a:active{
+	color:				black;
+	text-decoration: 	none;
+	border-bottom: 		2px solid black;
+}
+/*----------------------------------------图片-------------------------------------*/
+img{
+	max-width: 			90%;
+}
+/*----------------------------------------header---------------------------------*/
+#header{
+	background-color:	#fc5648;
+	color:				#fefefd;
+	height:				45px;
+}
+#header img{
+	border:				0px;
+	padding:			0px;
+	margin:				0px;
+	position:			absolute;
+	left:				0px;
+	top:				0px;
+}
+/*----------------------------------------navigation-----------------------------*/
+#navigation{
+	background-color:	#4c8dc7;
+	font-size:			medium;
+	font-weight:		bold;
+	color:				white;
+	padding:			10px 12%;	
+	margin:				0px;
+}
+#navigation a:link,#navigation a:visited{
+	color:				white;
+	border-bottom:		none;
+}
+#navigation a:hover{
+	color:				white;
+	border-bottom:		2px solid white;
+}
+/*--------------------------------------main-sidebar-----------------------------*/
+#main-sidebar{
+	padding: 			0%;
+	max-width: 			1000px;
+	margin:				0 auto;
+}
+/*----------------------------------------sidebar--------------------------------*/
+#sidebar{
+	margin:				33px 20px 20px 20px;
+	padding:			0px 0px 10px 10px;
+	width:				230px;
+	float:				right;
+}
+#sidebar h2{
+	text-align:			center;
+}
+#sidebar img{
+	display: 			block;
+	margin:				auto;
+}
+#box1,#box2{
+	margin:				10px 0px;
+	padding:			0px 10px;		
+	border:				3px solid #4c8dc7; 
+	border-radius: 		10px;
+}
+/*----------------------------------------main-----------------------------------*/
+#main{
+	margin:				10px 270px 20px 20px;
+	padding:			10px;	
+}
+/*----------------------------------------footer---------------------------------*/
+#footer{
+	border-top:			6px solid #FC5648;
+	background-color:	#171f2a;
+	color:				#979da4;
+	/*font-size/line-height font-family;*/
+	font:				small/1 Arial;
+	text-align:			center;
+	line-height:		1.5em;
+	height:				150px;	
+	clear:				right;
+}
+#footer a:link,#footer a:visited{
+	color:				#979da4;	
+	border-bottom:		none;
+}
+#footer a:hover{
+	color:				#979da4;
+	border-bottom:		2px solid #3bb9ff;
+}
+#social a:link,#social a:visited,#social a:hover{
+	border-bottom: 		none;
+}
+/*---------------------------------------button------------------------------------*/
+#download{
+	background-color: 	#579E2A;
+	border:				3px #519428;
+	color:				white;
+	font-weight:		bold;
+	padding: 			7px;
+}
+/*此处需要清除，包括HTML页面*/
+#backtohome{
+	position: 			absolute;
+	top:				5px;
+	right:				50px;
+}
+#backtotop a{
+	background: 		url(picture/backtotop1.png) no-repeat left top;
+	width:				64px;
+	height:				64px;
+	position:			fixed;
+	right:				20px;
+	bottom: 			20px;
+	border-bottom: 		none;
+}
+/*----------------------------------------icon-------------------------------------*/
+.external::after{
+	content: 			url(picture/icon/external.png);
+	display: 			inline-block;	
+	padding: 			0px 5px;
+	vertical-align: 	middle;
+}
+#MAN::before{
+	content:			url(picture/icon/man.png);
+	padding-right: 		5px;
+	vertical-align: 	middle;
+}
+#Skill::before{
+	content:			url(picture/icon/skill.png);
+	padding-right: 		5px;
+	vertical-align: 	middle;
+}
+#others::before{
+	content:			url(../../picture/icon/lab.png);
+	padding-right: 		5px;
+	vertical-align: 	middle;
+}
+.drawer::before{
+	content:			url(../../picture/icon/drawer.png);
+	padding-right: 		5px;
+	vertical-align: 	middle;
+}
+.book::before{
+	content:			url(../../picture/icon/book.png);
+	padding-right: 		5px;
+	vertical-align: 	middle;
+}
+/*----------------------------------------其他-------------------------------------*/
+code{
+	display: 			block;
+	background: 		#E3EEEA;
+	border:				1px solid #6AC5AC;
+	border-left-width:	5px;
+	padding:			10px;
+}
+.undo{
+	color:				gray;
+}
+.float{
+	padding:			0px 20px 10px 0px;
+	margin:				0px 20px 10px 0px;
+	float:				left;
+}
+.center{
+	text-align: 		center;
+}
+.left{
+	text-align: 		left;
+}
+.right{
+	text-align: 		right;
+}
+#lab a:link,#lab a:visited{
+	border-bottom: 		none;
+}
+#lab a:hover{
+	border-bottom:	    5px solid #00B38A;
+}
+#quote{
+	text-align: 		center;
+	color:				#0098DD;
+	font-size: 			large;
+	font-weight: 		bold;
+}
+#description{
+	color:				#FC5648;
+}
+/*----------------------------------------兼容-------------------------------------*/
+
+/*被IE认定为链接的图片会有默认边框显示*/
+img{
+	border:				0px;
+}
+
+/*IE9+, Opera, Chrome, Safari支持, Firefox不支持; #DAF1CC粉绿 #E38792是粉红*/
+::-moz-selection{
+	background-color: 	#DAF1CC;
+}
+::selection{
+	background-color: 	#DAF1CC;
+}
