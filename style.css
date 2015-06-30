@@ -155,11 +155,14 @@ ol {
 }
 
 /* 内联装饰 */
+abbr {
+	cursor: help;
+  	border-bottom: 1px dotted;
+}
 strong, b {
 	font-weight: bold;
 	color: #555;
 }
-
 mark {
     background: #fffdd1;
  	border-bottom: 1px solid #ffedce;
