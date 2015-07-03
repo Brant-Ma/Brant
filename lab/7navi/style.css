@@ -1,0 +1,7 @@
+ul, ol, li {
+	list-style: none;
+}
+section li {
+	display: inline-block;
+	float: left;
+}
