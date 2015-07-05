@@ -1,7 +1,12 @@
-ul, ol, li {
-	list-style: none;
+header {
+	position: fixed; 
+	z-index: auto;
 }
-section li {
+
+nav li {
 	display: inline-block;
-	float: left;
+}
+
+ol, ul {
+	list-style: none;
 }
