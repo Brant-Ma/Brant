@@ -74,13 +74,20 @@ p{
 }
 #menu{
 	position:fixed;
-	top:30%;
-	left:3%;
-	width: 7%;
-	height: 40px;
 	z-index: 999;
+	top:30%;
+	left:30px;
+	width: 120px;
+	height: 40px;
 	padding: 0;
 	margin:0;
+}
+#logo img {
+	margin-left: 28px;
+	width: 60px;
+	height: 60px;
+	border:	2px solid white;
+	border-radius: 50%;
 }
 #menu li {
 	text-align: center;
