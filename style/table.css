@@ -12,13 +12,18 @@
 	color:				#79B5A5;
 }
 /*..............................格式.............................*/
-table {
+.table-wrap {
 	max-width: 			100%;
+	overflow: 			auto;
+}
+table img {
+	max-width: 			45px;
 }
 td,th{
-	padding: 			10px 20px;
+	padding: 			0.5em 1em;
 	text-align: 		center;
 }
+
 /*..............................N005实例.........................*/
 #a,#b,#c,#d{
 	display: 			inline-block;

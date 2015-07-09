@@ -288,6 +288,13 @@ mark {
 	background: linear-gradient(-90deg, #282828, #4f4f4f);
 }
 
+
+/*很不错的纯CSS下拉菜单*/
+/*
+#main-nav ul { display: none; }
+#main-nav li:hover>ul { display: block; }
+*/
+
 /*-------------------------------------content---------------------------------*/
 
 #content {
