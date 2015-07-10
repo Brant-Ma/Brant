@@ -138,6 +138,7 @@ figcaption {
 /* 链接 */
 a {
 	color: #51aded;
+	color: #1ABC9C;
 	text-decoration: none;
 	/* border-bottom: 2px solid #eaeaea; */
 }
