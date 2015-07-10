@@ -111,8 +111,8 @@ body {
 	line-height:		1.7em; /* 我觉着不错 */
 	background-color: #1ABC9C; 
 	color: #666;
-	font: 100%/1.7em 'Lantinghei SC', "Microsoft Yahei", 'Hiragino Sans GB', 
-	'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
+	font: 100%/1.7em 'Hiragino Sans GB', 'Source Han Sans', 'Lantinghei SC', "Microsoft Yahei",  
+					 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
 }
 #pagewrap {
 	/* content(670)+sidebar(280), 共980，左右float后中间余30 */
@@ -124,11 +124,15 @@ p {
 	padding: 0;
 }
 
+/* 图片 */
 figure {
 	margin-bottom: 1.4em;
 }
 #sidebar figure {
 	margin-bottom: 0;
+}
+figcaption {
+	font-style: italic;
 }
 
 /* 链接 */
@@ -461,12 +465,15 @@ mark {
 	background-color: 	#DAF1CC;
 }
 																		
-code{                                                                /*这个得改*/
-	display: block;
+#refer, code {     
+	display: block;                                                           /*这个得改*/
 	background: #E3EEEA;
 	border:	1px solid #6AC5AC;
 	border-left-width: 5px;
 	padding: 10px;
+}
+#refer ol {
+	margin-bottom: 0;
 }
 
 /* 未完成内容的标注 */

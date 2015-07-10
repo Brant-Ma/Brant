@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
+	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
+	
+	<title>N006 中英字体的规则与使用</title>                                                                                              <!--change title first-->
+
+	<!--main css-->
+	<link type="text/css" rel="stylesheet" href="../../style.css" />
+	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />																  
+
+	<!--media query css-->	
+	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
+
+	<!--favicon generator-->
+	<meta name="theme-color" content="#ffffff"/>
+	<meta name="msapplication-TileColor" content="#00aba9"/>
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+	<link rel="manifest" href="favicons/manifest.json"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="../../favicons/apple-touch-icon-57x57.png"/>
+	<link rel="apple-touch-icon" sizes="60x60" href="../../favicons/apple-touch-icon-60x60.png"/>
+	<link rel="apple-touch-icon" sizes="72x72" href="../../favicons/apple-touch-icon-72x72.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="../../favicons/apple-touch-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="114x114" href="../../favicons/apple-touch-icon-114x114.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="../../favicons/apple-touch-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="144x144" href="../../favicons/apple-touch-icon-144x144.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="../../favicons/apple-touch-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon-180x180.png"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-16x16.png" sizes="16x16"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-32x32.png" sizes="32x32"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-96x96.png" sizes="96x96"/>
+	<link rel="icon" type="image/png" href="../../favicons/android-chrome-192x192.png" sizes="192x192"/>	
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div id="pagewrap">
+
+	<header id="header">
+
+		<hgroup>
+			<h1 id="site-logo"><a href="http://7brant.me" title="Back Home"><img src="../../picture/logos/chopper.png" alt=""></a></h1>
+			<!--<h6 id="site-description">Not perfect, but unique.</h6>-->
+		</hgroup>
+
+		<nav>
+			<ul id="main-nav" class="clearfix">
+				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
+				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
+				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
+				<li><a href="http://7brant.me#lab">Lab</a></li>
+			</ul>
+		</nav>
+
+		<form id="search-form">
+			<input type="search" id="search" placeholder="Search">
+		</form>
+
+	</header>
+
+	<div id="content">
+		<article class="post clearfix">                                                                                                   <!--add article second-->      
+			
+			<header>
+				<h3 class="post-title">N006 中英字体的规则与使用</h3>
+			</header>
+
+			<hr /><br />
+
+			<p>最近关注了"苹方"字体的进展后，我觉得有必要系统的学习一下字体相关的知识了。以下总结主要围绕字体规则与使用，此外还包括了一些字体设计的基本理念。</p>
+
+			<h4>基本分类与平台惯例</h4>
+			<p>虽然不能覆盖所有字体，但有无衬线是大部分字体的最基本划分。</p>
+			<p>衬线是笔画的装饰，<strong>有衬线字体（Serif）强调整个单词，适合大字号或者长篇幅；无衬线字体（Sans-Serif）强调单个字母，适合小字号或者短篇幅</strong>。但是关于哪种字体更适合阅读，研究界至今没有定论（阅读体验是极为主观的事情，我个人更喜欢无衬线）。</p>
+			<p>关于平台惯例的话，Windows力推的是自家的微软雅黑（Microsoft YaHei），Mac则是使用的华文黑体（STHeiti）。好消息是这款不那么招人喜欢的字体很快就会被"苹方"取代了。</p>
+
+			<h4>字体使用规则</h4>
+			<p>浏览器在渲染某个字符的时候，会优先使用CSS规则中排序靠前的字体。但由于中文字库包含英文字母而反之并不成立，我们在使用font-family属性时需要<strong>先指定英文字体，再指定中文字体</strong>。</p>
+			<p>另外还需要注意两个重要的细节：中文字体的中文名称和英文名称都应列出；英文名称由多单词构成时应该加引号。</p>
+
+			<h4>中英字体的现状</h4>
+			<p>英文字体的基本类就是有无衬线，而中文字体其实也有与之相似的对应字体：<strong>黑体（SimHei）对应无衬线，宋体（SimSun）对应有衬线</strong>。</p>
+			<h5>英文字体</h5>
+			<p>英文字体最流行的是"Helvetica"，由于普及程度过高而让很多设计师以无特色为由避而远之，但确实是一种极为"安全"的字体。其实说到<abbr title="全平台覆盖的字体">安全字体</abbr>，或许Arial，Arial Black，Comic Sans MS，Courier New，Georgia，Impact，Times New Roman，Trebuchet MS，Verdana这些会更加安全。</p>
+			<p>想到"Comic Sans MS"，我想在讲中文字体前插播一张tips...</p>
+			<figure class="center">
+				<img src="../../picture/mans/n/N006-1.jpg" alt="tips on fonts" />
+				<figcaption>Tips on Fonts</figcaption>
+			</figure>
+			<p>PS：说实话我还挺喜欢Comic Sans MS的...</p>
+			<h5>中文字体</h5>
+			<p>回到中文字体。中文字体目前差不多是由"微软雅黑"掌权的，此外，M$ Office中内置了很多华文字体。如今<strong>设计界倾心于各种黑体</strong>，这让小众的仿宋（FangSong）和楷体（KaiTi）地位极其尴尬，而隶书（LiSu）和幼圆（YouYuan）就真没什么使用场景了。</p>
+			<p>关于冬青黑体和思源黑体会在下面一部分进行讲解。</p>
+
+			<h4>字体设计与趋势</h4>
+			<p>英文字体设计已经十分成熟了，所以下文主要围绕中文字体来说明。</p>
+			<p>由于字库量大，导致中文字体设计极其复杂。相比千姿百态的英文字体，中文字体确实非常少，而且大都不支持web font。不过市场越来越重视中文字体，字体开发者也越来越多，包括苹果在内的大厂也开始重视群众的呼声。关于字体设计的规则，除了字符库要完善，我认为需要着重考虑两点：</p>
+			<ul>
+				<li>相比<abbr title="宏观的内容体验">易读性</abbr>（readability）的研究，<abbr title="微观的文字辨识">可读性</abbr>（legibility）显得更为重要，甚至某种程度上易读性只具有<a class="external" href="https://en.wikipedia.org/wiki/Typography" target="_blank" title="wikipedia关于typography的解读">潜在价值</a>。</li>
+				<li>同等字重的设定要保证不同语言具有相同的实际字重，以适应中英日等多语言的<strong>混排效果</strong>。</li>
+			</ul>
+			<p>目前中文字体界受到追捧的热门趋势字体主要有两种：</p>
+			<ul>
+				<li><strong>冬青黑体（Hiragino Sans GB）</strong>是第一款被国标认可的日文字体，但毕竟基于日语文化的设计并不会很好的照顾中国人的视力卫生。</li>
+				<li><strong>思源黑体（Source Han Sans）</strong>是Adobe主导的、包括Google在内的多方人员集体开发的字体，优点是大字面和多字重（7种）。</li>
+			</ul>
+			<p>最后，我对中文字体开发的未来很看好，而<a class="external" href="http://www.youziku.com/Home/Index" target="_blank" title="有字库官网">有字库</a>和<a class="external" href="http://justfont.com/" target="_blank" title="justfont官网">justfont</a>对web font的探索和努力也坚定了我这个信念。</p>			
+
+			<h4>参考文章</h4>
+			<div id="refer">
+				<ol>
+					<li>阮一峰， <a class="external" href="http://www.ruanyifeng.com/blog/2014/07/chinese_fonts.html" target="_blank" title="阮一峰的博客">中文字体网页开发指南</a></li>
+					<li>Kendra Schaefer， <a class="external" href="http://webdesign.tutsplus.com/zh-hans/articles/the-complete-beginners-guide-to-chinese-fonts--cms-23444" target="_blank" title="Tuts+">中文字体新手指南</a></li>
+					<li>孙志贵， <a class="external" href="http://zhuanlan.zhihu.com/ibuick/20096331" target="_blank" title="知乎专栏">OS X / iOS 六年字体战争</a></li>
+				</ol>
+			</div>
+
+			<h3 id="Comment">评论</h3>
+
+			<!--start Disqus loading-->
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+    			/* * * CONFIGURATION VARIABLES * * */
+    			var disqus_shortname = '7brant';
+    
+   				 /* * * DON'T EDIT BELOW THIS LINE * * */
+    			(function() {
+       				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			<!--end Disqus loading-->
+
+		</article>
+	</div>
+	<!--end content--> 
+	
+	
+	<aside id="sidebar">
+
+		<section class="widget">
+			<h4 class="widget-title">Profile</h4>
+			<ul>
+				<li>自述：马致远，前端开发攻城狮</li>
+				<li>标签：海贼控丨苏打粉丨射手座</li>
+			</ul>
+			<figure class="center">
+				<img src="../../picture/logos/QRcode.jpg" title="微信二维码" alt="QRcode">
+			</figure>
+			<ul>
+				<li>微信联系：扫码/搜索Brant-mzy</li>
+				<li>邮件联系：<a href="mailto:admin@7brant.me">admin@7brant.me</a></li>
+				<li>微博联系：<a href="http://weibo.com/brantma" target="_blank">橡皮擦爱吃鱼香茄子</a></li>	
+			</ul>
+		</section>
+		
+		<section class="widget clearfix">
+			<h4 class="widget-title">Books Wanted</h4>
+			<div class="center table-wrap">
+				<script type="text/javascript" src="http://www.douban.com/service/badge/44394014/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=wishlist&amp;n=9&amp;hidelogo=on&amp;cat=book&amp;columns=3"></script>
+			</div>	
+		</section>
+								
+	</aside>
+	<!--end sidebar-->
+
+	<div id="backtotop"><a href="#" title="回到顶部"></a></div>
+	<!--end back to top-->
+
+	<footer id="footer">
+		<p>&copy; 2015 Brant <a href="http://www.miitbeian.gov.cn/" target="_blank"> 豫ICP备15007162号 </a> <br />本站点所有作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Creative Commons">知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可</p>
+	</footer>	
+	
+</div>
+<!--end pagewrap-->
+
+<!--start js-->
+
+	<!--start Disqus comment count-->
+	<script type="text/javascript">
+    	/* * * CONFIGURATION VARIABLES * * */
+    	var disqus_shortname = '7brant';
+    
+    	/* * * DON'T EDIT BELOW THIS LINE * * */
+    	(function () {
+        	var s = document.createElement('script'); s.async = true;
+        	s.type = 'text/javascript';
+        	s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    	}());
+	</script>
+	<!--end Disqus comment count-->
+
+<!--end js-->
+
+</body>
+</html>
