@@ -396,7 +396,13 @@ mark {
 /* content为图片的伪元素无法设定图片尺寸 */
 
 .external::after{
-	content: url(picture/icon/external.png);
+	content: url(picture/icon/external-green.png);
+	display: inline-block;
+	padding: 0px 5px;
+	vertical-align: middle;
+}
+.external:hover::after{
+	content: url(picture/icon/external-gray.png);
 	display: inline-block;
 	padding: 0px 5px;
 	vertical-align: middle;
