@@ -1,0 +1,106 @@
+/*-------------------------------general setting----------------------------------*/
+body {	
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	text-align: center;
+	font-family: "Microsoft Yahei", 'Hiragino Sans GB', 'Source Han Sans',  sans-serif;
+}
+.wrap {
+	padding: 10%;
+}
+#left {
+	float: left;
+	width: 40%;
+	color: #1abc9c;
+	background-color: #ecf0f1;
+	padding-bottom: 5000px;
+	margin-bottom: -5000px;
+}
+#right {
+	float: right;
+	width: 60%;
+	color: #ecf0f1;
+	background-color: #1abc9c;
+	padding-bottom: 5000px;
+	margin-bottom: -5000px;	
+	box-shadow: -2px 0 16px 2px #666;
+}
+/*-----------------------------------pictures-------------------------------------*/
+#logo img {
+	width: 120px;
+	height: 120px;
+	border: 3px solid #1abc9c;
+	border-radius: 50%;
+}
+#logo img:hover {
+	border: 3px solid #e74c3c;
+}
+#social img {
+	display: inline-block;
+	width: 30px;
+	height: 30px;
+	padding-left: 30px;
+	padding-right: 30px; 
+}
+#wanted::before {
+	content: "";
+	background: url(img/wanted.png) no-repeat;
+	background-size: 18px;
+	background-position: 0 center;
+	padding-right: 25px;
+}
+#profile::before {
+	content: "";
+	background: url(img/profile.png) no-repeat;
+	background-size: 18px;
+	background-position: 0 center;
+	padding-right: 25px;
+}
+#homepage::before {
+	content: "";
+	background: url(img/homepage.png) no-repeat;
+	background-size: 18px;
+	background-position: 0 center;
+	padding-right: 25px;
+}
+#mail::before {
+	content: "";
+	background: url(img/mail.png) no-repeat;
+	background-size: 18px;
+	background-position: 0 center;
+	padding-right: 25px;
+}
+/*------------------------------------links---------------------------------------*/
+a:link, a:visited {
+	color: #1abc9c;
+	text-decoration: none;
+}
+a:hover {
+	color: #e74c3c;
+	border-bottom: #EAEAEA;
+}
+/*-----------------------------------details--------------------------------------*/
+#social {
+	margin-top: 120px;
+	margin-bottom: 120px;
+}
+#info, #content {
+	margin: auto;
+	text-align: left;
+}
+#info {
+	max-width: 256px;
+}
+#content {
+	max-width: 700px;
+	line-height: 1.7em;
+}
+#content h1 {
+	margin-top: 50px;
+}
+#content #title {
+	text-align: center;
+	font-size: 300%;
+	margin-bottom: 70px;
+}
