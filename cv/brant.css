@@ -4,6 +4,7 @@ body {
 	padding: 0;
 	overflow: hidden;
 	text-align: center;
+	font-size: 70%;
 	font-family: "Microsoft Yahei", 'Hiragino Sans GB', 'Source Han Sans',  sans-serif;
 }
 .wrap {
@@ -82,18 +83,18 @@ a:hover {
 }
 /*-----------------------------------details--------------------------------------*/
 #social {
-	margin-top: 120px;
-	margin-bottom: 120px;
+	margin-top: 90px;
+	margin-bottom: 90px;
 }
 #info, #content {
 	margin: auto;
 	text-align: left;
 }
 #info {
-	max-width: 256px;
+	max-width: 200px;
 }
 #content {
-	max-width: 700px;
+	max-width: 500px;
 	line-height: 1.7em;
 }
 #content h1 {
@@ -102,5 +103,5 @@ a:hover {
 #content #title {
 	text-align: center;
 	font-size: 300%;
-	margin-bottom: 70px;
+	margin-bottom: 50px;
 }
