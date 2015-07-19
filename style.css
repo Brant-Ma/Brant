@@ -134,10 +134,6 @@ figure {
 figcaption {
 	font-style: italic;
 }
-article img {
-	border: 5px solid #aaa;
-	border-radius: 10px;
-}
 
 /* 链接 */
 a {
