@@ -442,6 +442,21 @@ mark {
 	background-position: 0 center;
 	padding-right: 32px;
 }
+aside>section:first-child h4::before {
+	content: "";
+	background: url(../../picture/icon/profile.png) no-repeat;
+	background-size: 25px;
+	background-position: 0 center;
+	padding-right: 32px;
+
+}
+aside>section:last-child h4::before {
+	content: "";
+	background: url(../../picture/icon/book.png) no-repeat;
+	background-size: 25px;
+	background-position: 0 center;
+	padding-right: 32px;
+}
 
 /*-----------------------------------button------------------------------------*/
 
