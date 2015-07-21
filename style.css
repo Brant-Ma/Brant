@@ -534,10 +534,10 @@ img.float{
 	padding-bottom:	20px;
 }
 
-/* 首页7篇文章居中 */
+/* 首页7篇文章 */
 .indent {
 	margin-left: 10%;
-	margin-right: 10%;
+	list-style-type: lower-roman; 
 }
 
 /*------------------------------------clearfix---------------------------------*/
