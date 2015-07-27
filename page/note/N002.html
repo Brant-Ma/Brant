@@ -16,6 +16,9 @@
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
 
+	<!--highlight css-->
+	<link type="text/css" rel="stylesheet" href="../../style/github.css" />
+
 	<!--favicon generator-->
 	<meta name="theme-color" content="#ffffff"/>
 	<meta name="msapplication-TileColor" content="#00aba9"/>
@@ -87,16 +90,14 @@
 		
 			<h4>声明方式</h4>
 			<p>关于声明问题，比较简单。当让不同的情况可能稍有不同，通用的声明语句如下：</p>
-			<code>
-				&lt;link rel="icon" type="image/png" href="favicon.png" sizes="32x32"/&gt;
-			</code>
+			<pre class="highlight"><code>&lt;link rel="icon" type="image/png" href="favicon.png" sizes="32x32"/&gt;</code></pre>
 			<p>将这句话放进HTML文档的头部，然后就可以看到期待已久的favicon了。当然，前提是先完成下面这个最最重要的步骤。</p>
 		
 			<h4>生成图标</h4>
 			<p>可以随便找一个喜欢的JPG格式图片，然后自己切成合适的大小，再转换成不同的格式和分辨率...这么麻烦的事只有设计师才会去做。</p>
 			<p>任何麻烦的要死的方法都是耍流氓。 ——默罕默德</p>
 			<p>如何花最少的时间，制作出匹配各种设备、各种平台和浏览器的favicon？</p>
-			<p>答案是使用<a class="external" href="http://realfavicongenerator.net/" target="_blank" title="点我！我是图标生成器！">Real Favicon Generator</a>这个神器。上传图片后点几下鼠标，一包图片和一段代码就完美呈现了。</p>
+			<p>答案是使用<a class="external" href="http://realfavicongenerator.net/" target="_blank" title="点我！我是图标生成器！">Real Favicon Generator</a>这个神器。上传图片后点几下鼠标，一包图片和一段代码就完美呈现了。部分代码展示如下图：</p>
 			<figure class="center">
 				<img src="../../picture/mans/n/N002-1.png" alt="some codes" />
 				<figcaption>部分代码</figcaption>
@@ -187,6 +188,11 @@
     	}());
 	</script>
 	<!--end Disqus comment count-->
+
+	<!--start highlight-->
+	<script src="../../script/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!--end highlight-->
 
 <!--end js-->
 

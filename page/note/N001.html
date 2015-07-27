@@ -16,6 +16,9 @@
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
 
+	<!--highlight css-->
+	<link type="text/css" rel="stylesheet" href="../../style/github.css" />
+
 	<!--favicon generator-->
 	<meta name="theme-color" content="#ffffff"/>
 	<meta name="msapplication-TileColor" content="#00aba9"/>
@@ -92,15 +95,7 @@
 			<h4>基本用法</h4>
 			<p>IE浏览器中alt属性和title属性均可展示悬浮提示信息，容易搞混。<strong>alt属性的本质是替换，title属性的本质是提示</strong>，不应该乱用，因此以下内容是在<strong>非</strong>IE浏览器环境下测试。</p>
 			<p>虽然alt一般用于图片，title用于链接，但由于title的使用范围很广泛，因此在图片的属性使用中有以下四种用法：</p>
-			<code>
-			1. &lt;img src="图片地址" alt="替换信息" /&gt;<br />
-			
-			2. &lt;img src="图片地址" alt="替换信息" title="提示信息" /&gt;<br />
-			
-			3. &lt;a href="链接地址" title="提示信息"&gt;&lt;img src="图片地址" alt="替换信息" /&gt;&lt;/a&gt;<br />
-			
-			4. &lt;a href="链接地址"&gt;&lt;img src="图片地址" alt="替换信息" title="提示信息" /&gt;&lt;/a&gt;
-			</code>
+			<pre class="highlight"><code>1. &lt;img src="图片地址" alt="替换信息" /&gt;<br />2. &lt;img src="图片地址" alt="替换信息" title="提示信息" /&gt;<br />3. &lt;a href="链接地址" title="提示信息"&gt;&lt;img src="图片地址" alt="替换信息" /&gt;&lt;/a&gt;<br />4. &lt;a href="链接地址"&gt;&lt;img src="图片地址" alt="替换信息" title="提示信息" /&gt;&lt;/a&gt;</code></pre>
 
 			<h4>用法归纳</h4>
 			<p>以上4种方法都正确，但是我认为图片属性究竟怎么用，不仅要看有无图片链接，还要注意图片周围是否有文字说明。抛开这一点的话，我的使用倾向如下：</p>
@@ -193,6 +188,11 @@
     	}());
 	</script>
 	<!--end Disqus comment count-->
+
+	<!--start highlight-->
+	<script src="../../script/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!--end highlight-->
 
 <!--end js-->
 
