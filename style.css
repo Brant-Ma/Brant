@@ -489,9 +489,10 @@ aside>section:last-child h4::before {
 ::selection {
 	background-color: 	#DAF1CC;
 }
-																		
-#refer, code {     
-	display: block;                                                           /*这个得改*/
+
+/* 参考文章框 */																		
+#refer {     
+	display: block;                                                           
 	background: #E3EEEA;
 	border:	1px solid #6AC5AC;
 	border-left-width: 5px;
@@ -499,6 +500,12 @@ aside>section:last-child h4::before {
 }
 #refer ol {
 	margin-bottom: 0;
+}
+
+/* 代码高亮框 */
+.highlight {
+	border:	1px solid #6AC5AC;
+	border-left-width: 5px;
 }
 
 /* 未完成内容的标注 */
