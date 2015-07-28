@@ -95,13 +95,13 @@
 			<h4>基本用法</h4>
 			<p>IE浏览器中alt属性和title属性均可展示悬浮提示信息，容易搞混。<strong>alt属性的本质是替换，title属性的本质是提示</strong>，不应该乱用，因此以下内容是在<strong>非</strong>IE浏览器环境下测试。</p>
 			<p>虽然alt一般用于图片，title用于链接，但由于title的使用范围很广泛，因此在图片的属性使用中有以下四种用法：</p>
-			<pre class="highlight"><code>1. &lt;img src="图片地址" alt="替换信息" /&gt;<br />2. &lt;img src="图片地址" alt="替换信息" title="提示信息" /&gt;<br />3. &lt;a href="链接地址" title="提示信息"&gt;&lt;img src="图片地址" alt="替换信息" /&gt;&lt;/a&gt;<br />4. &lt;a href="链接地址"&gt;&lt;img src="图片地址" alt="替换信息" title="提示信息" /&gt;&lt;/a&gt;</code></pre>
+			<pre class="highlight"><code>&lt;!--method 1--&gt;<br />&lt;img src="image url" alt="alternative text" /&gt;<br /><br />&lt;!--method 2--&gt;<br />&lt;img src="image url" alt="alternative text" title="advisory information" /&gt;<br /><br />&lt;!--method 3--&gt;<br />&lt;a href="hypertext source link" title="advisory information"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="image url" alt="alternative text" /&gt;<br />&lt;/a&gt;<br /><br />&lt;!--method 4--&gt;<br />&lt;a href="hypertext source link"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="image url" alt="alternative text" title="advisory information" /&gt;<br />&lt;/a&gt;</code></pre>
 
 			<h4>用法归纳</h4>
-			<p>以上4种方法都正确，但是我认为图片属性究竟怎么用，不仅要看有无图片链接，还要注意图片周围是否有文字说明。抛开这一点的话，我的使用倾向如下：</p>
+			<p>以上4种方法都正确，但是我认为图片属性究竟怎么用，不仅要看有无图片链接，还要注意图片周围是否有文字说明。综合考虑的话，如果针对&lt;img&gt;的属性使用，我的倾向如下：</p>
 			<ol>
 				<li><strong>图片无链接，只用alt</strong>，图片周围选择&lt;figcaption&gt;标签增加文字说明。</li>
-				<li><strong>图片有链接，既用alt，也用title</strong>（最好是alt放&lt;img&gt;里，title放&lt;a&gt;里），图片周围不必再增加文字说明。<strong>但是！此时alt的作用是规避XHTML Strict错误，其内容并不显示；而title的值将代替alt的值出现。</strong></li>
+				<li><strong>图片有链接，既用alt，也用title</strong>（最好是alt放&lt;img&gt;里，title放&lt;a&gt;里），图片周围不必再增加文字说明。<strong>但是！</strong>此时alt的作用是规避XHTML Strict错误，其内容并不显示；而title的值将代替alt的值出现。</li>
 			</ol>
 
 			<h4>参考文章</h4>

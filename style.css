@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 }
 
 body {
-    line-height:1;
+    line-height:1.7em;
 }
 
 /* 列表 表格 表单 */
@@ -112,7 +112,6 @@ article h4 {
 
 body {
 	/* background: #0d1424 url(...) no-repeat center top; */
-	line-height:		1.7em; /* 我觉着不错 */
 	background-color: #1ABC9C; 
 	color: #666;
 	font: 100%/1.7em 'Hiragino Sans GB', 'Source Han Sans', 'Lantinghei SC', "Microsoft Yahei",  
@@ -509,6 +508,7 @@ aside>section:last-child h4::before {
 /* 代码高亮框 */
 .highlight {
 	font-family: Consolas,"Courier New",Courier;
+	line-height: 1.3em;
 	border:	1px solid #6AC5AC;
 	border-left-width: 5px;
 	margin: 0 0 1.2em;
