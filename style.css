@@ -504,8 +504,10 @@ aside>section:last-child h4::before {
 
 /* 代码高亮框 */
 .highlight {
+	font-family: Consolas,"Courier New",Courier;
 	border:	1px solid #6AC5AC;
 	border-left-width: 5px;
+	margin: 0 0 1.2em;
 }
 
 /* 未完成内容的标注 */

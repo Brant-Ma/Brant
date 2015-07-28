@@ -93,13 +93,13 @@
 		
 			<h4>实现"大白"</h4>
 			<p>API的好处是可以发挥创造力做出有趣的事情，36Kr的"大白"就是这么实现的。核心代码如下：</p>
+			<pre class="highlight"><code>var content=document.title<br />function changeTab(){<br />&nbsp;&nbsp;&nbsp;&nbsp;if(!document.hidden){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.title=content;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.title="(●––●) Hi, I'm Brant!";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br >&nbsp;&nbsp;&nbsp;&nbsp;}<br />document.addEventListener("visibilitychange", changeTab);</code></pre>
+			<p>在相同URL的标签页分别处于<strong>激活态和隐藏态</strong>时的效果图如上图（注：本站点的<a href="http://7brant.me/old-index.html" target="_blank" title="Old Page">旧版本主页</a>）：</p>
 			<figure class="center">
-				<img src="../../picture/mans/n/N003-1.png" alt="change tab" />
-				<figcaption>核心代码</figcaption>
-				<img src="../../picture/mans/n/N003-2.png" alt="performance" />
+				<img src="../../picture/mans/n/N003-1.png" alt="performance" />
 				<figcaption>效果图</figcaption>
 			</figure>
-			<p>在相同URL的标签页分别处于<strong>激活态和隐藏态</strong>时的效果图如上图（注：本站点的<a href="http://7brant.me/old-index.html" target="_blank" title="Old Page">旧版本主页</a>）。其实兼容性也是以后需要考虑在内的问题，针对不同浏览器和不同版本其代码稍有不同，这里就不再赘述了。</p>
+			<p>其实兼容性也是以后需要考虑在内的问题，针对不同浏览器和不同版本其代码稍有不同，这里就不再赘述了。</p>
 
 			<h4>参考文章</h4>
 			<div id="refer">
