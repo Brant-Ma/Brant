@@ -105,6 +105,9 @@ h4 {
 h5, h6 {
 	font-size: 1.2em;
 }
+h3[id="MAN"], h3[id="Lab"], h3[id="Skill"] {
+	border-bottom: 2px solid #FFA698;
+}
 article h4 {
 	border-left: 5px solid #ffa698; 
 	padding-left: 10px; 
