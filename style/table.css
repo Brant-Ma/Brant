@@ -12,9 +12,12 @@
 	color:				#79B5A5;
 }
 /*..............................格式.............................*/
-
+aside.table-wrap {
+	max-width: 			100%; 
+	overflow: 			scroll;
+}
 article.table-wrap {
-	max-width: 				100%;
+	width: 				100%;
 	overflow: 			scroll;
 }
 table img {
