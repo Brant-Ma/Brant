@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
 	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
 	
-	<title>N007 云栖大会·武汉（Cloud+ Conference Wuhan）</title>                                                                                              <!--change title first-->
+	<title>N007 正则表达式的18条入门匹配规则</title>                                                                                              <!--change title first-->
 
 	<!--main css-->
 	<link type="text/css" rel="stylesheet" href="../../style.css" />
@@ -77,56 +77,147 @@
 		<article class="post clearfix">                                                                                                   <!--add article second-->      
 			
 			<header>
-				<h3 class="post-title">N006 中英字体的规则与使用</h3>
+				<h3 class="post-title">N007 正则表达式的18条入门匹配规则</h3>
 			</header>
 
 			<hr /><br />
 
-			<p>最近关注了"苹方"字体的进展后，我觉得有必要系统的学习一下字体相关的知识了。以下总结主要围绕字体规则与使用，此外还包括了一些字体设计的基本理念。</p>
+			<p>如果要评选IT技能里面最让人头疼的东西，正则表达式一定会榜上有名。想要精通反人类的正则表达式的确很难，但其实掌握少量常用的规则就能应对大量的使用场景了。以下是我认为最重要的18条匹配规则：</p>
 
-			<h4>基本分类与平台惯例</h4>
-			<p>虽然不能覆盖所有字体，但有无衬线是大部分字体的最基本划分。</p>
-			<p>衬线是笔画的装饰，<strong>有衬线字体（Serif）强调整个单词，适合大字号或者长篇幅；无衬线字体（Sans-Serif）强调单个字母，适合小字号或者短篇幅</strong>。但是关于哪种字体更适合阅读，研究界至今没有定论（阅读体验是极为主观的事情，我个人更喜欢无衬线）。</p>
-			<p>关于平台惯例的话，Windows力推的是自家的微软雅黑（Microsoft YaHei），Mac则是使用的华文黑体（STHeiti）。好消息是这款不那么招人喜欢的字体很快就会被"苹方"取代了。</p>
+			<h4>位置规则（3个）</h4>
+			<div class="table-wrap">
+			<table>
+				<tr class="thead">
+					<th>匹配符</th>
+					<th>说明</th>
+				</tr>
+				<tr class="odd">
+					<td>\b</td>
+					<td>单词的开始或结束</td>
+				</tr >
+				<tr class="even">
+					<td>^</td>
+					<td>字符串的开始</td>
+				</tr>
+				<tr class="odd">
+					<td>$</td>
+					<td>字符串的结束</td>
+				</tr>
+			</table>
+			</div>
+			<br />
+			<p>注：用两个\b包裹<abbr title="多个连续的\w">单词</abbr>可以匹配单词；用^和$包裹字符串可以匹配字符串。</p>
 
-			<h4>字体使用规则</h4>
-			<p>浏览器在渲染某个字符的时候，会优先使用CSS规则中排序靠前的字体。但由于中文字库包含英文字母而反之并不成立，我们在使用font-family属性时需要<strong>先指定英文字体，再指定中文字体</strong>。</p>
-			<p>另外还需要注意两个重要的细节：中文字体的中文名称和英文名称都应列出；英文名称由多单词构成时应该加引号。</p>
+			<h4>特殊规则（4个）</h4>
+			<div class="table-wrap">
+			<table>
+				<tr class="thead">
+					<th>匹配符</th>
+					<th>说明</th>
+				</tr>
+				<tr class="odd">
+					<td>\</td>
+					<td>转义字符</td>
+				</tr >
+				<tr class="even">
+					<td>|</td>
+					<td>规则分支</td>
+				</tr>
+				<tr class="odd">
+					<td>()</td>
+					<td>规则分组</td>
+				</tr>
+				<tr class="even">
+					<td>\n</td>
+					<td>对分组后向引用</td>
+				</tr>
+			</table>
+			</div>
+			<br />
+			<p>注：转义字符作用于后侧字符；规则分支优先匹配前侧规则。</p>
 
-			<h4>中英字体的现状</h4>
-			<p>英文字体的基本类就是有无衬线，而中文字体其实也有与之相似的对应字体：<strong>黑体（SimHei）对应无衬线，宋体（SimSun）对应有衬线</strong>。</p>
-			<h5>英文字体</h5>
-			<p>英文字体最流行的是"Helvetica"，由于普及程度过高而让很多设计师以无特色为由避而远之，但确实是一种极为"安全"的字体。其实说到<abbr title="全平台覆盖的字体">安全字体</abbr>，或许Arial，Arial Black，Comic Sans MS，Courier New，Georgia，Impact，Times New Roman，Trebuchet MS，Verdana这些会更加安全。</p>
-			<p>想到"Comic Sans MS"，我想在讲中文字体前插播一张tips...</p>
-			<figure class="center">
-				<img src="../../picture/mans/n/N006-1.jpg" alt="tips on fonts" />
-				<figcaption>Tips on Fonts</figcaption>
-			</figure>
-			<p>PS：说实话我还挺喜欢Comic Sans MS的...</p>
-			<h5>中文字体</h5>
-			<p>回到中文字体。中文字体目前差不多是由"微软雅黑"掌权的，此外，M$ Office中内置了很多华文字体。如今<strong>设计界倾心于各种黑体</strong>，这让小众的仿宋（FangSong）和楷体（KaiTi）地位极其尴尬，而隶书（LiSu）和幼圆（YouYuan）就真没什么使用场景了。</p>
-			<p>关于冬青黑体和思源黑体会在下面一部分进行讲解。</p>
+			<h4>单个字符（5个）</h4>
+			<div class="table-wrap">
+			<table>
+				<tr class="thead">
+					<th>匹配符</th>
+					<th>说明</th>
+				</tr>
+				<tr class="odd">
+					<td>\d</td>
+					<td>数字字符</td>
+				</tr >
+				<tr class="even">
+					<td>\s</td>
+					<td>空白字符</td>
+				</tr>
+				<tr class="odd">
+					<td>\w</td>
+					<td>字母/数字/汉字/下划线</td>
+				</tr>
+				<tr class="even">
+					<td>.</td>
+					<td>任意的非换行字符</td>
+				</tr>
+				<tr class="odd">
+					<td>[]</td>
+					<td>指定范围的字符</td>
+				</tr>
+			</table>
+			</div>
+			<br />
+			<p>注：空白字符包括空格、换行等；[]中的具体项或范围不需要转义。</p>
 
-			<h4>字体设计与趋势</h4>
-			<p>英文字体设计已经十分成熟了，所以下文主要围绕中文字体来说明。</p>
-			<p>由于字库量大，导致中文字体设计极其复杂。相比千姿百态的英文字体，中文字体确实非常少，而且大都不支持web font。不过市场越来越重视中文字体，字体开发者也越来越多，包括苹果在内的大厂也开始重视群众的呼声。关于字体设计的规则，除了字符库要完善，我认为需要着重考虑两点：</p>
-			<ul>
-				<li>相比<abbr title="宏观的内容体验">易读性</abbr>（readability）的研究，<abbr title="微观的文字辨识">可读性</abbr>（legibility）显得更为重要，甚至某种程度上易读性只具有<a class="external" href="https://en.wikipedia.org/wiki/Typography" target="_blank" title="wikipedia关于typography的解读">潜在价值</a>。</li>
-				<li>同等字重的设定要保证不同语言具有相同的实际字重，以适应中英日等多语言的<strong>混排效果</strong>。</li>
-			</ul>
-			<p>目前中文字体界受到追捧的热门趋势字体主要有两种：</p>
-			<ul>
-				<li><strong>冬青黑体（Hiragino Sans GB）</strong>是第一款被国标认可的日文字体，但毕竟基于日语文化的设计并不会很好的照顾中国人的视力卫生。</li>
-				<li><strong>思源黑体（Source Han Sans）</strong>是Adobe主导的、包括Google在内的多方人员集体开发的字体，优点是大字面和多字重（7种）。</li>
-			</ul>
-			<p>最后，我对中文字体开发的未来很看好，而<a class="external" href="http://www.youziku.com/Home/Index" target="_blank" title="有字库官网">有字库</a>和<a class="external" href="http://justfont.com/" target="_blank" title="justfont官网">justfont</a>对web font的探索和努力也坚定了我这个信念。</p>			
+			<h4>重复次数（6个）</h4>
+			<div class="table-wrap">
+			<table>
+				<tr class="thead">
+					<th>匹配符</th>
+					<th>说明</th>
+				</tr>
+				<tr class="odd">
+					<td>*</td>
+					<td>重复0次以上</td>
+				</tr >
+				<tr class="even">
+					<td>+</td>
+					<td>重复1次以上</td>
+				</tr>
+				<tr class="odd">
+					<td>?</td>
+					<td>重复0次或1次</td>
+				</tr>
+				<tr class="even">
+					<td>{n}</td>
+					<td>重复n次</td>
+				</tr>
+				<tr class="odd">
+					<td>{n,}</td>
+					<td>重复n次以上</td>
+				</tr>
+				<tr class="even">
+					<td>{n,m}</td>
+					<td>重复n至m次</td>
+				</tr>
+			</table>
+			</div>
+			<br />
+			<p>注：可以将?理解为有或无；所有的重复匹配符都是作用于前侧字符。</p>
+
+			<h4>简单的使用实例</h4>
+			<p>这里有一个挺不错的<a class="external" href="http://regexpal.com/" target="_blank" title="regexpal">JavaScript正则表达式在线测试工具</a>可以拿去用。给乏味的匹配符作如上分组归类就是为了方便复习，但有些例子可能会更好理解：</p>
+			<h5>实例1：匹配QQ号码</h5>
+			<p>首先需要分析QQ号码的特征。一个QQ号至少是5位的，每一位都是0-9的数字，貌似通过\d{5,}就可以解决问题。但不要忘了，第一位不能是0，所以修正为<strong>[1-9]\d{4,}</strong>才能正确匹配。</p>
+			<h5>实例2：匹配身份证号</h5>
+			<P>新的身份证位数都是18位的，但据说以前是15位的，后3位通过?即可实现有无。另一个值得注意的是，18位身份证的最后一位可以是x/X，这样<strong>\d{15}(\d\d[0-9xX])?</strong>就能实现匹配了。</P>
+			<h5>实例3：匹配HTML元素</h5>
+			<p>元素包括标签、属性和内容，而空元素又是在开始标签就闭合的。如果是非空元素，需要保证开始标签和结束标签的标签类型是相同的，这需要通过分组和后向引用来实现。非空元素和空元素可以分开写，分别是<strong>&lt;(.*).*&gt;.*&lt;\/\1&gt;</strong>和<strong>&lt;.*\/&gt;</strong>两部分，二者之间由|连接即可。值得注意的是，由于前者需要保证标签类型一致，需要使用2次.*分别代表标签类型和属性；而后者则可以只使用一次来统一匹配标签类型和属性。</p>	
+			<p>以上便是正则表达式的入门规则与应用。每次用到时拎出来复习强化，并随时学习其他额外的规则，没准这个反人类的东西就能被驾驭了。</p>		
 
 			<h4>参考文章</h4>
 			<div id="refer">
 				<ol>
-					<li>阮一峰， <a class="external" href="http://www.ruanyifeng.com/blog/2014/07/chinese_fonts.html" target="_blank" title="阮一峰的博客">中文字体网页开发指南</a></li>
-					<li>Kendra Schaefer， <a class="external" href="http://webdesign.tutsplus.com/zh-hans/articles/the-complete-beginners-guide-to-chinese-fonts--cms-23444" target="_blank" title="Tuts+">中文字体新手指南</a></li>
-					<li>孙志贵， <a class="external" href="http://zhuanlan.zhihu.com/ibuick/20096331" target="_blank" title="知乎专栏">OS X / iOS 六年字体战争</a></li>
+					<li>deerchao， <a class="external" href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" title="阮一峰的博客">正则表达式30分钟入门教程</a></li>
 				</ol>
 			</div>
 
