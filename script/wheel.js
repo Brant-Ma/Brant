@@ -64,3 +64,9 @@ function moveElement(elementID, x_final, y_final, interval){
 	var temp="moveElement"+"('"+elementID+"',"+x_final+","+y_final+","+interval+")";
 	element.movement=setTimeout(temp,interval);
 }
+
+// 轮子：范围随机取值
+function selectFrom(lowerValue, upperValue){
+	var choices=upperValue-lowerValue+1;
+	return Math.floor(Math.random()*choices+lowerValue);
+}
