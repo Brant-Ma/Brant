@@ -555,6 +555,11 @@ img.float{
 	margin-left: 10%;
 	list-style-type: lower-roman; 
 }
+.new {
+	color: #FC5648;
+	font-weight: bold;
+	font-style: italic;
+}
 
 /*------------------------------------clearfix---------------------------------*/
 
