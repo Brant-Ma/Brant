@@ -83,5 +83,9 @@
 		padding: 10px 8px;
 	}
 
+	#backtotop a {
+		display: none;
+	}
+
 }
 
