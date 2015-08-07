@@ -201,9 +201,8 @@ mark {
 	border-radius: 50%;
 }
 #site-logo img:hover {
-	width: 70px;
-	height: 70px;
-	box-shadow: 0 0 10px #747474;
+	border: 2px solid #FFA698;
+	box-shadow: 0 0 10px #FC5648;
 }
 
 /* #site-description {
