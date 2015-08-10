@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
+	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
+	
+	<title>N008 标准总结：Selectors Level 3</title>                                                                                              <!--change title first-->
+
+	<!--main css-->
+	<link type="text/css" rel="stylesheet" href="../../style.css" />
+	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />																  
+
+	<!--media query css-->	
+	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
+
+	<!--highlight css-->
+	<link type="text/css" rel="stylesheet" href="../../style/github.css" />
+
+	<!--favicon generator-->
+	<meta name="theme-color" content="#ffffff"/>
+	<meta name="msapplication-TileColor" content="#00aba9"/>
+	<meta name="msapplication-TileImage" content="/mstile-144x144.png"/>
+	<link rel="manifest" href="favicons/manifest.json"/>
+	<link rel="apple-touch-icon" sizes="57x57" href="../../favicons/apple-touch-icon-57x57.png"/>
+	<link rel="apple-touch-icon" sizes="60x60" href="../../favicons/apple-touch-icon-60x60.png"/>
+	<link rel="apple-touch-icon" sizes="72x72" href="../../favicons/apple-touch-icon-72x72.png"/>
+	<link rel="apple-touch-icon" sizes="76x76" href="../../favicons/apple-touch-icon-76x76.png"/>
+	<link rel="apple-touch-icon" sizes="114x114" href="../../favicons/apple-touch-icon-114x114.png"/>
+	<link rel="apple-touch-icon" sizes="120x120" href="../../favicons/apple-touch-icon-120x120.png"/>
+	<link rel="apple-touch-icon" sizes="144x144" href="../../favicons/apple-touch-icon-144x144.png"/>
+	<link rel="apple-touch-icon" sizes="152x152" href="../../favicons/apple-touch-icon-152x152.png"/>
+	<link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon-180x180.png"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-16x16.png" sizes="16x16"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-32x32.png" sizes="32x32"/>
+	<link rel="icon" type="image/png" href="../../favicons/favicon-96x96.png" sizes="96x96"/>
+	<link rel="icon" type="image/png" href="../../favicons/android-chrome-192x192.png" sizes="192x192"/>	
+
+	<!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+
+	<!--[if lt IE 9]>
+		<script src="http://css3-mediaqueries-js.googlecode.com/svn/trunk/css3-mediaqueries.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+<div id="pagewrap">
+
+	<header id="header">
+
+		<hgroup>
+			<h1 id="site-logo"><a href="http://7brant.me" title="Back Home"><img src="../../picture/logos/chopper.png" alt=""></a></h1>
+			<!--<h6 id="site-description">Not perfect, but unique.</h6>-->
+		</hgroup>
+
+		<nav>
+			<ul id="main-nav" class="clearfix">
+				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
+				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
+				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
+				<li><a href="http://7brant.me#lab">Lab</a></li>
+			</ul>
+		</nav>
+
+		<form id="search-form">
+			<input type="search" id="search" placeholder="Search">
+		</form>
+
+	</header>
+
+	<div id="content">
+		<article class="post clearfix">                                                                                                   <!--add article second-->      
+			
+			<header>
+				<h3 class="post-title">N008 标准总结：Selectors Level 3</h3>
+			</header>
+
+			<hr /><br />
+
+			<p>最近通读了部分W3C标准，然后觉得有必要做一些总结，以便自己查阅和他人参考。本文是关于选择器的总结，基本与标准保持一致，部分措辞和顺序有所调整。另外，为方便阅读和使用，本文与标准有以下额外的不同之处：</p>
+			<ul>
+				<li>本文未对命名空间进行阐述，详细内容请参阅<a>标准</a>。</li>
+				<li>本文<strong>将伪类单独列出</strong>，在标准中它是基本选择器的一部分。</li>
+				<li>标准中有两处留白，分别是:contains()伪类和::selection伪元素。本文<strong>未列出已被废弃的前者，保留了即将划归为标准的后者</strong>。</li>
+			</ul>
+			<p>以下按照基本选择器、组合选择器、伪类和伪元素的顺序分别列出选择器的语法与解释。文章的末尾部分对其他一些重要内容作了补充。</p>
+
+			<h4>基本选择器</h4>
+			<div class="table-wrap">
+			<table>
+				<tr>
+					<th>语法</th>
+					<th>解释</th>
+				</tr>
+				<tr>
+					<td>*</td>
+					<td>任意的元素</td>
+				</tr>
+				<tr>
+					<td>E</td>
+					<td>E类型的元素</td>
+				</tr>
+				<tr>
+					<td>#val</td>
+					<td>id属性为val</td>
+				</tr>
+				<tr>
+					<td>.val</td>
+					<td>class属性为val</td>
+				</tr>
+				<tr>
+					<td>[att]</td>
+					<td>具有att属性</td>
+				</tr>
+				<tr>
+					<td>[att="val"]</td>
+					<td>att属性的值为val</td>
+				</tr>
+				<tr>
+					<td>[att~="val"]</td>
+					<td>att属性的值是一列由空格隔开的值，其中一个为val</td>
+				</tr>
+				<tr>
+					<td>[att|="var"]</td>
+					<td>att属性的值是val，或者以val开头后接连字符"-"</td>
+				</tr>
+				<tr>
+					<td>[att^="val"]</td>
+					<td>（子串匹配）att属性的值以前缀val开头</td>
+				</tr>
+				<tr>
+					<td>[att$="val"]</td>
+					<td>（子串匹配）att属性的值以后缀val结尾</td>
+				</tr>
+				<tr>
+					<td>[att*="val"]</td>
+					<td>（子串匹配）att属性的值至少包含一个val子串</td>
+				</tr>
+			</table>
+			</div>
+			
+			<h4>组合选择器</h4>
+			<table>
+				<tr>
+					<th>语法</th>
+					<th>解释</th>
+				</tr>
+				<tr>
+					<td>E F</td>
+					<td>F是E的后代</td>
+				</tr>
+				<tr>
+					<td>E&lt;F</td>
+					<td>F是E的孩子</td>
+				</tr>
+				<tr>
+					<td>E+F</td>
+					<td>F是E的相邻兄弟</td>
+				</tr>
+				<tr>
+					<td>E~F</td>
+					<td>F是E的通用兄弟</td>
+				</tr>
+			</table>
+
+			<h4>伪类</h4>
+			<div class="table-wrap">
+			<table>
+				<tr>
+					<th>语法</th>
+					<th>解释</th>
+				</tr>
+				<tr>
+					<td>:link</td>
+					<td>（链接状态）未访问的链接</td>
+				</tr>
+				<tr>
+					<td>:visited</td>
+					<td>（链接状态）已访问的链接</td>
+				</tr>
+				<tr>
+					<td>:hover</td>
+					<td>（用户行为）正在被指针指向，但未激活</td>
+				</tr>
+				<tr>
+					<td>:active</td>
+					<td>（用户行为）正在被激活</td>
+				</tr>
+				<tr>
+					<td>:focus</td>
+					<td>（用户行为）因鼠标或键盘而产生了焦点</td>
+				</tr>
+				<tr>
+					<td>:enabled</td>
+					<td>（元素状态）被启用的表单元素</td>
+				</tr>
+				<tr>
+					<td>:disabled</td>
+					<td>（元素状态）被禁用的表单元素</td>
+				</tr>
+				<tr>
+					<td>:checked</td>
+					<td>（元素状态）被选中的表单元素</td>
+				</tr>
+				<tr>
+					<td>:indeterminate</td>
+					<td>（元素状态）既不是被选中，也不是未被选中的表单元素</td>
+				</tr>
+				<tr>
+					<td>:target</td>
+					<td>正在被激活的链接所指向的锚</td>
+				</tr>
+				<tr>
+					<td>:lang(val)</td>
+					<td>lang属性的值为val，或者以val开头后接连字符"-"，进行语言匹配</td>
+				</tr>
+				<tr>
+					<td>:root</td>
+					<td>根元素&lt;html&gt;</td>
+				</tr>
+				<tr>
+					<td>:nth-child()</td>
+					<td>这样的元素：它是其父元素的某子元素，参数为even/odd，或者an+b，其中n≥0，an+b＞0</td>
+				</tr>
+				<tr>
+					<td>:nth-last-child()</td>
+					<td>倒序，参数同上</td>
+				</tr>
+				<tr>
+					<td>:nth-of-type()</td>
+					<td>这样的元素：它是其父元素的某类型子元素，参数为even/odd，或者an+b，其中n≥0，an+b＞0</td>
+				</tr>
+				<tr>
+					<td>:nth-last-of-type()</td>
+					<td>倒序，参数同上</td>
+				</tr>
+				<tr>
+					<td>:first-child</td>
+					<td>这样的元素：它是其父元素的第一个子元素</td>
+				</tr>
+				<tr>
+					<td>:last-child</td>
+					<td>这样的元素：它是其父元素的最后一个子元素</td>
+				</tr>
+				<tr>
+					<td>:first-of-type</td>
+					<td>这样的元素：它是其父元素的第一个某类型子元素</td>
+				</tr>
+				<tr>
+					<td>:last-of-type</td>
+					<td>这样的元素：它是其父元素的最后一个某类型子元素</td>
+				</tr>
+				<tr>
+					<td>:only-child</td>
+					<td>这样的元素：它是其父元素唯一的子元素</td>
+				</tr>
+				<tr>
+					<td>:only-of-type</td>
+					<td>这样的元素：它是其父元素唯一的某类型子元素</td>
+				</tr>
+				<tr>
+					<td>:not(selector)</td>
+					<td>排除某个简单选择器匹配后剩下的元素</td>
+				</tr>
+				<tr>
+					<td>:empty</td>
+					<td>既没有子元素，也没有文本节点的元素</td>
+				</tr>
+			</table>
+
+			<h4>伪元素</h4>
+			<table>
+				<tr>
+					<th>语法</th>
+					<th>解释</th>
+				</tr>
+				<tr>
+					<td>::first-line</td>
+					<td>元素的（格式化的）首行</td>
+				</tr>
+				<tr>
+					<td>::first-letter</td>
+					<td>元素的（格式化的）首字母</td>
+				</tr>
+				<tr>
+					<td>::before</td>
+					<td>在元素的内容前生成元素</td>
+				</tr>
+				<tr>
+					<td>::after</td>
+					<td>在元素的内容后生成元素</td>
+				</tr>
+				<tr>
+					<td>::selection</td>
+					<td>被选中的元素</td>
+				</tr>
+			</table>
+
+			<h4>选择器的组（Group）</h4>
+			<p>组是一个很好理解的概念：当多个选择器所对应的样式规则声明相同时，通过逗号将它们隔开，即可共享同一个样式规则。比如：</p>
+			<pre class="highlight"><code>h1 {<br />&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br />}<br />h2 {<br />&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br />}</code></pre>
+			<p>上述规则就等价于：</p>
+			<pre class="highlight"><code>h1, h2 {<br />&nbsp;&nbsp;&nbsp;&nbsp;color: green;<br />}</code></pre>
+			<p>通过组的使用，不仅可以简化代码书写，还可以增强CSS语句的可读性。</p>
+
+			<h4>选择器的优先级（Specificity）</h4>
+			<p>当多个规则匹配同一个元素时，浏览器将选择最高优先级的选择器所对应的样式规则来进行渲染。对于简单的选择器，其描述越"具体"则优先级越高；对于复杂的选择器，其优先级的计算方法如下：</p>
+			<ul>
+				<li>ID选择器的个数之和为a</li>
+				<li>类/伪类、属性选择器的个数之和为b</li>
+				<li>元素/伪元素的个数之和为c</li>
+			</ul>
+			<p>将a-b-c串联，所得的abc的值就是这个复杂选择器的优先级，值越大则表明优先级越高。另外，<strong>通用选择器和否定伪类不计其数目，但否定伪类的参数选择器需要计数</strong>。</p>
+
+			<h4>其他特性</h4>
+			<p>除了上述重要的内容，选择器还有一些复杂强大的使用方法和规则细节。比如多个选择器进行组合匹配、伪类的级联叠加、伪元素的具体实现方式等等，此文不再赘述。</p>
+			
+			<h4>参考文章</h4>
+			<div id="refer">
+				<ol>
+					<li>W3C Standards， <a class="external" href="http://www.w3.org/TR/2011/REC-css3-selectors-20110929/" target="_blank" title="阮一峰的博客">Selectors Level 3</a></li>
+					<li>MDN， <a class="external" href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Reference" target="_blank" title="CSS参考">CSS参考</a></li>
+				</ol>
+			</div>
+
+			<h3 id="Comment">评论</h3>
+
+			<!--start Disqus loading-->
+			<div id="disqus_thread"></div>
+			<script type="text/javascript">
+    			/* * * CONFIGURATION VARIABLES * * */
+    			var disqus_shortname = '7brant';
+    
+   				 /* * * DON'T EDIT BELOW THIS LINE * * */
+    			(function() {
+       				var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    			})();
+			</script>
+			<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+			<!--end Disqus loading-->
+
+		</article>
+	</div>
+	<!--end content--> 
+	
+	
+	<aside id="sidebar">
+
+		<section class="widget">
+			<h4 class="widget-title">Profile</h4>
+			<ul>
+				<li>自述：马致远，前端开发攻城狮</li>
+				<li>标签：海贼控丨苏打粉丨射手座</li>
+			</ul>
+			<figure class="center">
+				<img src="../../picture/logos/QRcode.jpg" title="微信二维码" alt="QRcode">
+			</figure>
+			<ul>
+				<li>微信联系：扫码/搜索Brant-mzy</li>
+				<li>邮件联系：<a href="mailto:admin@7brant.me">admin@7brant.me</a></li>
+				<li>微博联系：<a href="http://weibo.com/brantma" target="_blank">橡皮擦爱吃鱼香茄子</a></li>	
+			</ul>
+		</section>
+		
+		<section class="widget clearfix">
+			<h4 class="widget-title">Books Wanted</h4>
+			<div class="center table-wrap">
+				<script type="text/javascript" src="http://www.douban.com/service/badge/44394014/?selection=latest&amp;picsize=small&amp;hideself=on&amp;show=wishlist&amp;n=9&amp;hidelogo=on&amp;cat=book&amp;columns=3"></script>
+			</div>	
+		</section>
+								
+	</aside>
+	<!--end sidebar-->
+
+	<div id="backtotop"><a href="#" title="回到顶部"></a></div>
+	<!--end back to top-->
+
+	<footer id="footer">
+		<p>&copy; 2015 Brant <a href="http://www.miitbeian.gov.cn/" target="_blank"> 豫ICP备15007162号 </a> <br />本站点所有作品采用 <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" title="Creative Commons">知识共享 署名-非商业性使用-相同方式共享 4.0 国际许可协议</a> 进行许可</p>
+	</footer>	
+	
+</div>
+<!--end pagewrap-->
+
+<!--start js-->
+
+	<!--start Disqus comment count-->
+	<script type="text/javascript">
+    	/* * * CONFIGURATION VARIABLES * * */
+    	var disqus_shortname = '7brant';
+    
+    	/* * * DON'T EDIT BELOW THIS LINE * * */
+    	(function () {
+        	var s = document.createElement('script'); s.async = true;
+        	s.type = 'text/javascript';
+        	s.src = '//' + disqus_shortname + '.disqus.com/count.js';
+        	(document.getElementsByTagName('HEAD')[0] || document.getElementsByTagName('BODY')[0]).appendChild(s);
+    	}());
+	</script>
+	<!--end Disqus comment count-->
+
+	<!--start highlight-->
+	<script src="../../script/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!--end highlight-->
+
+<!--end js-->
+
+</body>
+</html>
