@@ -1,44 +1,49 @@
 /*..............................颜色.............................*/
-.thead{
-	background-color: 	#79B5A5;
-	color:				white;	
+
+/* 表格第1行，即head */
+article table tr:first-child {
+	background-color: #79B5A5;
+	color: white;
 }
-.odd{
-	background-color: 	#E6FFED;
-	color:				#79B5A5;
+
+/* 表格body奇数行，即246 */
+article table tr:nth-child(even) {
+	background-color: #E6FFED;
+	color: #79B5A5;
 }
-.even{
-	background-color: 	#C3E6D8;
-	color:				#79B5A5;
+/* 表格body偶数行，即357 */
+article table tr:nth-child(2n+3) {
+	background-color: #C3E6D8;
+	color: #79B5A5;
 }
 /*..............................格式.............................*/
 .table-wrap {
-	max-width: 			100%; 
-	overflow: 			auto;
+	max-width: 100%; 
+	overflow: auto;
 }
 aside table img {
-	max-width: 			45px;
+	max-width: 45px;
 }
 td,th{
-	padding: 			0.5em 1em;
-	text-align: 		center;
+	padding: 0.5em 1em;
+	text-align: center;
 }
 
 /*..............................N005实例.........................*/
 #a,#b,#c,#d{
-	display: 			inline-block;
+	display: inline-block;
 }
 #a{
-	text-decoration: 	underline;
+	text-decoration: underline;
 }
 #b{
-	text-decoration: 	none;
-	border-bottom: 		solid;
+	text-decoration: none;
+	border-bottom: solid;
 }
 #c{
-	text-decoration: 	underline;
+	text-decoration: underline;
 }
 #d{
-	text-decoration: 	none;
-	border-bottom: 		solid;
+	text-decoration: none;
+	border-bottom: solid;
 }
