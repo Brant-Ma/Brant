@@ -78,7 +78,8 @@
 		-webkit-text-size-adjust: none;
 	}
 
-	aside>section:not(aside:first-child), #backtotop a {
+	/* 侧边栏只保留信息栏 */
+	aside>section:first-child~section, #backtotop a {
 		display: none;
 	}
 
