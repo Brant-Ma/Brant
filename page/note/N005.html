@@ -82,11 +82,11 @@
 
 			<hr /><br />
 
-			<p>作为构建网页间关系的基本方式，<a class="external" href="http://en.wikipedia.org/wiki/Hyperlink" target="_blank" title="hyperlink">超链接（hyperlink）</a>应用极为广泛，但涉及到<strong>下划线</strong>时，相似属性text-decoration和border-bottom却让我困惑了很久。通过研究终有所获，下面是一些结论和想法。</p>
+			<p>作为构建网页间关系的基本方式，<a class="external" href="http://en.wikipedia.org/wiki/Hyperlink" target="_blank" title="hyperlink">超链接（hyperlink）</a>应用极为广泛，但涉及到<strong>下划线</strong>时，相似属性<code>text-decoration</code>和<code>border-bottom</code>却让我困惑了很久。通过研究终有所获，下面是一些结论和想法。</p>
 			
 			<h4>本质区别</h4>
-			<p><strong>text-decoration</strong>本质上是对文本的修饰。不仅可以是下划线（underline），还可以是上划线（overline）或者贯穿线（line-through）。由于链接默认是带有下划线的，所以可以将text-decoration设值none来清除下划线。</p>
-			<p><strong>border-botttom</strong>则是来源于盒模式。对border-bottom属性的设定实际上就是对border的具体设定，因此还可以配合padding-bottom一起使用。</p>
+			<p><strong><code>text-decoration</code></strong>本质上是对文本的修饰。不仅可以是下划线（underline），还可以是上划线（overline）或者贯穿线（line-through）。由于链接默认是带有下划线的，所以可以将<code>text-decoration</code>设值none来清除下划线。</p>
+			<p><strong><code>border-bottom</code></strong>则是来源于盒模式。对<code>border-bottom</code>属性的设定实际上就是对border的具体设定，因此还可以配合<code>padding-bottom</code>一起使用。</p>
 		
 			<h4>效果差异</h4>
 			<p>由于二者的来源不同，实际的效果差异也是很明显的。下面分别对中英文和两种属性的显示效果进行对比展示：</p>
@@ -120,7 +120,7 @@
 			</table>
 			</div>
 			<br />
-			<p>从上表可以看出，无论是中文还是英文，text-decoration控制下的下划线会显得与文字很拥挤，几乎是贴近的。而英文显示中更是糟糕，尤其是跟某些字母（<strong>g j p q y</strong>）搭配时会贯穿其下部。字体很小时可能影响程度更大。而border-bottom配合padding-bottom属性可以更好的控制这个距离，获取更佳的视觉效果。（但不能超过行距影响了下一行！）</p>
+			<p>从上表可以看出，无论是中文还是英文，<code>text-decoration</code>控制下的下划线会显得与文字很拥挤，几乎是贴近的。而英文显示中更是糟糕，尤其是跟某些字母（<strong>g j p q y</strong>）搭配时会贯穿其下部。字体很小时可能影响程度更大。而<code>border-bottom</code>配合<code>padding-bottom</code>属性可以更好的控制这个距离，获取更佳的视觉效果。（但不能超过行距影响了下一行！）</p>
 		
 			<h4>如何取舍</h4>
 			<p>现在可以下结论了：为了获取最佳的下划线效果，<strong>我们要尽量避免使用装饰线，而选择用边框的替代方案。</strong></p>

@@ -517,15 +517,17 @@ aside>section:last-child h4::before {
 	margin: 0 0 1.2em;
 }
 /* 单独code标签的显示样式 */
-/*p code {
+p code, li code {
 	font-family: Menlo, Monaco, Consolas, "Courier New", Courier, monospace;
+	font-weight: normal; 									/*消除strong影响*/
+	color: #666; 											/*消除strong影响*/
 	background-color: #F8F8F8;
     border: 2px solid #EAEAEA;
     border-radius: 5px;
     padding: 0px 4px;
     margin-left: 2px;
     margin-right: 2px;
-}*/
+}
 
 /* 未完成内容的标注 */
 .undo{

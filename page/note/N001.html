@@ -85,23 +85,23 @@
 			<p>由于经常搞混这两个属性，因此将其归纳总结来提醒自己：</p>
 			
 			<h4>主要功能</h4>
-			<p>虽然本文是在讨论alt属性和title属性在&lt;img&gt;标签中的使用，但仍需注意的是：<strong>alt属性一般用于&lt;img&gt;等个别标签，title属性可用于大部分标签</strong>。具体功能如下：</p>
+			<p>虽然本文是在讨论<code>alt</code>属性和<code>title</code>属性在<code>&lt;img&gt;</code>标签中的使用，但仍需注意的是：<strong><code>alt</code>属性一般用于<code>&lt;img&gt;</code>等个别标签，<code>title</code>属性可用于大部分标签</strong>。具体功能如下：</p>
 			<ol>
-				<li>alt属性：图片文本替换，用于SEO（搜索引擎优化）。提供关键词可以为搜索引擎提供判断依据。图片无法显示时替换也能发挥作用。</li>
-				<li>title属性：链接的悬浮提示，用于UEO（用户体验优化）。用户无需点击链接即可预先知道链接内容，避免了多余的操作和页面加载。</li>
+				<li><code>alt</code>属性：图片文本替换，用于SEO（搜索引擎优化）。提供关键词可以为搜索引擎提供判断依据。图片无法显示时替换也能发挥作用。</li>
+				<li><code>title</code>属性：链接的悬浮提示，用于UEO（用户体验优化）。用户无需点击链接即可预先知道链接内容，避免了多余的操作和页面加载。</li>
 			</ol>
-			<p>注：XHTML规定&lt;img&gt;标签必须使用alt属性，以便帮助视觉障碍用户、屏幕阅读器用户、显示器有问题用户或者图片链接本身不正确的情况下可以知道图片的内容；而title属性并没有强制的使用要求。</p>	
+			<p>注：XHTML规定<code>&lt;img&gt;</code>标签必须使用<code>alt</code>属性，以便帮助视觉障碍用户、屏幕阅读器用户、显示器有问题用户或者图片链接本身不正确的情况下可以知道图片的内容；而<code>title</code>属性并没有强制的使用要求。</p>	
 		
 			<h4>基本用法</h4>
-			<p>IE浏览器中alt属性和title属性均可展示悬浮提示信息，容易搞混。<strong>alt属性的本质是替换，title属性的本质是提示</strong>，不应该乱用，因此以下内容是在<strong>非</strong>IE浏览器环境下测试。</p>
-			<p>虽然alt一般用于图片，title用于链接，但由于title的使用范围很广泛，因此在图片的属性使用中有以下四种用法：</p>
+			<p>IE浏览器中<code>alt</code>属性和<code>title</code>属性均可展示悬浮提示信息，容易搞混。<strong><code>alt</code>属性的本质是替换，<code>title</code>属性的本质是提示</strong>，不应该乱用，因此以下内容是在<strong>非</strong>IE浏览器环境下测试。</p>
+			<p>虽然<code>alt</code>一般用于图片，<code>title</code>用于链接，但由于<code>title</code>的使用范围很广泛，因此在图片的属性使用中有以下四种用法：</p>
 			<pre class="highlight"><code>&lt;!--method 1--&gt;<br />&lt;img src="image url" alt="alternative text" /&gt;<br /><br />&lt;!--method 2--&gt;<br />&lt;img src="image url" alt="alternative text" title="advisory information" /&gt;<br /><br />&lt;!--method 3--&gt;<br />&lt;a href="hypertext source link" title="advisory information"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="image url" alt="alternative text" /&gt;<br />&lt;/a&gt;<br /><br />&lt;!--method 4--&gt;<br />&lt;a href="hypertext source link"&gt;<br />&nbsp;&nbsp;&nbsp;&nbsp;&lt;img src="image url" alt="alternative text" title="advisory information" /&gt;<br />&lt;/a&gt;</code></pre>
 
 			<h4>用法归纳</h4>
-			<p>以上4种方法都正确，但是我认为图片属性究竟怎么用，不仅要看有无图片链接，还要注意图片周围是否有文字说明。综合考虑的话，如果针对&lt;img&gt;的属性使用，我的倾向如下：</p>
+			<p>以上4种方法都正确，但是我认为图片属性究竟怎么用，不仅要看有无图片链接，还要注意图片周围是否有文字说明。综合考虑的话，如果针对<code>&lt;img&gt;</code>的属性使用，我的倾向如下：</p>
 			<ol>
-				<li><strong>图片无链接，只用alt</strong>，图片周围选择&lt;figcaption&gt;标签增加文字说明。</li>
-				<li><strong>图片有链接，既用alt，也用title</strong>（最好是alt放&lt;img&gt;里，title放&lt;a&gt;里），图片周围不必再增加文字说明。<strong>但是！</strong>此时alt的作用是规避XHTML Strict错误，其内容并不显示；而title的值将代替alt的值出现。</li>
+				<li><strong>图片无链接，只用<code>alt</code></strong>，图片周围选择<code>&lt;figcaption&gt;</code>标签增加文字说明。</li>
+				<li><strong>图片有链接，既用<code>alt</code>，也用<code>title</code></strong>（最好是<code>alt</code>放<code>&lt;img&gt;</code>里，<code>title</code>放<code>&lt;a&gt;</code>里），图片周围不必再增加文字说明。<strong>但是！</strong>此时<code>alt</code>的作用是规避XHTML Strict错误，其内容并不显示；而<code>title</code>的值将代替<code>alt</code>的值出现。</li>
 			</ol>
 
 			<h4>参考文章</h4>
