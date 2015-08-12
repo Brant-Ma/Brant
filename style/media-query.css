@@ -78,13 +78,13 @@
 		-webkit-text-size-adjust: none;
 	}
 
+	aside>section:not(aside:first-child), #backtotop a {
+		display: none;
+	}
+
 	#main-nav a {
 		font-size: 90%;
 		padding: 10px 8px;
-	}
-
-	#backtotop a {
-		display: none;
 	}
 
 }
