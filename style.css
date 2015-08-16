@@ -528,6 +528,12 @@ p code, li code {
     margin-left: 2px;
     margin-right: 2px;
 }
+aside li code {
+	font-family: "Microsoft Yahei", sans-serif;	
+	font-size: 88%;
+	background-color: #EEF6F1;  		
+	border: 2px solid #A8D6B9;	 
+}
 
 /* 未完成内容的标注 */
 .undo{
