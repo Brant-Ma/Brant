@@ -7,17 +7,14 @@
 	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
 	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
 	
-	<title>N007 正则表达式的18条入门匹配规则</title>                                                                                              <!--change title first-->
+	<title>A002 Sleep Cycle</title>                                                                                                               <!--change title first-->
 
 	<!--main css-->
 	<link type="text/css" rel="stylesheet" href="../../style.css" />
-	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />																  
+	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />
 
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
-
-	<!--highlight css-->
-	<link type="text/css" rel="stylesheet" href="../../style/github.css" />
 
 	<!--favicon generator-->
 	<meta name="theme-color" content="#ffffff"/>
@@ -60,10 +57,9 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
-				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
-				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
-				<li><a href="http://7brant.me#lab">Lab</a></li>
+				<li><a href="http://7brant.me/archive/#m">Mindmap</a></li>
+				<li><a href="http://7brant.me/archive/#a">App</a></li>
+				<li><a href="http://7brant.me/archive/#n">Note</a></li>
 			</ul>
 		</nav>
 
@@ -77,149 +73,24 @@
 		<article class="post clearfix">                                                                                                   <!--add article second-->      
 			
 			<header>
-				<h3 class="post-title">N007 正则表达式的18条入门匹配规则</h3>
+				<h3 class="post-title">A002 Sleep Cycle</h3>
 			</header>
 
 			<hr /><br />
 
-			<p>如果要评选IT技能里面最让人头疼的东西，正则表达式一定会榜上有名。想要精通反人类的正则表达式的确很难，但其实掌握少量常用的规则就能应对大量的使用场景了。以下是我认为最重要的18条匹配规则：</p>
+			<a href="http://www.wandoujia.com/apps/com.northcube.sleepcycle" target="_blank" title="Sleep Cycle"><img class="float" src="../../picture/mans/a/sleepcycle.png" alt="sleepcycle" width="120px" height="120px"></a>
 
-			<h4>位置规则（3个）</h4>
-			<div class="table-wrap">
-			<table>
-				<tr class="thead">
-					<th>匹配符</th>
-					<th>用法</th>
-				</tr>
-				<tr class="odd">
-					<td>\b</td>
-					<td>单词的开始或结束</td>
-				</tr >
-				<tr class="even">
-					<td>^</td>
-					<td>字符串的开始</td>
-				</tr>
-				<tr class="odd">
-					<td>$</td>
-					<td>字符串的结束</td>
-				</tr>
-			</table>
-			</div>
+			<p>这是我购买的的第一个付费应用，现在想想真心是物超所值。它能全程监测你的睡眠状态，记录一段日子的睡眠质量，并在浅睡眠时轻柔的唤醒你（在你设定的唤醒时间段内）。</p>
+
+			<p>从某种意义上讲，这是起床困难户的必备App。尽管首次使用会存在<strong>一定的学习成本</strong>，但是细致的说明会让你觉得这不是什么问题，毕竟这是一劳永逸的学习。</p>
+
+			<p>界面的导航风格是中规中矩的4个Tab，颜色是深沉的灰蓝色调，符合使用场景。基本功能除了监测唤醒外，还有小睡功能和周末设定。最大的特色是强大的数据统计功能，在使用了几个夜晚后就能为你呈现各种图表信息，帮助你了解自己的睡眠状况；心情、运动、天气和心率等不太常用的功能可作为辅助信息来判断影响睡眠的因素或者增加睡眠监测的乐趣。</p>
+
+			<p>任何App都有缺陷，如此强大的Sleep Cycle也不例外。简单的说就是耗电：<strong>你需要睡觉时充电使用。</strong>这是工作机制决定的，不过睡前为手机充电应该是很多人的习惯动作了，所以并不会为你增加过多困扰。另外，担心夜间打扰或者辐射忧虑的可以调制飞行模式</p>
+			
+			<p>PS：无印良品的<a class="external" href="http://www.wandoujia.com/apps/net.muji.sleep.mujitosleep" target="_blank" title="占坑">MUJI to Relax</a>有一个根据个人心率来提供定制音乐的功能，跟Sleep Cycle的心率监测功能一样用到了摄像头和闪光灯，二者的设计有异曲同工之妙。</p>
+
 			<br />
-			<p>注：用两个<code>\b</code>包裹<abbr title="多个连续的\w">单词</abbr>可以匹配单词；用<code>^</code>和<code>$</code>包裹字符串可以匹配字符串。</p>
-
-			<h4>特殊规则（4个）</h4>
-			<div class="table-wrap">
-			<table>
-				<tr class="thead">
-					<th>匹配符</th>
-					<th>用法</th>
-				</tr>
-				<tr class="odd">
-					<td>\</td>
-					<td>转义字符</td>
-				</tr >
-				<tr class="even">
-					<td>|</td>
-					<td>规则分支</td>
-				</tr>
-				<tr class="odd">
-					<td>()</td>
-					<td>规则分组</td>
-				</tr>
-				<tr class="even">
-					<td>\n</td>
-					<td>对分组后向引用</td>
-				</tr>
-			</table>
-			</div>
-			<br />
-			<p>注：转义字符作用于后侧字符；规则分支优先匹配前侧规则。</p>
-
-			<h4>单个字符（5个）</h4>
-			<div class="table-wrap">
-			<table>
-				<tr class="thead">
-					<th>匹配符</th>
-					<th>用法</th>
-				</tr>
-				<tr class="odd">
-					<td>\d</td>
-					<td>数字字符</td>
-				</tr >
-				<tr class="even">
-					<td>\s</td>
-					<td>空白字符</td>
-				</tr>
-				<tr class="odd">
-					<td>\w</td>
-					<td>字母/数字/汉字/下划线</td>
-				</tr>
-				<tr class="even">
-					<td>.</td>
-					<td>任意的非换行字符</td>
-				</tr>
-				<tr class="odd">
-					<td>[]</td>
-					<td>指定范围的字符</td>
-				</tr>
-			</table>
-			</div>
-			<br />
-			<p>注：空白字符包括空格、换行等；<code>[]</code>中的具体项或范围不需要转义。</p>
-
-			<h4>重复次数（6个）</h4>
-			<div class="table-wrap">
-			<table>
-				<tr class="thead">
-					<th>匹配符</th>
-					<th>用法</th>
-				</tr>
-				<tr class="odd">
-					<td>*</td>
-					<td>重复0次以上</td>
-				</tr >
-				<tr class="even">
-					<td>+</td>
-					<td>重复1次以上</td>
-				</tr>
-				<tr class="odd">
-					<td>?</td>
-					<td>重复0次或1次</td>
-				</tr>
-				<tr class="even">
-					<td>{n}</td>
-					<td>重复n次</td>
-				</tr>
-				<tr class="odd">
-					<td>{n,}</td>
-					<td>重复n次以上</td>
-				</tr>
-				<tr class="even">
-					<td>{n,m}</td>
-					<td>重复n至m次</td>
-				</tr>
-			</table>
-			</div>
-			<br />
-			<p>注：可以将<code>?</code>理解为有或无；所有的重复匹配符都是作用于前侧字符。</p>
-
-			<h4>简单的使用实例</h4>
-			<p>这里有一个挺不错的<a class="external" href="http://regexpal.com/" target="_blank" title="regexpal">JavaScript正则表达式在线测试工具</a>可以拿去用。给乏味的匹配符作如上分组归类就是为了方便复习，但有些例子可能会更好理解：</p>
-			<h5>实例1：匹配QQ号码</h5>
-			<p>首先需要分析QQ号码的特征。一个QQ号至少是5位的，每一位都是0-9的数字，貌似通过<code>\d{5,}</code>就可以解决问题。但不要忘了，第一位不能是0，所以修正为<code>[1-9]\d{4,}</code>才能正确匹配。</p>
-			<h5>实例2：匹配身份证号</h5>
-			<P>新的身份证位数都是18位的，但据说以前是15位的，后3位通过?即可实现有无。另一个值得注意的是，18位身份证的最后一位可以是x/X，这样<code>\d{15}(\d\d[0-9xX])?</code>就能实现匹配了。</P>
-			<h5>实例3：匹配HTML元素</h5>
-			<p>元素包括标签、属性和内容，而空元素又是在开始标签就闭合的。如果是非空元素，需要保证开始标签和结束标签的标签类型是相同的，这需要通过分组和后向引用来实现。非空元素和空元素可以分开写，分别是<code>&lt;(.*).*&gt;.*&lt;\/\1&gt;</code>和<code>&lt;.*\/&gt;</code>两部分，二者之间由|连接即可。值得注意的是，由于前者需要保证标签类型一致，需要使用2次.*分别代表标签类型和属性；而后者则可以只使用一次来统一匹配标签类型和属性。</p>	
-			<p>以上便是正则表达式的入门规则与应用。每次用到时拎出来复习强化，并随时学习其他额外的规则，没准这个反人类的东西就能被驾驭了。</p>		
-
-			<h4>参考文章</h4>
-			<div id="refer">
-				<ol>
-					<li>deerchao， <a class="external" href="http://deerchao.net/tutorials/regex/regex.htm" target="_blank" title="阮一峰的博客">正则表达式30分钟入门教程</a></li>
-				</ol>
-			</div>
 
 			<h3 id="Comment">评论</h3>
 
@@ -299,10 +170,7 @@
 	</script>
 	<!--end Disqus comment count-->
 
-	<!--start highlight-->
-	<script src="../../script/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-	<!--end highlight-->
+	<script type="text/javascript" src="../../script/wheel.js"></script>
 
 <!--end js-->
 

@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
 	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
 	
-	<title>A004 滴答清单</title>                                                                                                               <!--change title first-->
+	<title>N004 私人订制Error Pages</title>                                                                                                               <!--change title first-->
 
 	<!--main css-->
 	<link type="text/css" rel="stylesheet" href="../../style.css" />
@@ -15,6 +15,9 @@
 
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
+
+	<!--highlight css-->
+	<link type="text/css" rel="stylesheet" href="../../style/github.css" />
 
 	<!--favicon generator-->
 	<meta name="theme-color" content="#ffffff"/>
@@ -57,10 +60,9 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
-				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
-				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
-				<li><a href="http://7brant.me#lab">Lab</a></li>
+				<li><a href="http://7brant.me/archive/#m">Mindmap</a></li>
+				<li><a href="http://7brant.me/archive/#a">App</a></li>
+				<li><a href="http://7brant.me/archive/#n">Note</a></li>
 			</ul>
 		</nav>
 
@@ -74,24 +76,38 @@
 		<article class="post clearfix">                                                                                                   <!--add article second-->      
 			
 			<header>
-				<h3 class="post-title">A004 滴答清单</h3>
+				<h3 class="post-title">N004 私人订制Error Pages</h3>
 			</header>
 
 			<hr /><br />
 
-			<a href="http://www.wandoujia.com/apps/cn.ticktick.task" target="_blank" title="滴答清单"><img class="float" src="../../picture/mans/a/ticktick.png" alt="ticktick" width="120px" height="120px"></a>
-
-			<p>曾有人这么评价App Store的应用分布：50%是效率类，50%是摄影类。当然这是夸张的说法，但的确反映了这两个分类的白热化竞争。在这样的大环境下想要杀出一片市场确实很艰难，不过滴答清单（TickTick）做到了。</p>
-
-			<p>关于<abbr title="Getting Things Done">GTD</abbr>类目的应用，全平台支持和团队协作是必要条件，强大的提醒功能更是加分项。常规应用的提醒一般是定时提醒，最多有个提前量的提醒方式，而滴答清单有个大杀器：<strong>基于地理位置的提醒</strong>，当你离开/到达某地点时触发提醒，这无疑是更为人性化的设定方式。</p>
-
-			<p>说到人性化的功能，任务重复的设定就不得不提了。滴答清单<strong>将重复分为了完成重复和到期重复</strong>：如果某任务需要在完成时刻推算下次执行时间（比如浇花），就是完成重复；如果某任务需要在固定时间节点提醒而不考虑上次是否完成（比如追番），就是到期重复。普通应用的重复任务往往没有全面的考察使用场景，只是简单粗暴的设定循环而已。</p>
-
-			<p>此外，滴答清单还有不少的惊喜。比如滴答清单的2.0版本新增了<strong>日历视图</strong>，任务清单可以方便的展示排序和拖动调整，使它不再局限于To Do List这个范围。语音输入和Siri集成让任务创建这件烦心事也充满了乐趣。此外，微信公众号与状态栏插件也丰富了它的功能性。</p>
+			<p>网站的开发即使再小心翼翼也难免会有疏漏，提供一些备选方案可以提升网页的可用性和用户体验。比如图片的<code>alt</code>属性就是在图片丢失的情况下用替换文本来改善阅读体验。</p>
+			<p><strong>错误页面（error pages）</strong>也是一种类似的存在。尽管在站点中出现的频次并不高，可是页面一旦出现错误，它的重要性将在一瞬间体现出来。在介绍错误页面制作方法之前，需要先了解一下状态代码的分类。</p>
+		
+			<h4>HTTP状态代码</h4>
+			<p>当用户通过浏览器向服务器发出某页面的访问请求时，服务器会向用户返回一个HTTP状态码，该状态码提供了关于请求的相关信息。最常见的状态码就是404和503了：</p>
+			<ul>
+				<li>404：请求的页面不存在。经历过诸如论坛删帖等页面离奇失踪事件的同学一定不会陌生</li>
+				<li>503：服务器暂时不可用。One Piece（安利时刻：<a class="external" href="http://www.ishuhui.com/archives/category/zaixianmanhua/op" target="_blank" title="鼠绘漫画网">鼠绘漫画网</a>）周四更新时服务器瞬间就过载了，那时候最心疼的就是F5</li>
+			</ul>
+			<p>HTTP状态码是很庞大的家族：1xx系列代表临时响应，2xx系列代表成功处理，3xx系列代表已重定向，4xx系列（最庞大）代表请求错误，5xx系列代表服务器错误。<a href="#google" title="状态代码说明">完整的状态代码</a>可以参考Google的一篇说明。</p>
 			
-			<p>如果非要说滴答清单的缺点，我认为有两个。第一是"发现功能"显得过于积累（不过也算是良好的变现接口）；第二是抽屉导航并不友好，这一点真心不及高颜值的<a class="external" href="http://www.wandoujia.com/apps/com.wunderkinder.wunderlistandroid" target="_blank" title="占坑">奇妙清单</a>这个强势竞品，抱了微软大腿的它现在也是风光无限。</p>
+			<h4>制作页面</h4>
+			<p>由于error pages本质上仍然是HTML页面，因此制作过程就是重新写一个...当然不用这么麻烦！<strong>重新做不必要的轮子是最大的资源浪费</strong>。这里重磅推荐一个1分钟产出报错页面的在线工具：</p>
+			<p><a class="external" href="https://better-error-pages.statuspage.io/#" target="_blank" title="Better Error Pages">Better Error Pages</a></p>
+			<p>这个网站提供3种风格的模板，3种页面类型（404，503，以及maintanence维护页），以及页面元素和背景颜色的微调控制，基本涵盖了日常报错页面的核心需求。操作过程也极其简单，填写邮箱（供用户报告错误以及工具更新提醒）和正确的域名就OK了。点击几次下一步后，就可以下载已经做好的HTML文件了。下面是我的404页面：</p>
+			<figure class="center">
+				<img src="../../picture/mans/n/N004-1.png" alt="404" />
+				<figcaption>404页面</figcaption>
+			</figure>
+			<p>真切的感受一下404页面的动态效果吧（由于域名下不存在的页面会报错404，于是我就瞎写了一个URL）：<a href="http://7brant.me/404效果" target="_blank" title="404效果"><mark>酷炫的展示时间到了</mark></a></p>
 
-			<br />
+			<h4>参考文章</h4>
+			<div id="refer">
+				<ol>
+					<li>Search Console Help from Google， <a id="google" class="external" href="https://support.google.com/webmasters/answer/40132?hl=zh-Hans" target="_blank" title="HTTP状态代码">完整的HTTP状态代码及相关解释</a></li>
+				</ol>
+			</div>
 
 			<h3 id="Comment">评论</h3>
 
@@ -170,6 +186,13 @@
     	}());
 	</script>
 	<!--end Disqus comment count-->
+
+	<!--start highlight-->
+	<script src="../../script/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!--end highlight-->
+
+	<script type="text/javascript" src="../../script/wheel.js"></script>
 
 <!--end js-->
 

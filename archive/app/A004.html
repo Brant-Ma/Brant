@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
 	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
 	
-	<title>N003 初探Page Visibility API</title>                                                                                                               <!--change title first-->
+	<title>A004 滴答清单</title>                                                                                                               <!--change title first-->
 
 	<!--main css-->
 	<link type="text/css" rel="stylesheet" href="../../style.css" />
@@ -15,9 +15,6 @@
 
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
-
-	<!--highlight css-->
-	<link type="text/css" rel="stylesheet" href="../../style/github.css" />
 
 	<!--favicon generator-->
 	<meta name="theme-color" content="#ffffff"/>
@@ -60,10 +57,9 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
-				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
-				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
-				<li><a href="http://7brant.me#lab">Lab</a></li>
+				<li><a href="http://7brant.me/archive/#m">Mindmap</a></li>
+				<li><a href="http://7brant.me/archive/#a">App</a></li>
+				<li><a href="http://7brant.me/archive/#n">Note</a></li>
 			</ul>
 		</nav>
 
@@ -77,37 +73,24 @@
 		<article class="post clearfix">                                                                                                   <!--add article second-->      
 			
 			<header>
-				<h3 class="post-title">N003 初探Page Visibility API</h3>
+				<h3 class="post-title">A004 滴答清单</h3>
 			</header>
 
 			<hr /><br />
 
-			<p>前阵子<a class="external" href="http://movie.douban.com/subject/11026735/" target="_blank" title="豆瓣电影">超能陆战队</a>真是火得一塌糊涂，随之而来的不仅是票房光环，也催生了一系列的周边（我的网站之前也使用了Baymax元素）。</p>
+			<a href="http://www.wandoujia.com/apps/cn.ticktick.task" target="_blank" title="滴答清单"><img class="float" src="../../picture/mans/a/ticktick.png" alt="ticktick" width="120px" height="120px"></a>
 
-			<p>大概是过年的时候，我发现<a class="external" href="http://36kr.com/" target="_blank" title="36氪">36Kr</a>的标签页居然在切换时可以显示<strong>颜文字版的大白</strong>(●––●)，但只能猜出是用JavaScript做出的效果，通过某种方式获取窗口状态之类，具体实现就不清楚了。通过"36Kr"、"大白"、"标签页"等关键词搜索却无功而返，又过了几天甚至36Kr的这个彩蛋也下架了。</p>
+			<p>曾有人这么评价App Store的应用分布：50%是效率类，50%是摄影类。当然这是夸张的说法，但的确反映了这两个分类的白热化竞争。在这样的大环境下想要杀出一片市场确实很艰难，不过滴答清单（TickTick）做到了。</p>
+
+			<p>关于<abbr title="Getting Things Done">GTD</abbr>类目的应用，全平台支持和团队协作是必要条件，强大的提醒功能更是加分项。常规应用的提醒一般是定时提醒，最多有个提前量的提醒方式，而滴答清单有个大杀器：<strong>基于地理位置的提醒</strong>，当你离开/到达某地点时触发提醒，这无疑是更为人性化的设定方式。</p>
+
+			<p>说到人性化的功能，任务重复的设定就不得不提了。滴答清单<strong>将重复分为了完成重复和到期重复</strong>：如果某任务需要在完成时刻推算下次执行时间（比如浇花），就是完成重复；如果某任务需要在固定时间节点提醒而不考虑上次是否完成（比如追番），就是到期重复。普通应用的重复任务往往没有全面的考察使用场景，只是简单粗暴的设定循环而已。</p>
+
+			<p>此外，滴答清单还有不少的惊喜。比如滴答清单的2.0版本新增了<strong>日历视图</strong>，任务清单可以方便的展示排序和拖动调整，使它不再局限于To Do List这个范围。语音输入和Siri集成让任务创建这件烦心事也充满了乐趣。此外，微信公众号与状态栏插件也丰富了它的功能性。</p>
 			
-			<p>我以为再也没办法知道实现方法了。直到前阵子我又抽风搜索了一次，居然有了重大收获。</p>
-		
-			<h4>Page Visibility API</h4>
-			<p>通过Jeff等人的文章，我有种豁然开朗的感觉。经研究，这是一个名叫Page Visibility的酷炫API。众所周知，除了远古级别的浏览器（并没有黑IE），现代浏览器的标签页可以方便的进行Tab切换以实现不同的功能需求（比如视频缓冲、页面加载，甚至保护个人隐私...）。虽然每次只有一个可见页面，但是多个动态任务同时执行时无疑会消耗大量资源。<strong>因而它的主要目的是通过监听标签页状态来节约系统资源</strong>。</p>
-		
-			<h4>实现"大白"</h4>
-			<p>API的好处是可以发挥创造力做出有趣的事情，36Kr的"大白"就是这么实现的。核心代码如下：</p>
-			<pre class="highlight"><code>var content=document.title<br />function changeTab(){<br />&nbsp;&nbsp;&nbsp;&nbsp;if(!document.hidden){<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.title=content;<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}else{<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;document.title="(●––●) Hi, I'm Brant!";<br />&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;}<br >&nbsp;&nbsp;&nbsp;&nbsp;}<br />document.addEventListener("visibilitychange", changeTab);</code></pre>
-			<p>在相同URL的标签页分别处于<strong>激活态和隐藏态</strong>时的效果图如上图（注：本站点的<a href="http://7brant.me/old-index.html" target="_blank" title="Old Page">旧版本主页</a>）：</p>
-			<figure class="center">
-				<img src="../../picture/mans/n/N003-1.png" alt="performance" />
-				<figcaption>效果图</figcaption>
-			</figure>
-			<p>其实兼容性也是以后需要考虑在内的问题，针对不同浏览器和不同版本其代码稍有不同，这里就不再赘述了。</p>
+			<p>如果非要说滴答清单的缺点，我认为有两个。第一是"发现功能"显得过于积累（不过也算是良好的变现接口）；第二是抽屉导航并不友好，这一点真心不及高颜值的<a class="external" href="http://www.wandoujia.com/apps/com.wunderkinder.wunderlistandroid" target="_blank" title="占坑">奇妙清单</a>这个强势竞品，抱了微软大腿的它现在也是风光无限。</p>
 
-			<h4>参考文章</h4>
-			<div id="refer">
-				<ol>
-					<li>Jeff， <a class="external" href="http://devework.com/html5-page-visibility-api.html" target="_blank" title="DeveWork">妙趣横生的 HTML5 Page Visibility API</a></li>
-					<li>Web Developer Guide from MDN， <a class="external" href="https://developer.mozilla.org/en-US/docs/Web/Guide/User_experience/Using_the_Page_Visibility_API" target="_blank" title="MDN">Using the Page Visibility API</a></li>
-				</ol>
-			</div>
+			<br />
 
 			<h3 id="Comment">评论</h3>
 
@@ -187,10 +170,7 @@
 	</script>
 	<!--end Disqus comment count-->
 
-	<!--start highlight-->
-	<script src="../../script/highlight.pack.js"></script>
-	<script>hljs.initHighlightingOnLoad();</script>
-	<!--end highlight-->
+	<script type="text/javascript" src="../../script/wheel.js"></script>
 
 <!--end js-->
 

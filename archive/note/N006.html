@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
 	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
 	
-	<title>N005 text-decoration与border-bottom的使用</title>                                                                                              <!--change title first-->
+	<title>N006 中英字体的规则与使用</title>                                                                                              <!--change title first-->
 
 	<!--main css-->
 	<link type="text/css" rel="stylesheet" href="../../style.css" />
@@ -60,10 +60,9 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
-				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
-				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
-				<li><a href="http://7brant.me#lab">Lab</a></li>
+				<li><a href="http://7brant.me/archive/#m">Mindmap</a></li>
+				<li><a href="http://7brant.me/archive/#a">App</a></li>
+				<li><a href="http://7brant.me/archive/#n">Note</a></li>
 			</ul>
 		</nav>
 
@@ -77,59 +76,56 @@
 		<article class="post clearfix">                                                                                                   <!--add article second-->      
 			
 			<header>
-				<h3 class="post-title">N005 text-decoration与border-bottom的使用</h3>
+				<h3 class="post-title">N006 中英字体的规则与使用</h3>
 			</header>
 
 			<hr /><br />
 
-			<p>作为构建网页间关系的基本方式，<a class="external" href="http://en.wikipedia.org/wiki/Hyperlink" target="_blank" title="hyperlink">超链接（hyperlink）</a>应用极为广泛，但涉及到<strong>下划线</strong>时，相似属性<code>text-decoration</code>和<code>border-bottom</code>却让我困惑了很久。通过研究终有所获，下面是一些结论和想法。</p>
-			
-			<h4>本质区别</h4>
-			<p><strong><code>text-decoration</code></strong>本质上是对文本的修饰。不仅可以是下划线（underline），还可以是上划线（overline）或者贯穿线（line-through）。由于链接默认是带有下划线的，所以可以将<code>text-decoration</code>设值none来清除下划线。</p>
-			<p><strong><code>border-bottom</code></strong>则是来源于盒模式。对<code>border-bottom</code>属性的设定实际上就是对border的具体设定，因此还可以配合<code>padding-bottom</code>一起使用。</p>
-		
-			<h4>效果差异</h4>
-			<p>由于二者的来源不同，实际的效果差异也是很明显的。下面分别对中英文和两种属性的显示效果进行对比展示：</p>
-			<div class="table-wrap">
-			<table>
-				<tr class="thead">
-					<th></th>
-					<th>具体样式</th>
-					<th>实际效果</th>
-				</tr>
-				<tr class="odd">
-					<th>中：text-decoration</th>
-					<td>text-decoration:underline;</td>
-					<td><span id="a">前端开发</span></td>
-				</tr >
-				<tr class="even">
-					<th>中：border-bottom</th>
-					<td>text-decoration:none;<br />border-bottom:solid;</td>
-					<td><span id="b">前端开发</span></td>
-				</tr>
-				<tr  class="odd">
-					<th>英：text-decoration</th>
-					<td>text-decoration:underline;</td>
-					<td><span id="c">front-end development</span></td>
-				</tr>
-				<tr class="even">
-					<th>英：border-bottom</th>
-					<td>text-decoration:none;<br />border-bottom:solid;</td>
-					<td><span id="d">front-end development</span></td>
-				</tr>
-			</table>
-			</div>
-			<br />
-			<p>从上表可以看出，无论是中文还是英文，<code>text-decoration</code>控制下的下划线会显得与文字很拥挤，几乎是贴近的。而英文显示中更是糟糕，尤其是跟某些字母（<strong>g j p q y</strong>）搭配时会贯穿其下部。字体很小时可能影响程度更大。而<code>border-bottom</code>配合<code>padding-bottom</code>属性可以更好的控制这个距离，获取更佳的视觉效果。（但不能超过行距影响了下一行！）</p>
-		
-			<h4>如何取舍</h4>
-			<p>现在可以下结论了：为了获取最佳的下划线效果，<strong>我们要尽量避免使用装饰线，而选择用边框的替代方案。</strong></p>
+			<p>最近关注了"苹方"字体的进展后，我觉得有必要系统的学习一下字体相关的知识了。以下总结主要围绕字体规则与使用，此外还包括了一些字体设计的基本理念。</p>
+
+			<h4>基本分类与平台惯例</h4>
+			<p>虽然不能覆盖所有字体，但有无衬线是大部分字体的最基本划分。</p>
+			<p>衬线是笔画的装饰，<strong>有衬线字体（Serif）强调整个单词，适合大字号或者长篇幅；无衬线字体（Sans-Serif）强调单个字母，适合小字号或者短篇幅</strong>。但是关于哪种字体更适合阅读，研究界至今没有定论（阅读体验是极为主观的事情，我个人更喜欢无衬线）。</p>
+			<p>关于平台惯例的话，Windows力推的是自家的微软雅黑（Microsoft YaHei），Mac则是使用的华文黑体（STHeiti）。好消息是这款不那么招人喜欢的字体很快就会被"苹方"取代了。</p>
+
+			<h4>字体使用规则</h4>
+			<p>浏览器在渲染某个字符的时候，会优先使用CSS规则中排序靠前的字体。但由于中文字库包含英文字母而反之并不成立，我们在使用<code>font-family</code>属性时需要<strong>先指定英文字体，再指定中文字体</strong>。</p>
+			<p>另外还需要注意两个重要的细节：中文字体的中文名称和英文名称都应列出；英文名称由多单词构成时应该加引号。</p>
+
+			<h4>中英字体的现状</h4>
+			<p>英文字体的基本类就是有无衬线，而中文字体其实也有与之相似的对应字体：<strong>黑体（SimHei）对应无衬线，宋体（SimSun）对应有衬线</strong>。</p>
+			<h5>英文字体</h5>
+			<p>英文字体最流行的是"Helvetica"，由于普及程度过高而让很多设计师以无特色为由避而远之，但确实是一种极为"安全"的字体。其实说到<abbr title="全平台覆盖的字体">安全字体</abbr>，或许Arial，Arial Black，Comic Sans MS，Courier New，Georgia，Impact，Times New Roman，Trebuchet MS，Verdana这些会更加安全。</p>
+			<p>想到"Comic Sans MS"，我想在讲中文字体前插播一张tips...</p>
+			<figure class="center">
+				<img src="../../picture/mans/n/N006-1.jpg" alt="tips on fonts" />
+				<figcaption>Tips on Fonts</figcaption>
+			</figure>
+			<p>PS：说实话我还挺喜欢Comic Sans MS的...</p>
+			<h5>中文字体</h5>
+			<p>回到中文字体。中文字体目前差不多是由"微软雅黑"掌权的，此外，M$ Office中内置了很多华文字体。如今<strong>设计界倾心于各种黑体</strong>，这让小众的仿宋（FangSong）和楷体（KaiTi）地位极其尴尬，而隶书（LiSu）和幼圆（YouYuan）就真没什么使用场景了。</p>
+			<p>关于冬青黑体和思源黑体会在下面一部分进行讲解。</p>
+
+			<h4>字体设计与趋势</h4>
+			<p>英文字体设计已经十分成熟了，所以下文主要围绕中文字体来说明。</p>
+			<p>由于字库量大，导致中文字体设计极其复杂。相比千姿百态的英文字体，中文字体确实非常少，而且大都不支持web font。不过市场越来越重视中文字体，字体开发者也越来越多，包括苹果在内的大厂也开始重视群众的呼声。关于字体设计的规则，除了字符库要完善，我认为需要着重考虑两点：</p>
+			<ul>
+				<li>相比<abbr title="宏观的内容体验">易读性</abbr>（readability）的研究，<abbr title="微观的文字辨识">可读性</abbr>（legibility）显得更为重要，甚至某种程度上易读性只具有<a class="external" href="https://en.wikipedia.org/wiki/Typography" target="_blank" title="wikipedia关于typography的解读">潜在价值</a>。</li>
+				<li>同等字重的设定要保证不同语言具有相同的实际字重，以适应中英日等多语言的<strong>混排效果</strong>。</li>
+			</ul>
+			<p>目前中文字体界受到追捧的热门趋势字体主要有两种：</p>
+			<ul>
+				<li><strong>冬青黑体</strong>（Hiragino Sans GB）是第一款被国标认可的日文字体，但毕竟基于日语文化的设计并不会很好的照顾中国人的视力卫生。</li>
+				<li><strong>思源黑体</strong>（Source Han Sans）是Adobe主导的、包括Google在内的多方人员集体开发的字体，优点是大字面和多字重（7种）。</li>
+			</ul>
+			<p>最后，我对中文字体开发的未来很看好，而<a class="external" href="http://www.youziku.com/Home/Index" target="_blank" title="有字库官网">有字库</a>和<a class="external" href="http://justfont.com/" target="_blank" title="justfont官网">justfont</a>对web font的探索和努力也坚定了我这个信念。</p>			
 
 			<h4>参考文章</h4>
 			<div id="refer">
 				<ol>
-					<li>Dennis Deacon， <a class="external" href="http://www.dennisdeacon.com/web-design/text-decoration-vs-border-bottom/" target="_blank" title="text-decoration vs. border-bottom">Text-Decoration vs. Border-Bottom</a></li>
-					<li>stackoverflow， <a class="external" href="http://stackoverflow.com/questions/2467475/text-decoration-underline-vs-border-bottom" target="_blank" title="text-decoration">text-decoration: underline vs border-bottom</a></li>
+					<li>阮一峰， <a class="external" href="http://www.ruanyifeng.com/blog/2014/07/chinese_fonts.html" target="_blank" title="阮一峰的博客">中文字体网页开发指南</a></li>
+					<li>Kendra Schaefer， <a class="external" href="http://webdesign.tutsplus.com/zh-hans/articles/the-complete-beginners-guide-to-chinese-fonts--cms-23444" target="_blank" title="Tuts+">中文字体新手指南</a></li>
+					<li>孙志贵， <a class="external" href="http://zhuanlan.zhihu.com/ibuick/20096331" target="_blank" title="知乎专栏">OS X / iOS 六年字体战争</a></li>
 				</ol>
 			</div>
 
@@ -215,6 +211,8 @@
 	<script src="../../script/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 	<!--end highlight-->
+
+	<script type="text/javascript" src="../../script/wheel.js"></script>
 
 <!--end js-->
 

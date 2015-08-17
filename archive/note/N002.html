@@ -7,7 +7,7 @@
 	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
 	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
 	
-	<title>A001 EverMemo</title>                                                                                                               <!--change title first-->
+	<title>N002 关于Favicon图标</title>                                                                                                               <!--change title first-->
 
 	<!--main css-->
 	<link type="text/css" rel="stylesheet" href="../../style.css" />
@@ -15,6 +15,9 @@
 
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
+
+	<!--highlight css-->
+	<link type="text/css" rel="stylesheet" href="../../style/github.css" />
 
 	<!--favicon generator-->
 	<meta name="theme-color" content="#ffffff"/>
@@ -57,10 +60,9 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
-				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
-				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
-				<li><a href="http://7brant.me#lab">Lab</a></li>
+				<li><a href="http://7brant.me/archive/#m">Mindmap</a></li>
+				<li><a href="http://7brant.me/archive/#a">App</a></li>
+				<li><a href="http://7brant.me/archive/#n">Note</a></li>
 			</ul>
 		</nav>
 
@@ -74,25 +76,36 @@
 		<article class="post clearfix">                                                                                                   <!--add article second-->      
 			
 			<header>
-				<h3 class="post-title">A001 EverMemo</h3>
+				<h3 class="post-title">N002 关于Favicon图标</h3>
 			</header>
 
 			<hr /><br />
 
-			<a href="http://www.wandoujia.com/apps/com.zhan_dui.evermemo" target="_blank" title="EverMemo"><img class="float" src="../../picture/mans/a/evermemo.png" alt="evermemo" width="120px" height="120px"></a>
+			<p>前几天突然意识到我的网站还差个网站小图标，也就是标签页或者收藏夹中可以显示在网站title前的小图标，于是乎开始了各种研究和尝试。以下是颇有成效的研究结果：</p>
+		
+			<h4>格式尺寸</h4>
+			<p>据研究，常见的小图标为ICO格式，不过实际上这是历史遗留问题，或者说是针对旧版IE浏览器的格式。众所周知的是，旧版IE在很多兼容性上和功能性上都比其他主流浏览器（Chrome，Firefox，Safari，Opera）落后很多，而巨硬也尝试推出新的Spartan革自己的命。随着HTML5的推广，ICO格式因其局限性逐步被淘汰，应用范围（包括移动端）更加广泛的PNG格式开始成为主流。所以，使用新的PNG格式总不会有错。</p>
+			<p>尺寸问题取决于<strong>设备、平台和浏览器（甚至还要考虑各种版本）的综合选择</strong>，比如iOS 7的Retina屏幕的iPhone的（定语好长）Icon尺寸规格是120x120。因此，即使准备了16x16、32x32和64x64也是不够折腾的。最好的办法下面会讲到。</p>
+		
+			<h4>声明方式</h4>
+			<p>关于声明问题，比较简单。当让不同的情况可能稍有不同，通用的声明语句如下：</p>
+			<pre class="highlight"><code>&lt;link rel="icon" type="image/png" href="favicon.png" sizes="32x32"/&gt;</code></pre>
+			<p>将这句话放进HTML文档的头部，然后就可以看到期待已久的favicon了。当然，前提是先完成下面这个最最重要的步骤。</p>
+		
+			<h4>生成图标</h4>
+			<p>可以随便找一个喜欢的JPG格式图片，然后自己切成合适的大小，再转换成不同的格式和分辨率...这么麻烦的事只有设计师才会去做。</p>
+			<p>任何麻烦的要死的方法都是耍流氓。 ——默罕默德</p>
+			<p>如何花最少的时间，制作出匹配各种设备、各种平台和浏览器的favicon？</p>
+			<p>答案是使用<a class="external" href="http://realfavicongenerator.net/" target="_blank" title="点我！我是图标生成器！">Real Favicon Generator</a>这个神器。上传图片后点几下鼠标，一包图片和一段代码就完美呈现了。生成的代码展示如下图（可以看出有种类齐全的适配方案）：</p>
+			<pre class="highlight"><code>&lt;!--favicon generator--&gt;<br />&lt;meta name="theme-color" content="#ffffff"/&gt;<br />&lt;meta name="msapplication-TileColor" content="#00aba9"/&gt;<br />&lt;meta name="msapplication-TileImage" content="/mstile-144x144.png"/&gt;<br />&lt;link rel="manifest" href="favicons/manifest.json"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="57x57" href="../../favicons/apple-touch-icon-57x57.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="60x60" href="../../favicons/apple-touch-icon-60x60.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="72x72" href="../../favicons/apple-touch-icon-72x72.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="76x76" href="../../favicons/apple-touch-icon-76x76.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="114x114" href="../../favicons/apple-touch-icon-114x114.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="120x120" href="../../favicons/apple-touch-icon-120x120.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="144x144" href="../../favicons/apple-touch-icon-144x144.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="152x152" href="../../favicons/apple-touch-icon-152x152.png"/&gt;<br />&lt;link rel="apple-touch-icon" sizes="180x180" href="../../favicons/apple-touch-icon-180x180.png"/&gt;<br />&lt;link rel="icon" type="image/png" href="../../favicons/favicon-16x16.png" sizes="16x16"/&gt;<br />&lt;link rel="icon" type="image/png" href="../../favicons/favicon-32x32.png" sizes="32x32"/&gt;<br />&lt;link rel="icon" type="image/png" href="../../favicons/favicon-96x96.png" sizes="96x96"/&gt;<br />&lt;link rel="icon" type="image/png" href="../../favicons/android-chrome-192x192.png" sizes="192x192"/&gt;<br /></code></pre>
+			<p>之前繁琐的流程全部由1次上传和1次点击取代，极大的提高了工作效率。当我发现这个在线工具的时候，脑海里只有一句话：<strong>这简直是大自然的馈赠。</strong></p>
 
-			<p>用了一阵子EverMemo才发现这并非<a class="external" href="http://www.wandoujia.com/apps/com.evernote" target="_blank" title="占坑">EverNote</a>官方出品，然后就深深的被开发者折服了。极简又清爽的风格让人用起来欲罢不能，与EverNote完美同步的特性也为它增色不少。此外，EverMemo还有以下特点：</p>
-			
-			<p>1.自动粘贴功能。有意思的是，该功能只在首次打开新便签时触发一次。（也就是说粘贴动作完成后，剪贴板上相同的这个内容就不会再次触发）</p>
-			<p>2.主界面下方居中位置有一枚"添加"按钮，并在浏览便签流时自动隐藏。这个按钮设计最近很流行，比如之前的<a class="external" href="http://www.wandoujia.com/apps/com.gewara" target="_blank" title="占坑">格瓦拉</a>和现在的<a class="external" href="http://www.wandoujia.com/apps/com.wunderkinder.wunderlistandroid" target="_blank" title="占坑">奇妙清单</a>都有这样的设计。</p>
-			<p>3.很多贴心的细微设计。比如可以设置字体（Helvetica、Georgia等）、启动时自动打开新便签、左滑选择置顶或归档功能。</p>
-			<p>4.内容编辑功能。便签内容有可能是结构化的，因此开发者引入了TAB、列表，甚至还有简单的计算器功能。</p>
-			<p>5.我最喜欢的彩色便签功能：类似于常驻于侧边抽屉导航的便签分组功能，配合搜索功能可以轻松分类和查询。</p>
-			<p>6.<strong>允许用户犯错的设计。</strong>主要是撤销功能，一个是编辑内容时有双向的撤销，一个是删除或归档便签时有几秒的取消反应时间。</p>
-			
-			<p>作为一款优秀的工具类产品，有些功能并不完美，比如Mocha功能。我认为开发者是打算通过公开化的便签打造一个有趣的社区，但我认为比较鸡肋，而且内容并未经过筛选沉淀，大多数呈现出的是无意义的内容。另外Mocha对用户的<strong>隐私保护</strong>上也值得商榷。</p>
-
-			<br />
+			<h4>参考文章</h4>
+			<div id="refer">
+				<ol>
+					<li>Guest Author from CSS-TRICKS， <a class="external" href="https://css-tricks.com/favicon-quiz/" target="_blank" title="CSS-TRICKS">Favicons, Touch Icons, Tile Icons, etc. Which Do You Need?</a></li>
+				</ol>
+			</div>
 
 			<h3 id="Comment">评论</h3>
 
@@ -171,6 +184,13 @@
     	}());
 	</script>
 	<!--end Disqus comment count-->
+
+	<!--start highlight-->
+	<script src="../../script/highlight.pack.js"></script>
+	<script>hljs.initHighlightingOnLoad();</script>
+	<!--end highlight-->
+
+	<script type="text/javascript" src="../../script/wheel.js"></script>
 
 <!--end js-->
 

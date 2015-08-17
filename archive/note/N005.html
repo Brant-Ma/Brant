@@ -7,11 +7,11 @@
 	<meta name="keywords" content="Brant丨脑图丨Mindmap丨应用丨App丨笔记丨Note丨前端丨Front-end" />
 	<meta name="description" content="前端技术的学习笔记，互联网书籍的思维导图，移动应用的测评文章" />
 	
-	<title>N004 私人订制Error Pages</title>                                                                                                               <!--change title first-->
+	<title>N005 text-decoration与border-bottom的使用</title>                                                                                              <!--change title first-->
 
 	<!--main css-->
 	<link type="text/css" rel="stylesheet" href="../../style.css" />
-	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />
+	<link type="text/css" rel="stylesheet" href="../../style/table.css" media="screen" />																  
 
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../../style/media-query.css" />
@@ -60,10 +60,9 @@
 
 		<nav>
 			<ul id="main-nav" class="clearfix">
-				<li><a href="http://7brant.me/page/mindmap/M000.html">Mindmap</a></li>
-				<li><a href="http://7brant.me/page/app/A000.html">App</a></li>
-				<li><a href="http://7brant.me/page/note/N000.html">Note</a></li>
-				<li><a href="http://7brant.me#lab">Lab</a></li>
+				<li><a href="http://7brant.me/archive/#m">Mindmap</a></li>
+				<li><a href="http://7brant.me/archive/#a">App</a></li>
+				<li><a href="http://7brant.me/archive/#n">Note</a></li>
 			</ul>
 		</nav>
 
@@ -77,36 +76,59 @@
 		<article class="post clearfix">                                                                                                   <!--add article second-->      
 			
 			<header>
-				<h3 class="post-title">N004 私人订制Error Pages</h3>
+				<h3 class="post-title">N005 text-decoration与border-bottom的使用</h3>
 			</header>
 
 			<hr /><br />
 
-			<p>网站的开发即使再小心翼翼也难免会有疏漏，提供一些备选方案可以提升网页的可用性和用户体验。比如图片的<code>alt</code>属性就是在图片丢失的情况下用替换文本来改善阅读体验。</p>
-			<p><strong>错误页面（error pages）</strong>也是一种类似的存在。尽管在站点中出现的频次并不高，可是页面一旦出现错误，它的重要性将在一瞬间体现出来。在介绍错误页面制作方法之前，需要先了解一下状态代码的分类。</p>
-		
-			<h4>HTTP状态代码</h4>
-			<p>当用户通过浏览器向服务器发出某页面的访问请求时，服务器会向用户返回一个HTTP状态码，该状态码提供了关于请求的相关信息。最常见的状态码就是404和503了：</p>
-			<ul>
-				<li>404：请求的页面不存在。经历过诸如论坛删帖等页面离奇失踪事件的同学一定不会陌生</li>
-				<li>503：服务器暂时不可用。One Piece（安利时刻：<a class="external" href="http://www.ishuhui.com/archives/category/zaixianmanhua/op" target="_blank" title="鼠绘漫画网">鼠绘漫画网</a>）周四更新时服务器瞬间就过载了，那时候最心疼的就是F5</li>
-			</ul>
-			<p>HTTP状态码是很庞大的家族：1xx系列代表临时响应，2xx系列代表成功处理，3xx系列代表已重定向，4xx系列（最庞大）代表请求错误，5xx系列代表服务器错误。<a href="#google" title="状态代码说明">完整的状态代码</a>可以参考Google的一篇说明。</p>
+			<p>作为构建网页间关系的基本方式，<a class="external" href="http://en.wikipedia.org/wiki/Hyperlink" target="_blank" title="hyperlink">超链接（hyperlink）</a>应用极为广泛，但涉及到<strong>下划线</strong>时，相似属性<code>text-decoration</code>和<code>border-bottom</code>却让我困惑了很久。通过研究终有所获，下面是一些结论和想法。</p>
 			
-			<h4>制作页面</h4>
-			<p>由于error pages本质上仍然是HTML页面，因此制作过程就是重新写一个...当然不用这么麻烦！<strong>重新做不必要的轮子是最大的资源浪费</strong>。这里重磅推荐一个1分钟产出报错页面的在线工具：</p>
-			<p><a class="external" href="https://better-error-pages.statuspage.io/#" target="_blank" title="Better Error Pages">Better Error Pages</a></p>
-			<p>这个网站提供3种风格的模板，3种页面类型（404，503，以及maintanence维护页），以及页面元素和背景颜色的微调控制，基本涵盖了日常报错页面的核心需求。操作过程也极其简单，填写邮箱（供用户报告错误以及工具更新提醒）和正确的域名就OK了。点击几次下一步后，就可以下载已经做好的HTML文件了。下面是我的404页面：</p>
-			<figure class="center">
-				<img src="../../picture/mans/n/N004-1.png" alt="404" />
-				<figcaption>404页面</figcaption>
-			</figure>
-			<p>真切的感受一下404页面的动态效果吧（由于域名下不存在的页面会报错404，于是我就瞎写了一个URL）：<a href="http://7brant.me/404效果" target="_blank" title="404效果"><mark>酷炫的展示时间到了</mark></a></p>
+			<h4>本质区别</h4>
+			<p><strong><code>text-decoration</code></strong>本质上是对文本的修饰。不仅可以是下划线（underline），还可以是上划线（overline）或者贯穿线（line-through）。由于链接默认是带有下划线的，所以可以将<code>text-decoration</code>设值none来清除下划线。</p>
+			<p><strong><code>border-bottom</code></strong>则是来源于盒模式。对<code>border-bottom</code>属性的设定实际上就是对border的具体设定，因此还可以配合<code>padding-bottom</code>一起使用。</p>
+		
+			<h4>效果差异</h4>
+			<p>由于二者的来源不同，实际的效果差异也是很明显的。下面分别对中英文和两种属性的显示效果进行对比展示：</p>
+			<div class="table-wrap">
+			<table>
+				<tr class="thead">
+					<th></th>
+					<th>具体样式</th>
+					<th>实际效果</th>
+				</tr>
+				<tr class="odd">
+					<th>中：text-decoration</th>
+					<td>text-decoration:underline;</td>
+					<td><span id="a">前端开发</span></td>
+				</tr >
+				<tr class="even">
+					<th>中：border-bottom</th>
+					<td>text-decoration:none;<br />border-bottom:solid;</td>
+					<td><span id="b">前端开发</span></td>
+				</tr>
+				<tr  class="odd">
+					<th>英：text-decoration</th>
+					<td>text-decoration:underline;</td>
+					<td><span id="c">front-end development</span></td>
+				</tr>
+				<tr class="even">
+					<th>英：border-bottom</th>
+					<td>text-decoration:none;<br />border-bottom:solid;</td>
+					<td><span id="d">front-end development</span></td>
+				</tr>
+			</table>
+			</div>
+			<br />
+			<p>从上表可以看出，无论是中文还是英文，<code>text-decoration</code>控制下的下划线会显得与文字很拥挤，几乎是贴近的。而英文显示中更是糟糕，尤其是跟某些字母（<strong>g j p q y</strong>）搭配时会贯穿其下部。字体很小时可能影响程度更大。而<code>border-bottom</code>配合<code>padding-bottom</code>属性可以更好的控制这个距离，获取更佳的视觉效果。（但不能超过行距影响了下一行！）</p>
+		
+			<h4>如何取舍</h4>
+			<p>现在可以下结论了：为了获取最佳的下划线效果，<strong>我们要尽量避免使用装饰线，而选择用边框的替代方案。</strong></p>
 
 			<h4>参考文章</h4>
 			<div id="refer">
 				<ol>
-					<li>Search Console Help from Google， <a id="google" class="external" href="https://support.google.com/webmasters/answer/40132?hl=zh-Hans" target="_blank" title="HTTP状态代码">完整的HTTP状态代码及相关解释</a></li>
+					<li>Dennis Deacon， <a class="external" href="http://www.dennisdeacon.com/web-design/text-decoration-vs-border-bottom/" target="_blank" title="text-decoration vs. border-bottom">Text-Decoration vs. Border-Bottom</a></li>
+					<li>stackoverflow， <a class="external" href="http://stackoverflow.com/questions/2467475/text-decoration-underline-vs-border-bottom" target="_blank" title="text-decoration">text-decoration: underline vs border-bottom</a></li>
 				</ol>
 			</div>
 
@@ -192,6 +214,8 @@
 	<script src="../../script/highlight.pack.js"></script>
 	<script>hljs.initHighlightingOnLoad();</script>
 	<!--end highlight-->
+
+	<script type="text/javascript" src="../../script/wheel.js"></script>
 
 <!--end js-->
 
