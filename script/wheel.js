@@ -1,3 +1,37 @@
+// bug：切换前的初次进入为空白页，url切换时不变
+// 归档页面的部分内容显示效果
+function showArchive(sectionId) {
+	var article=document.getElementsByTagName("article")[0];
+	var sections=article.getElementsByTagName("section");
+	for (var i = 0; i < sections.length; i++) {
+		var id=sections[i].getAttribute("id");
+		if (id!=sectionId) {
+			sections[i].style.display="none";
+		} else {
+			sections[i].style.display="block";
+		}
+	}
+}
+function matchArchive() {
+	var header=document.getElementsByTagName("header")[0];
+	var nav=header.getElementsByTagName("nav")[0];
+	var links=nav.getElementsByTagName("a");
+	for (var i = 0; i < links.length; i++) {
+		var match=links[i].getAttribute("href").split("#")[1];
+		if (!document.getElementById(match)) continue;
+		document.getElementById(match).style.display="none";
+		// 将局部变量设为全局属性
+		links[i].target=match;
+		links[i].onclick=function() {
+			showArchive(this.target);
+			return false;
+		}
+	}
+}
+addLoadEvent(matchArchive);
+
+// --------------------------------------------------------------------small wheels-------------------------------------------------------------------------------------
+
 // 轮子：新增加载事件
 function addLoadEvent(func){
 	var oldonload=window.onload;
