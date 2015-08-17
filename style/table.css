@@ -30,20 +30,20 @@ td,th{
 }
 
 /*..............................N005实例.........................*/
-#a,#b,#c,#d{
+table #a, table #b, table #c, table #d{
 	display: inline-block;
 }
-#a{
+table #a{
 	text-decoration: underline;
 }
-#b{
+table #b{
 	text-decoration: none;
 	border-bottom: solid;
 }
-#c{
+table #c{
 	text-decoration: underline;
 }
-#d{
+table #d{
 	text-decoration: none;
 	border-bottom: solid;
 }

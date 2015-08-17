@@ -296,7 +296,6 @@ mark {
 	background: linear-gradient(-90deg, #282828, #4f4f4f);*/
 }
 
-
 /*很不错的纯CSS下拉菜单*/
 /*
 #main-nav ul { display: none; }
@@ -491,7 +490,7 @@ aside>section:last-child h4::before {
 }
 
 /* article内部的锚 */
-:target {
+#refer a:target {
 	background-color: #ffa698;
 	color: #666;
 }
@@ -577,6 +576,11 @@ img.float{
 	color: #FC5648;
 	font-weight: bold;
 	font-style: italic;
+}
+
+/* 归档样式 */
+.db {
+	color: #666;
 }
 
 /*------------------------------------clearfix---------------------------------*/
