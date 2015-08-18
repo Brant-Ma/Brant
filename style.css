@@ -586,9 +586,22 @@ img.float{
 	font-style: italic;
 }
 
-/* 归档样式 */
+/* 归档豆瓣样式 */
 .db {
 	color: #666;
+}
+
+/* webkit可用的滚动条 */
+::-webkit-scrollbar {
+    width: 12px;
+} 
+::-webkit-scrollbar-track {
+	border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); 
+} 
+::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5); 
 }
 
 /*------------------------------------clearfix---------------------------------*/
