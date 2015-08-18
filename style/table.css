@@ -23,18 +23,24 @@ article table tr:nth-child(2n+3) {
 	max-width: 100%; 
 	overflow: auto;
 }
-td,th {
-	padding: 0.5em 1em;
-	text-align: left;
-}
-
 
 /* specific table */
 aside table img {
 	max-width: 45px;
 }
+aside td,th {
+	padding: 0.5em 1em;
+	text-align: center;
+}
 article table {
 	width: 600px;
+}
+article td,th {
+	font-size: 90%;
+	padding: 0.5em;
+	padding-left: 20px;
+	text-align: left;
+	vertical-align: middle;
 }
 
 /*..............................N005实例.........................*/
