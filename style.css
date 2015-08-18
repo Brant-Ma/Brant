@@ -503,7 +503,8 @@ aside>section:last-child h4::before {
 }
 
 /* 参考文章框 */																		
-#refer {     
+#refer { 
+	font-size: 75%;    
 	display: block;                                                           
 	background: #E3EEEA;
 	border:	1px solid #6AC5AC;
