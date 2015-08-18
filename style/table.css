@@ -17,33 +17,41 @@ article table tr:nth-child(2n+3) {
 	color: #79B5A5;
 }
 /*..............................格式.............................*/
+
+/* all table */
 .table-wrap {
 	max-width: 100%; 
 	overflow: auto;
 }
+td,th {
+	padding: 0.5em 1em;
+	text-align: left;
+}
+
+
+/* specific table */
 aside table img {
 	max-width: 45px;
 }
-td,th{
-	padding: 0.5em 1em;
-	text-align: center;
+article table {
+	width: 600px;
 }
 
 /*..............................N005实例.........................*/
-table #a, table #b, table #c, table #d{
+table #n005a, table #n005b, table #n005c, table #n005d{
 	display: inline-block;
 }
-table #a{
+table #n005a{
 	text-decoration: underline;
 }
-table #b{
+table #n005b{
 	text-decoration: none;
 	border-bottom: solid;
 }
-table #c{
+table #n005c{
 	text-decoration: underline;
 }
-table #d{
+table #n005d{
 	text-decoration: none;
 	border-bottom: solid;
 }
