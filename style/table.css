@@ -42,6 +42,11 @@ article td,th {
 	text-align: left;
 	vertical-align: middle;
 }
+/* 除了表头以外的hover */
+article table tr:first-child~tr:hover {
+	background-color: #1abc9c;
+	color: white;
+}
 
 /*..............................N005实例.........................*/
 table #n005a, table #n005b, table #n005c, table #n005d{
