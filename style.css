@@ -399,7 +399,7 @@ mark {
 
 /*------------------------------------icon-------------------------------------*/
 
-/* content为图片的伪元素无法设定图片尺寸 */
+/* content为url图片的话将无法控制图片尺寸 */
 
 .external::after{
 	content: url(picture/icon/external-green.png);
