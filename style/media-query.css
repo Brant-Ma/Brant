@@ -1,5 +1,4 @@
 /*-----------------------------------------------------------------------------*/
-/*----------------------------------less than 980px----------------------------*/
 
 @media screen and (max-width: 980px) {
 
@@ -21,8 +20,6 @@
 	}
 
 }
-
-/*----------------------------------less than 650px----------------------------*/
 
 @media screen and (max-width: 650px) {
 
@@ -70,17 +67,11 @@
 	}
 
 }
-/*----------------------------------less than 480px----------------------------*/
 
 @media screen and (max-width: 480px) {
 
 	html {
 		-webkit-text-size-adjust: none;
-	}
-
-	/* 侧边栏只保留信息栏 */
-	aside>section:first-child~section, #backtotop a {
-		display: none;
 	}
 
 	#main-nav a {
@@ -90,3 +81,24 @@
 
 }
 
+/*----------------------------------模块显示问题-------------------------------*/
+
+@media screen and (min-width: 480px) and (max-width: 650px) {
+
+	aside {
+		display: none;
+	}
+
+}
+
+@media screen and (max-width: 480px) {
+
+	aside>section:first-child~section, #backtotop a {
+		display: none;
+	}
+
+	aside>section:first-child ul {
+		text-align: center;
+	}
+
+}
