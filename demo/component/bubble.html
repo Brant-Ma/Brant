@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>demo</title>
+	<style type="text/css">
+
+	/*-------------------------general-------------------------*/
+
+	.demo {
+		position: relative;
+		width: 480px;
+		padding: 30px;
+		margin: 20px;
+		border: 5px solid #6AC5AC;
+		color: #666;
+		font-family: "Microsoft Yahei";
+	}
+
+	.demo::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: "Demo";
+		color: white;
+		padding: 5px;
+		background-color: #6AC5AC;
+	}
+
+	a:link, a:visited {
+		color: #1ABC9C;
+		text-decoration: none;
+	}
+
+	a:hover {
+		border-bottom: 2px solid #1ABC9C;
+	}
+
+	/*-------------------------Demo 1--------------------------*/
+
+	/*空白框*/
+	.bubble {
+		position: relative;
+		width: 150px;
+		padding: 15px;
+		margin: 3em 0 1em;
+		border: 3px solid #ADD8E6;
+		border-radius: 10px;
+		text-align: center;
+	}
+
+	/*绿三角*/
+	.bubble::before {
+		content: "";
+		width: 0;
+		height: 0;
+		display: block; 
+		border: 15px solid;
+		border-color: transparent transparent #ADD8E6 transparent;
+		position: absolute;
+		top: -30px;
+		left: 50px;	  
+	}
+
+	/*白三角*/
+	.bubble::after{
+		content: "";
+	  	width: 0;
+	  	height: 0;
+	  	display: block; 
+	  	border: 15px solid;
+	  	border-color: transparent transparent #fff transparent;
+	  	position: absolute;
+	  	top: -26px;
+	  	left: 50px;	  
+	}
+
+	/*-------------------------Demo 2--------------------------*/
+
+	a[tip] {
+    	position: relative;
+    }
+
+	/*蓝三角*/
+	a[tip]:before {
+        content: "";
+        visibility: hidden;
+        border: 21px solid;
+        border-color: #ADD8E6 transparent transparent transparent;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        
+    }
+
+    /*蓝色框*/
+    a[tip]:after {        
+        content: attr(tip);
+        white-space: nowrap;
+        visibility: hidden;
+        padding: 5px 10px;
+        border-radius: 7px;
+        color: #FFF;
+        background: #ADD8E6;        
+        position: absolute;
+        top: -35px;
+        left: -25px;
+    }
+
+    a[tip]:hover:before, a[tip]:hover:after {
+        visibility: visible;
+    }
+
+    /*-------------------------Demo 2--------------------------*/
+
+	a {
+    	position: relative;
+    }
+
+	/*蓝三角*/
+	a:before {
+        content: "";
+        visibility: hidden;
+        border: 21px solid;
+        border-color: #ADD8E6 transparent transparent transparent;
+        position: absolute;
+        top: -20px;
+        left: -10px;
+        
+    }
+
+    /*蓝色框*/
+    a:after {        
+        content: url(http://7brant.me/picture/packman.png);
+        white-space: nowrap;
+        visibility: hidden;
+        padding: 5px 10px;
+        border-radius: 7px;
+        color: #FFF;
+        background: #ADD8E6;        
+        position: absolute;
+        top: -150px;
+        left: -25px;
+    }
+
+    a:hover:before, a:hover:after {
+        visibility: visible;
+    }
+
+    </style>
+
+</head>
+<body>
+
+	<!--Demo 1-->
+	<div class="demo">
+		<div class="bubble">This is a comment</div>
+	</div>	
+
+	<!--Demo 2-->
+	<div class="demo">
+		<p>Hover to get a <a class="tip" href="#" tip="Can you see me?">text tooltip</a></p>
+	</div>
+
+	<!--Demo 3-->
+	<div class="demo">
+		<p>Hover to get a <a class="tip" href="#">image tooltip</a></p>
+	</div>
+
+</body>
+</html>

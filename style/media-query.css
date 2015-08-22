@@ -93,11 +93,11 @@
 
 @media screen and (max-width: 480px) {
 
-	aside>section:first-child~section, #backtotop a {
+	aside>section:first-child~section, aside>section:first-child h4, #backtotop a {
 		display: none;
 	}
 
-	aside>section:first-child ul {
+	aside>section:first-child {
 		text-align: center;
 	}
 
