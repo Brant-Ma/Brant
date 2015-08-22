@@ -215,6 +215,36 @@ mark {
 	box-shadow: 0 0 10px #FC5648;
 }
 
+/* logo的提示气泡 */
+#site-logo a {
+	position: relative;
+}
+#site-logo a:before {
+	content: "";
+    visibility: hidden;
+    border: 15px solid;
+    border-color: transparent #fff transparent transparent;
+    position: absolute;
+    top: -13px;
+    left: 60px;
+}
+#site-logo a:after {        
+    content: attr(tip);
+    white-space: nowrap;
+    visibility: hidden;
+    padding: 0px 10px;
+    border-radius: 7px;
+    color: #666;
+    font-size: 14px;
+    background: #fff;        
+    position: absolute;
+    top: -20px;
+    left: 82px;
+}
+#site-logo a:hover:before, #site-logo a:hover:after {
+    visibility: visible;
+}
+
 /* #site-description {
 	color: #E67E22;
 	position: absolute;
@@ -563,12 +593,36 @@ aside li code {
 
 /* lab图标 */
 .lab-icon a {
+	position: relative;
 	display: inline-block;
 	margin-right: 20px; 
 	border-bottom: 5px solid white;
 }
-.lab-icon a:hover {
-	border-bottom: 5px solid #00B38A;
+.lab-icon a:before {
+	content: "";
+    visibility: hidden;
+    border: 21px solid;
+    border-color: #7F8C8D transparent transparent transparent;
+    position: absolute;
+    top: -28px;
+    left: 10px;
+}
+.lab-icon a:after {        
+    content: attr(tip);
+    white-space: nowrap;
+    visibility: hidden;
+    padding: 5px 10px;
+    border-radius: 7px;
+    color: #fff;
+    font-size: 85%;
+    background: #7F8C8D;        
+    position: absolute;
+    top: -50px;
+    left: -5px;
+}
+
+.lab-icon a:hover:before, .lab-icon a:hover:after {
+    visibility: visible;
 }
 
 /* app页的图片float */
