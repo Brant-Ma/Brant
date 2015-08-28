@@ -7,14 +7,18 @@
 
 	/*-------------------------general-------------------------*/
 
+	body {
+		background-color: #EDEDEF;
+		font-family: "MicroSoft Yahei";
+		line-height: 1.7;
+		color: #666;
+	}
 	.demo {
 		position: relative;
 		width: 480px;
 		padding: 30px;
 		margin: 20px;
 		border: 5px solid #6AC5AC;
-		color: #666;
-		font-family: "Microsoft Yahei";
 	}
 
 	.demo::before {
@@ -47,6 +51,7 @@
 		border: 3px solid #ADD8E6;
 		border-radius: 10px;
 		text-align: center;
+		background-color: white;
 	}
 
 	/*绿三角*/
@@ -102,7 +107,7 @@
         color: #FFF;
         background: #ADD8E6;        
         position: absolute;
-        top: -35px;
+        top: -40px;
         left: -25px;
     }
 
@@ -116,19 +121,19 @@
     	position: relative;
     }
 
-	/*蓝三角*/
+	/*灰三角*/
 	a:before {
         content: "";
         visibility: hidden;
         border: 21px solid;
-        border-color: #ADD8E6 transparent transparent transparent;
+        border-color: #666 transparent transparent transparent;
         position: absolute;
         top: -20px;
         left: -10px;
         
     }
 
-    /*蓝色框*/
+    /*灰色框*/
     a:after {        
         content: url(http://7brant.me/picture/packman.png);
         white-space: nowrap;
@@ -136,7 +141,7 @@
         padding: 5px 10px;
         border-radius: 7px;
         color: #FFF;
-        background: #ADD8E6;        
+        background: #666;        
         position: absolute;
         top: -150px;
         left: -25px;
@@ -158,12 +163,12 @@
 
 	<!--Demo 2-->
 	<div class="demo">
-		<p>Hover to get a <a class="tip" href="#" tip="Can you see me?">text tooltip</a></p>
+		<p>Hover me to get a <a class="tip" href="#" tip="Can you see me?">text tooltip</a></p>
 	</div>
 
 	<!--Demo 3-->
 	<div class="demo">
-		<p>Hover to get a <a class="tip" href="#">image tooltip</a></p>
+		<p>Hover me to get a <a class="tip" href="#">image tooltip</a></p>
 	</div>
 
 </body>

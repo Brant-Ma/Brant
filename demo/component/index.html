@@ -7,24 +7,76 @@
 
 	/*-------------------------general-------------------------*/
 
+	body {
+		background-color: #EDEDEF;
+		font-family: "MicroSoft Yahei";
+		line-height: 1.7;
+		color: #666;
+		overflow: auto;
+	}
+	header {
+		position: relative;
+	}
+	header img {
+		position: absolute;
+		left: 45px;
+		top: 15px;
+		width: 70px;
+		height: 70px;
+	}
+	header, div.content {
+		width: 450px;
+		margin: 25px auto;
+		padding: 25px;
+		border-radius: 15px;
+		background-color: white;
+		box-shadow: 5px 5px 10px 1px #ccc;			
+	}
+	h1, h2 {
+		margin: 0;
+		text-align: center;
+	}
+	h1 {
+		padding-left: 60px;
+	}
 	a:link, a:visited {
 		color: #1ABC9C;
 		text-decoration: none;
 	}
-
 	a:hover {
-		border-bottom: 2px solid #1ABC9C;
+		color: #666;
 	}
+	span.status {
+		float: right;
+	} 
 
 	</style>
 
 </head>
 <body>
 
-	<h1>UI component</h1>
-	<ul>
-		<li><a href="bubble.html">Bubbles</a></li>
-	</ul>
+	<header>
+		<img src="../../picture/logos/seal.jpg" />
+		<h1>UI component</h1>
+	</header>
+
+	<div class="content">
+		
+		<div class="done">
+		<h2>Done</h2>
+			<ul>
+				<li><a href="bubble.html">Bubbles</a> <span class="status">3 completed</span></li>
+				<li><a href="dog-ear.html">Dog Ear</a> <span class="status">1 completed</span></li>
+			</ul>
+		</div>
+		<div class="todo">
+			<h2>Todo</h2>
+			<ul>
+				<li><a href="tab.html">Tab Page</a> <span class="status">1 under way</span></li>
+			</ul>
+		</div>
+		
+	</div>	
 
 </body>
 </html>
