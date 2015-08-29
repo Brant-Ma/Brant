@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>demo</title>
+	<style type="text/css">
+		body {
+			background-color: #EDEDEF;
+			font-family: "MicroSoft Yahei";
+			line-height: 1.7;
+			color: #666;
+		}
+		div.abstract {
+			position: relative;
+			background-color: white;
+			width: 550px;
+			margin: 25px;		
+		}
+		div.abstract::before {
+			content: "";
+			position: absolute;
+			top: 0;
+			right: 0;
+			border: solid;
+			border-width: 0;
+			border-color: #D4D4D4 #EDEDEF;
+		}
+		div.abstract:hover::before {
+			border-width: 0 20px 20px 0;
+		}
+		p.see-some {
+			position: relative;
+			width: 500px;
+			margin: 0;
+			padding: 25px;
+		}
+		span.here {
+			position: absolute;
+			right: 25px;
+		}
+	</style>
+
+</head>
+<body>
+
+	<div class="abstract">
+		<p class="see-some">Hover me to see a dog ear. <span class="here">(๑•̀ㅂ•́)↗</span></p>	
+	</div>
+
+
+</body>
+</html>
