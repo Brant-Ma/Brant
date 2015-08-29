@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>demo</title>
+	<style type="text/css">
+
+		body {
+			background-color: #EDEDEF;
+			font-family: "MicroSoft Yahei";
+			line-height: 1.7;
+			color: #666;
+		}
+		a:link, a:visited {
+			color: #1ABC9C;
+			text-decoration: none;
+		}
+		a:hover {
+			color: #666;
+		}
+
+
+
+		/* 开关样式 */
+		a.switch-on {
+			display: inline-block;
+			padding: 10px;
+			border: 2px solid #1ABC9C;
+			background-color: #fff;
+		}
+		/* 菜单样式 */
+		div div ul {
+			display: inline-block;
+			position: fixed;
+			list-style: none;
+			padding: 10px;
+			border: 2px solid #1ABC9C;
+			background-color: #fff;
+			z-index: 9999;
+		}
+
+
+
+		/* 下拉菜单 */
+		#dropdown .dropdown-menu {
+			opacity: 0;
+		}
+		/* 作为target的下拉菜单 */
+		#dropdown:target .dropdown-menu {
+			opacity: 1;
+		}
+
+
+
+		/* 关闭按钮 */
+		#dropdown .switch-off {
+			display: none;
+			background: transparent;
+			width: 100%;
+			height: 100%;
+			position: fixed;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;			
+		}
+		/* 作为target的关闭按钮 */
+		#dropdown:target .switch-off {
+			display: block;
+		}
+
+		
+	</style>
+
+</head>
+<body>
+
+<p>点击下面的链接，触发dropdown；点击页面其他区域，关闭dropdown</p>
+
+<div>
+	<a class="switch-on" href="#dropdown">DropDown</a>
+	<div id="dropdown">
+		<div class="dropdown-menu">
+		<a class="switch-off" href="#"></a>
+			<ul>
+				<li><a href="1">① (￣▽￣) 其实，我是菜单项</a></li>
+				<li><a href="2">② (￣▽￣) 这么巧，我也是菜单项</a></li>
+				<li><a href="3">③ (￣▽￣) 是挺巧的，我也是菜单项</a></li>
+				<li><a href="4">④ (￣▽￣) 你们都够了，我才是菜单项</a></li>
+			</ul>
+		</div>
+	</div>	
+</div>
+
+<p>word word word word word word word word word word word word </p>
+<p>word word word word word word word word word word word word </p>
+<p>word word word word word word word word word word word word </p>
+<p>word word word word word word word word word word word word </p>
+<p>word word word word word word word word word word word word </p>
+
+</body>
+</html>
