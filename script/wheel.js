@@ -100,7 +100,16 @@ function moveElement(elementID, x_final, y_final, interval){
 }
 
 // 轮子：范围随机取值
-function selectFrom(lowerValue, upperValue){
+function selectFromRange(lowerValue, upperValue){
 	var choices=upperValue-lowerValue+1;
 	return Math.floor(Math.random()*choices+lowerValue);
+}
+
+// 轮子：数组随机取值
+function selectFromItem(){
+    var temp=[];
+    for(var i=0; i<arguments.length; i++){
+        temp[i]=arguments[i];
+    }   
+	return temp[selectFromRange(0, temp.length-1)];
 }
