@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>布局方案</title>
+	<style type="text/css">
+
+	/*-------------------------general-------------------------*/
+
+	body {
+		background-color: #EDEDEF;
+		font-family: "MicroSoft Yahei";
+		line-height: 1.7;
+		color: #666;
+		overflow: auto;
+	}
+	main {
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		   -moz-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+	}
+	header {
+		position: relative;
+	}
+	header img {
+		position: absolute;
+		left: 45px;
+		top: 15px;
+		width: 70px;
+		height: 70px;
+	}
+	header, div.content {
+		width: 450px;
+		margin: 25px auto;
+		padding: 25px;
+		border-radius: 15px;
+		background-color: white;
+		box-shadow: 5px 5px 10px 1px #ccc;			
+	}
+	h1, h2 {
+		margin: 0;
+		text-align: center;
+	}
+	h1 {
+		padding-left: 60px;
+	}
+	a:link, a:visited {
+		color: #1ABC9C;
+		text-decoration: none;
+	}
+	a:hover {
+		color: #666;
+	}
+	span.status {
+		float: right;
+	} 
+
+	</style>
+
+</head>
+<body>
+<main>
+
+	<header>
+		<img src="../../picture/logos/seal.jpg" />
+		<h1>布局方案</h1>
+	</header>
+
+	<div class="content">
+		
+		<div class="done">
+		<h2>Done</h2>
+			<ul>
+				<li><a href="vh-center.html">垂直水平居中</a> <span class="status">1 completed</span></li>
+			</ul>
+		</div>
+		<div class="todo">
+			<h2>Todo</h2>
+			<ul>
+				<li><a href="holy.html">圣杯</a> <span class="status">1 under way</span></li>
+				<li><a href="fly-wing.html">双飞翼</a> <span class="status">1 under way</span></li>
+			</ul>
+		</div>
+		
+	</div>	
+
+</main>
+</body>
+</html>
