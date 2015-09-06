@@ -194,6 +194,19 @@ mark {
  	margin: 0 5px;
 }
 
+/* 垂直水平居中 */
+.outer {
+	position:relative; 
+}
+.inner {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	   -moz-transform: translate(-50%, -50%);
+	        transform: translate(-50%, -50%);
+}
+
 /*-----------------------------------header------------------------------------*/
 
 #header {
