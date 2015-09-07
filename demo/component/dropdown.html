@@ -5,20 +5,42 @@
 	<title>demo</title>
 	<style type="text/css">
 
-		body {
-			background-color: #EDEDEF;
-			font-family: "MicroSoft Yahei";
-			line-height: 1.7;
-			color: #666;
-		}
-		a:link, a:visited {
-			color: #1ABC9C;
-			text-decoration: none;
-		}
-		a:hover {
-			color: #666;
-		}
+	/*-------------------------general-------------------------*/
 
+	body {
+		background-color: #EDEDEF;
+		font-family: "MicroSoft Yahei";
+		line-height: 1.7;
+		color: #666;
+	}
+	.demo {
+		position: relative;
+		width: 480px;
+		padding: 30px;
+		margin: 20px;
+		border: 5px solid #6AC5AC;
+	}
+
+	.demo::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: "Demo";
+		color: white;
+		padding: 5px;
+		background-color: #6AC5AC;
+	}
+
+	a:link, a:visited {
+		color: #1ABC9C;
+		text-decoration: none;
+	}
+
+	a:hover {
+		border-bottom: 2px solid #1ABC9C;
+	}
+
+	/*-------------------------Demo 1--------------------------*/
 
 
 		/* 开关样式 */
@@ -75,28 +97,30 @@
 </head>
 <body>
 
-<p>点击下面的链接，触发dropdown；点击页面其他区域，关闭dropdown</p>
+<div class="demo">
+	<p>点击下面的链接，触发dropdown；点击页面其他区域，关闭dropdown</p>
 
-<div>
-	<a class="switch-on" href="#dropdown">DropDown</a>
-	<div id="dropdown">
-		<div class="dropdown-menu">
-		<a class="switch-off" href="#"></a>
-			<ul>
-				<li><a href="1">① (￣▽￣) 其实，我是菜单项</a></li>
-				<li><a href="2">② (￣▽￣) 这么巧，我也是菜单项</a></li>
-				<li><a href="3">③ (￣▽￣) 是挺巧的，我也是菜单项</a></li>
-				<li><a href="4">④ (￣▽￣) 你们都够了，我才是菜单项</a></li>
-			</ul>
-		</div>
-	</div>	
+	<div>
+		<a class="switch-on" href="#dropdown">DropDown</a>
+		<div id="dropdown">
+			<div class="dropdown-menu">
+			<a class="switch-off" href="#"></a>
+				<ul>
+					<li><a href="1">① (￣▽￣) 其实，我是菜单项</a></li>
+					<li><a href="2">② (￣▽￣) 这么巧，我也是菜单项</a></li>
+					<li><a href="3">③ (￣▽￣) 是挺巧的，我也是菜单项</a></li>
+					<li><a href="4">④ (￣▽￣) 你们都够了，我才是菜单项</a></li>
+				</ul>
+			</div>
+		</div>	
+	</div>
+
+	<p>word word word word word word word word word word word word </p>
+	<p>word word word word word word word word word word word word </p>
+	<p>word word word word word word word word word word word word </p>
+	<p>word word word word word word word word word word word word </p>
+	<p>word word word word word word word word word word word word </p>
 </div>
-
-<p>word word word word word word word word word word word word </p>
-<p>word word word word word word word word word word word word </p>
-<p>word word word word word word word word word word word word </p>
-<p>word word word word word word word word word word word word </p>
-<p>word word word word word word word word word word word word </p>
 
 </body>
 </html>

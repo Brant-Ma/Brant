@@ -4,49 +4,83 @@
 	<meta charset="utf-8" />
 	<title>demo</title>
 	<style type="text/css">
-		body {
-			background-color: #EDEDEF;
-			font-family: "MicroSoft Yahei";
-			line-height: 1.7;
-			color: #666;
-		}
-		div.dog-ear {
-			position: relative;
-			background-color: white;
-			width: 550px;
-			margin: 25px;		
-		}
-		div.dog-ear::before {
-			content: "";
-			position: absolute;
-			top: 0;
-			right: 0;
-			border: solid;
-			border-width: 0;
-			border-color: #D4D4D4 #EDEDEF;
-		}
-		div.dog-ear:hover::before {
-			border-width: 0 20px 20px 0;
-		}
-		p {
-			position: relative;
-			width: 500px;
-			margin: 0;
-			padding: 25px;
-		}
-		span.here {
-			position: absolute;
-			right: 25px;
-		}
+	
+	/*-------------------------general-------------------------*/
+
+	body {
+		background-color: #EDEDEF;
+		font-family: "MicroSoft Yahei";
+		line-height: 1.7;
+		color: #666;
+	}
+	.demo {
+		position: relative;
+		width: 480px;
+		padding: 30px;
+		margin: 20px;
+		border: 5px solid #6AC5AC;
+	}
+
+	.demo::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: "Demo";
+		color: white;
+		padding: 5px;
+		background-color: #6AC5AC;
+	}
+
+	a:link, a:visited {
+		color: #1ABC9C;
+		text-decoration: none;
+	}
+
+	a:hover {
+		border-bottom: 2px solid #1ABC9C;
+	}
+
+	/*-------------------------Demo 1--------------------------*/
+	    
+	div.dog-ear {
+		position: relative;
+		background-color: white;
+		width: 400px;
+		margin: 25px;				
+	}
+	div.dog-ear::before {
+		content: "";
+		position: absolute;
+		top: 0;
+		right: 0;
+		border: solid;
+		border-width: 0;
+		border-color: #D4D4D4 #EDEDEF;
+	}
+	div.dog-ear:hover::before {
+		border-width: 0 20px 20px 0;
+	}
+	p {
+		position: relative;
+		width: 300px;
+		margin: 0;
+		padding: 25px;
+	}
+	span.here {
+		position: absolute;
+		right: 0;
+	}
+
 	</style>
 
 </head>
 <body>
 
-	<div class="dog-ear">
-		<p>Hover me to see a dog ear. <span class="here">(๑•̀ㅂ•́)↗</span></p>	
+	<div class="demo">
+		<div class="dog-ear">
+			<p>Hover me to see a dog ear. <span class="here">(๑•̀ㅂ•́)↗</span></p>	
+		</div>
 	</div>
-
 
 </body>
 </html>
