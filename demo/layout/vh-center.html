@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>demo</title>
+	<style type="text/css">
+
+	/*-------------------------general-------------------------*/
+
+	body {
+		background-color: #EDEDEF;
+		font-family: "MicroSoft Yahei";
+		line-height: 1.7;
+		color: #666;
+	}
+	.demo {
+		position: relative;
+		width: 480px;
+		padding: 30px;
+		margin: 20px;
+		border: 5px solid #6AC5AC;
+	}
+
+	.demo::before {
+		position: absolute;
+		top: 0;
+		right: 0;
+		content: "Demo";
+		color: white;
+		padding: 5px;
+		background-color: #6AC5AC;
+	}
+
+	a:link, a:visited {
+		color: #1ABC9C;
+		text-decoration: none;
+	}
+
+	a:hover {
+		border-bottom: 2px solid #1ABC9C;
+	}
+
+	/*-------------------------Demo 1--------------------------*/
+
+	div.outer {
+		height: 200px;		
+	}
+	div.inner {
+		/* absolute的百分比计算是以最近的定位父元素为基准 */
+		position: absolute; 
+		top: 50%;
+		left: 50%;
+		width: 240px;
+		padding: 0 15px;
+		background-color: #ccc;
+		/* transform的百分比计算是以自身border-box为基准 */
+		-webkit-transform: translate(-50%, -50%);
+		   -moz-transform: translate(-50%, -50%);
+		        transform: translate(-50%, -50%);
+	}
+	
+
+	/*-------------------------Demo 2--------------------------*/
+
+	
+
+    /*-------------------------Demo 3--------------------------*/
+
+
+    </style>
+
+</head>
+<body>
+
+	<!--Demo 1-->
+	<div class="demo outer">
+		
+		<div class="inner">
+			<p>方法1：利用absolute和transform实现</p>
+		</div>
+		
+	</div>	
+
+</body>
+</html>
