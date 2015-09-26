@@ -223,6 +223,7 @@ mark {
 	height: 60px;
 	border:	2px solid white;
 	border-radius: 50%;
+	transition: border .7s ease;
 }
 #site-logo img:hover {
 	border: 2px solid #FFA698;
