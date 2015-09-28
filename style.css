@@ -1,4 +1,4 @@
-/*-----------------------------------------------------------------------------*/
+
 /*-------------------------------global reset----------------------------------*/
 
 html, body, div, span, object, iframe,
@@ -14,34 +14,34 @@ article, aside, canvas, details, embed,
 figcaption, figure, footer, header, hgroup, 
 menu, nav, output, section, summary,
 time, mark, audio, video {
-    margin:0;
-    padding:0;
-    border:0;
-    outline:0;
-    font:inherit;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section { 
-    display:block;
+    display: block;
 }
 
 body {
-    line-height:1.7em;
+    line-height: 1.7em;
 }
 
 /* 列表 表格 表单 */
 ol, ul {
-    list-style:none;
+    list-style: none;
 }
 
 table {
 	display: table;
-    border-collapse:collapse;
-    border-spacing:0;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 tr {
 	display: table-row;
@@ -51,16 +51,16 @@ th, td {
 }
 
 input, select {
-    vertical-align:middle;
+    vertical-align: middle;
 }
 
 /* 链接 图片 */
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    vertical-align:baseline;
-    background:transparent;
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
 }
 
 img {
@@ -70,13 +70,13 @@ img {
 
 /* 大引用 小引用 */
 blockquote, q {
-    quotes:none;
+    quotes: none;
 }
 
 blockquote:before, blockquote:after,
 q:before, q:after {
-    content:'';
-    content:none;
+    content: '';
+    content: none;
 }
 
 /* reset webkit search input styles */                            /*研究一下！*/
@@ -95,7 +95,7 @@ input[type="search"]::-webkit-search-cancel-button {
 h1, h2, h3, h4, h5, h6 {
 	line-height: 1.4em;
 	margin: 20px 0;
-	color: #FC5648;
+	color: #fc5648;
 }
 h1 {
 	font-size: 2em;
@@ -113,7 +113,7 @@ h5, h6 {
 	font-size: 1.2em;
 }
 h3[id="MAN"], h3[id="Lab"], h3[id="Skill"] {
-	border-bottom: 2px solid #FFA698;
+	border-bottom: 2px solid #ffa698;
 }
 article h4 {
 	border-left: 5px solid #ffa698; 
@@ -122,7 +122,7 @@ article h4 {
 
 body {
 	/* background: #0d1424 url(...) no-repeat center top; */
-	background-color: #1ABC9C; 
+	background-color: #1abc9c; 
 	color: #666;
 	font: 100%/1.7em 'Hiragino Sans GB', 'Source Han Sans', 'Lantinghei SC', "Microsoft Yahei",  
 					 'Microsoft Sans Serif', 'WenQuanYi Micro Hei', sans-serif;
@@ -145,7 +145,7 @@ figure {
 	margin-bottom: 0;
 }
 figcaption {
-	color: #7F8C8D;
+	color: #7f8c8d;
 	font-size: 85%;
 	font-weight: bold;
 	font-style: italic;
@@ -154,14 +154,12 @@ figcaption {
 /* 链接 */
 a {
 	color: #51aded;
-	color: #1ABC9C;
+	color: #1abc9c;
 	text-decoration: none;
 	transition: all .4s linear .2s;
-	/* border-bottom: 2px solid #eaeaea; */
 }
 a:hover {
 	color:#666;
-	/* border-bottom: 2px solid #3bb9ff; */
 }
 
 /* 列表 */
@@ -226,11 +224,11 @@ mark {
 	transition: border .7s ease;
 }
 #site-logo img:hover {
-	border: 2px solid #FFA698;
-	box-shadow: 0 0 10px #FC5648;
+	border: 2px solid #ffa698;
+	box-shadow: 0 0 10px #fc5648;
 }
 
-/* logo的提示气泡 */
+/* logo的tooltip */
 #site-logo a {
 	position: relative;
 }
@@ -284,25 +282,22 @@ mark {
 	float: right;
 	background: #fff;
 	padding: 6px 10px;
-	/* box shadow */
 	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
-	-moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
-	box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
-	/* transition */
+       -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	        box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
 	-webkit-transition: width .7s;
-	-moz-transition: width .7s;
-	transition: width .7s;
+	   -moz-transition: width .7s;
+	        transition: width .7s;
 }
 
 #search-form #search:focus {
 	width: 150px;
-	border: 2px solid #F29C9C;
+	border: 2px solid #f29c9c;
 }
 
 /*------------------------------------navigation-------------------------------*/
 
-                                               /*这段copy的代码需要好好研究一下*/
-
+                                              
 #main-nav {
 	width: 100%;
 	background: #ccc;
@@ -313,15 +308,7 @@ mark {
 	bottom: 0;
 	z-index: 100;
 	border-radius: 8px;
-	/* gradient */
 	background: #7f8c8d url(images/nav-bar-bg.png) repeat-x;
-	/*background: -webkit-gradient(linear, left top, left bottom, from(#b9b9b9), to(#6a6a6a));
-	background: -moz-linear-gradient(top,  #b9b9b9,  #6a6a6a);
-	background: linear-gradient(-90deg, #b9b9b9, #6a6a6a);*/
-	/* box shadow */
-	/*-webkit-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.4);
-	-moz-box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.4);
-	box-shadow: inset 0 1px 0 rgba(255,255,255,.3), 0 1px 1px rgba(0,0,0,.4);*/
 }
 #main-nav li {
 	margin: 0;
@@ -337,14 +324,16 @@ mark {
 	line-height: 100%;
 	font-weight: bold;
 	color: #fff;
-	display: block;
+	display: inline-block;
 	padding: 14px 15px;
+	width: 75px;
+	text-align: center;
 	text-decoration: none;
 	text-shadow: 0 -1px 0 rgba(0,0,0,.5);
 }
 #main-nav a:hover {
 	color: #fff;
-	background: #5BA1B0;
+	background: #5ba1b0;
 	/* gradient */
 	/*background: -webkit-gradient(linear, left top, left bottom, from(#282828), to(#4f4f4f));
 	background: -moz-linear-gradient(top,  #282828,  #4f4f4f);
@@ -365,14 +354,12 @@ mark {
 	padding: 20px 35px;
 	width: 600px;
 	float: left;
-	/* rounded corner */
 	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	/* box shadow */
+	   -moz-border-radius: 8px;
+	        border-radius: 8px;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	   -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	        box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 
 /* 具体post信息 */
@@ -406,14 +393,12 @@ mark {
 	background: #fff;
 	margin: 0 0 30px;
 	padding: 10px 20px;
-	/* rounded corner */
 	-webkit-border-radius: 8px;
-	-moz-border-radius: 8px;
-	border-radius: 8px;
-	/* box shadow */
+	   -moz-border-radius: 8px;
+	        border-radius: 8px;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	-moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	   -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	        box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 .widget-title {
 	margin: 0 0 5px;
@@ -439,7 +424,7 @@ mark {
 	color: #555;
 	font-size: 70%;
 }
-#footer a{
+#footer a {
 	color: #555;
 	font-style: italic;
 	text-decoration: underline;
@@ -449,47 +434,47 @@ mark {
 
 /* content为url图片的话将无法控制图片尺寸 */
 
-.external::after{
+.external::after {
 	content: url(picture/icon/external-green.png);
 	display: inline-block;
 	padding: 0px 5px;
 	vertical-align: middle;
 }
-.external:hover::after{
+.external:hover::after {
 	content: url(picture/icon/external-gray.png);
 	display: inline-block;
 	padding: 0px 5px;
 	vertical-align: middle;
 }
-#MAN::before{
+#MAN::before {
 	content: "";
 	background: url(../../picture/icon/man.png) no-repeat;
 	background-size: 25px;
 	background-position: 0 center;
 	padding-right: 32px;
 }
-#Skill::before{
+#Skill::before {
 	content: "";
 	background: url(../../picture/icon/skill.png) no-repeat;
 	background-size: 25px;
 	background-position: 0 center;
 	padding-right: 32px;
 }
-#Lab::before{
+#Lab::before {
 	content: "";
 	background: url(../../picture/icon/lab.png) no-repeat;
 	background-size: 25px;
 	background-position: 0 center;
 	padding-right: 32px;
 }
-#Comment::before{
+#Comment::before {
 	content: "";
 	background: url(../../picture/icon/comment.png) no-repeat;
 	background-size: 25px;
 	background-position: 0 center;
 	padding-right: 32px;
 }
-.drawer::before{
+.drawer::before {
 	content: "";
 	background: url(../../picture/icon/drawer.png) no-repeat;
 	background-size: 25px;
@@ -514,8 +499,8 @@ aside>section:last-child h4::before {
 
 /*-----------------------------------button------------------------------------*/
 
-#download{                                                          /*这个得改*/
-	background-color: 	#579E2A;
+#download {                                                          /*这个得改*/
+	background-color: 	#579e2a;
 	border:				3px #519428;
 	color:				white;
 	font-weight:		bold;
@@ -523,7 +508,7 @@ aside>section:last-child h4::before {
 }
 
 /* 返回顶部 */
-#backtotop a{
+#backtotop a {
 	background: 		url(picture/backtotop1.png) no-repeat left top;
 	width:				64px;
 	height:				64px;
@@ -535,13 +520,8 @@ aside>section:last-child h4::before {
 
 /*------------------------------------others-----------------------------------*/
 
-/* 支持Firefox */
-::-moz-selection {
-	background-color: 	#DAF1CC;
-}
-/* 支持IE9+, Opera, Chrome, Safari */
-::selection {
-	background-color: 	#DAF1CC;
+::-moz-selection, ::selection {
+	background-color: 	#daf1cc;
 }
 
 /* article内部的锚 */
@@ -554,8 +534,8 @@ aside>section:last-child h4::before {
 #refer { 
 	font-size: 75%;    
 	display: block;                                                           
-	background: #E3EEEA;
-	border:	1px solid #6AC5AC;
+	background: #e3eeea;
+	border:	1px solid #6ac5ac;
 	border-left-width: 5px;
 	padding: 10px;
 }
@@ -567,7 +547,7 @@ aside>section:last-child h4::before {
 .highlight {
 	font-family: Menlo, Monaco, Consolas, "Courier New", Courier, monospace;
 	line-height: 1.3em;
-	border:	1px solid #6AC5AC;
+	border:	1px solid #6ac5ac;
 	border-left-width: 5px;
 	margin: 0 0 1.2em;
 }
@@ -576,8 +556,8 @@ p code, li code {
 	font-family: Menlo, Monaco, Consolas, "Courier New", Courier, monospace;
 	font-weight: normal; 									/*消除strong影响*/
 	color: #666; 											/*消除strong影响*/
-	background-color: #F8F8F8;
-    border: 2px solid #EAEAEA;
+	background-color: #f8f8f8;
+    border: 2px solid #eaeaea;
     border-radius: 5px;
     padding: 0px 4px;
     margin-left: 2px;
@@ -586,23 +566,23 @@ p code, li code {
 aside li code {
 	font-family: "Microsoft Yahei", sans-serif;	
 	font-size: 88%;
-	background-color: #EEF6F1;  		
-	border: 2px solid #A8D6B9;	 
+	background-color: #eef6f1;  		
+	border: 2px solid #a8d6b9;	 
 }
 
 /* 未完成内容的标注 */
-.undo{
+.undo {
 	color: gray;
 }
 
 /* 简单粗暴的对齐方法 */
-.center{
+.center {
 	text-align: center;
 }
-.left{
+.left {
 	text-align: left;
 }
-.right{
+.right {
 	text-align: right;
 }
 
@@ -617,7 +597,7 @@ aside li code {
 	content: "";
     visibility: hidden;
     border: 21px solid;
-    border-color: #7F8C8D transparent transparent transparent;
+    border-color: #7f8c8d transparent transparent transparent;
     position: absolute;
     top: -28px;
     left: 10px;
@@ -630,7 +610,7 @@ aside li code {
     border-radius: 7px;
     color: #fff;
     font-size: 85%;
-    background: #7F8C8D;        
+    background: #7f8c8d;        
     position: absolute;
     top: -50px;
     left: -5px;
@@ -655,7 +635,7 @@ img.float{
 }
 .new {
 	color: white;
-	background-color: #FFA698;
+	background-color: #ffa698;
 	font: 75% Verdana;
 	padding: 2px 5px; 
 	margin-left: 7px;
@@ -685,6 +665,3 @@ img.float{
 .clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 .clearfix { display: inline-block; }
 .clearfix { display: block; zoom: 1; }
-                                                                   /*还没搞懂！*/
-
-/*-----------------------------------------------------------------------------*/
