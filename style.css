@@ -639,7 +639,12 @@ img.float{
 	font: 75% Verdana;
 	padding: 2px 5px; 
 	margin-left: 7px;
-	border-radius: 5px;
+	border-radius: 9px;
+	transition: border-radius .5s linear;
+}
+
+.new:hover {
+	border-radius: 0;
 }
 
 /* 归档豆瓣样式 */
