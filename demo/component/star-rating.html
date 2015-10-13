@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Demo</title>
+	<style type="text/css">
+
+		/*-------------------------general-------------------------*/
+
+		body {
+			background-color: #EDEDEF;
+			font-family: "MicroSoft Yahei";
+			line-height: 1.7;
+			color: #666;
+		}
+		.demo {
+			position: relative;
+			width: 480px;
+			padding: 30px;
+			margin: 20px;
+			border: 5px solid #6AC5AC;
+		}
+
+		.demo::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			content: "Demo";
+			color: white;
+			padding: 5px;
+			background-color: #6AC5AC;
+		}
+
+		a:link, a:visited {
+			color: #1ABC9C;
+			text-decoration: none;
+		}
+
+		a:hover {
+			border-bottom: 2px solid #1ABC9C;
+		}
+
+		/*-------------------------Demo 1--------------------------*/
+
+		.rating {
+			width: 300px;
+			height: 50px;
+		}
+
+		/* 透明的空心星星 */	
+		.demo input {
+			/* 配合通用兄弟选择器的样式 */
+			float: right;  
+			width: 44px;
+			height: 44px;
+			/* 与border相比，outline不占空间且可以是非矩形 */
+			outline: none;  
+			-webkit-appearance: none;
+			   -moz-appearance: none;
+			background: url(image/star-rating.png) no-repeat;
+			background-position: 0 -44px;
+			opacity: .5;  
+			transition: all .3s ease;
+
+		}
+
+		/* 不透明的空心星星 */
+		.demo input:hover,
+		.demo input:hover ~ input {
+			opacity: 1;  
+		}
+
+		/* 不透明的实心星星 */
+		.demo input:checked,
+		.demo input:checked ~ input {
+			background-position: 0 0;
+			opacity: 1;
+		}
+
+	</style>
+</head>
+
+<body>
+	<div class="demo">
+		<div class="rating">
+			<input type="radio" name="rating" value="5-star">
+			<input type="radio" name="rating" value="4-star">
+			<input type="radio" name="rating" value="3-star">
+			<input type="radio" name="rating" value="2-star">
+			<input type="radio" name="rating" value="1-star">
+		</div>
+	</div>	
+</body>
+
+</html>

@@ -586,7 +586,7 @@ aside li code {
 	text-align: right;
 }
 
-/* lab图标 */
+/* LAB小工具的图标 */
 .lab-icon a {
 	position: relative;
 	display: inline-block;
@@ -600,7 +600,7 @@ aside li code {
     border-color: #7f8c8d transparent transparent transparent;
     position: absolute;
     top: -28px;
-    left: 10px;
+    left: 10px;    
 }
 .lab-icon a:after {        
     content: attr(tip);
@@ -613,7 +613,7 @@ aside li code {
     background: #7f8c8d;        
     position: absolute;
     top: -50px;
-    left: -5px;
+    left: -5px;    
 }
 
 .lab-icon a:hover:before, .lab-icon a:hover:after {
