@@ -156,7 +156,7 @@ a {
 	color: #51aded;
 	color: #1abc9c;
 	text-decoration: none;
-	transition: all .4s linear .2s;
+	transition: all .3s linear;
 }
 a:hover {
 	color:#666;
