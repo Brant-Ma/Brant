@@ -629,10 +629,13 @@ img.float{
 
 /* 首页7篇文章 */
 .top7 {
-	list-style-type: lower-roman;
-	margin-left: 10%;
-	
+	list-style: inside disc;
+	border: 2px solid #a8d6b9;	
+	padding: 3% 5%;
+	margin: 3% 1%;	
+	background-color: #eef6f1;
 }
+
 .new {
 	color: white;
 	background-color: #ffa698;
