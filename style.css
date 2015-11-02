@@ -354,9 +354,7 @@ mark {
 	padding: 20px 35px;
 	width: 600px;
 	float: left;
-	-webkit-border-radius: 8px;
-	   -moz-border-radius: 8px;
-	        border-radius: 8px;
+	border-radius: 8px;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
 	   -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
 	        box-shadow: 0 1px 3px rgba(0,0,0,.4);
@@ -393,9 +391,7 @@ mark {
 	background: #fff;
 	margin: 0 0 30px;
 	padding: 10px 20px;
-	-webkit-border-radius: 8px;
-	   -moz-border-radius: 8px;
-	        border-radius: 8px;
+	border-radius: 8px;
 	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
 	   -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
 	        box-shadow: 0 1px 3px rgba(0,0,0,.4);
