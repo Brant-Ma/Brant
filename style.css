@@ -201,9 +201,7 @@ mark {
 	position: absolute;
 	top: 50%;
 	left: 50%;
-	-webkit-transform: translate(-50%, -50%);
-	   -moz-transform: translate(-50%, -50%);
-	        transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
 }
 
 /*-----------------------------------header------------------------------------*/
@@ -282,12 +280,8 @@ mark {
 	float: right;
 	background: #fff;
 	padding: 6px 10px;
-	-webkit-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
-       -moz-box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
-	        box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
-	-webkit-transition: width .7s;
-	   -moz-transition: width .7s;
-	        transition: width .7s;
+	box-shadow: inset 0 1px 2px rgba(0,0,0,.2);
+	transition: width .7s;
 }
 
 #search-form #search:focus {
@@ -355,9 +349,7 @@ mark {
 	width: 600px;
 	float: left;
 	border-radius: 8px;
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	   -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	        box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 
 /* 具体post信息 */
@@ -392,9 +384,7 @@ mark {
 	margin: 0 0 30px;
 	padding: 10px 20px;
 	border-radius: 8px;
-	-webkit-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	   -moz-box-shadow: 0 1px 3px rgba(0,0,0,.4);
-	        box-shadow: 0 1px 3px rgba(0,0,0,.4);
+	box-shadow: 0 1px 3px rgba(0,0,0,.4);
 }
 .widget-title {
 	margin: 0 0 5px;
