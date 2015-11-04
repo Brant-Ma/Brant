@@ -73,8 +73,8 @@ blockquote, q {
     quotes: none;
 }
 
-blockquote:before, blockquote:after,
-q:before, q:after {
+blockquote::before, blockquote::after,
+q::before, q::after {
     content: '';
     content: none;
 }
@@ -230,7 +230,7 @@ mark {
 #site-logo a {
 	position: relative;
 }
-#site-logo a:before {
+#site-logo a::before {
 	content: "";
     visibility: hidden;
     border: 15px solid;
@@ -239,7 +239,7 @@ mark {
     top: -13px;
     left: 60px;
 }
-#site-logo a:after {        
+#site-logo a::after {        
     content: attr(tip);
     white-space: nowrap;
     visibility: hidden;
@@ -252,7 +252,7 @@ mark {
     top: -20px;
     left: 82px;
 }
-#site-logo a:hover:before, #site-logo a:hover:after {
+#site-logo a:hover::before, #site-logo a:hover::after {
     visibility: visible;
 }
 
@@ -579,7 +579,7 @@ aside li code {
 	margin-right: 20px; 
 	border-bottom: 5px solid white;
 }
-.lab-icon a:before {
+.lab-icon a::before {
 	content: "";
     visibility: hidden;
     border: 21px solid;
@@ -588,7 +588,7 @@ aside li code {
     top: -28px;
     left: 10px;    
 }
-.lab-icon a:after {        
+.lab-icon a::after {        
     content: attr(tip);
     white-space: nowrap;
     visibility: hidden;
@@ -602,7 +602,7 @@ aside li code {
     left: -5px;    
 }
 
-.lab-icon a:hover:before, .lab-icon a:hover:after {
+.lab-icon a:hover::before, .lab-icon a:hover::after {
     visibility: visible;
 }
 
@@ -656,6 +656,6 @@ img.float{
 
 /*------------------------------------clearfix---------------------------------*/
 
-.clearfix:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+.clearfix::after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
 .clearfix { display: inline-block; }
 .clearfix { display: block; zoom: 1; }
