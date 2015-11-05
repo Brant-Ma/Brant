@@ -1,22 +1,158 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8" />
-	<title>demo</title>
+	<meta charset="utf-8">
+	<title>Demo</title>
 	<style type="text/css">
 
+		/*-------------------------general-------------------------*/
+
+		body {
+			background-color: #EDEDEF;
+			font-family: "MicroSoft Yahei";
+			line-height: 1.7;
+			color: #666;
+		}
+		.demo {
+			position: relative;
+			width: 480px;
+			height: 150px; /* 特殊情况加的高度 */
+			padding: 30px;
+			margin: 20px;
+			border: 5px solid #6AC5AC;
+		}
+
+		.demo::before {
+			position: absolute;
+			top: 0;
+			right: 0;
+			content: "Demo";
+			color: white;
+			padding: 5px;
+			background-color: #6AC5AC;
+		}
+
+		a:link, a:visited {
+			color: #1ABC9C;
+			text-decoration: none;
+		}
+
+		a:hover {
+			border-bottom: 2px solid #1ABC9C;
+		}
+
+		/*-------------------------Demo 1--------------------------*/
+		
+		/* 设置input标签 */
+		.tabs {
+			position: relative;
+			width: 450px; /*容器块的宽度*/
+			margin: 0 auto；
+		}
+		.tabs input {
+			position: absolute;
+			top: 0;
+			width: 120px;
+			height: 40px;
+			margin: 0;
+			padding: 0;
+			cursor: pointer;
+			opacity: 0;  /*隐藏input，label替代*/
+		}
+		.tabs input.tab-1 { left: 0; }
+		.tabs input.tab-2 { left: 120px; }
+		.tabs input.tab-3 { left: 240px; }
+
+		/* 设置label标签 */
+		.tabs label {
+			float: left;
+			width: 120px;
+			height: 40px;
+			margin: 0;
+			padding: 0;
+			border-radius: 2px 16px 0 0;
+			font: bold 90%/40px 'Microsoft Yahei', sans-serif;
+			letter-spacing: .1em;
+			text-transform: uppercase;
+			text-align: center;
+			color: #007e65;
+			background-color: #3cc8ac;	
+			box-shadow: 0 0 1px #007e65;
+			transition: background-color .3s ease .1s;
+				
+		}	
+		.tabs input:checked + label {
+			z-index: 9;
+			color: #eee;
+			background-color: #00aa89;
+		}
+		.label-1 { z-index: 3; }
+		.label-2 { z-index: 2; }
+		.label-3 { z-index: 1; }
+
+		/* 设置内容区域 */
+		.tab-content {
+			position: relative;
+			top: 40px;
+			width: 100%;
+			height: 120px; /* 内容区高度 */
+			z-index: 9;
+			background-color: #eef6f1;
+			box-shadow: 0 0 1px #007e65;
+		}
+		.tab-content div {
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding: 15px; /*设置内容区padding*/
+			z-index: 9;
+			opacity: 0;
+			transition: all .3s ease-out;
+		}
+		.tabs input.tab-1:checked ~ div>.content-1,
+		.tabs input.tab-2:checked ~ div>.content-2,
+		.tabs input.tab-3:checked ~ div>.content-3 {
+			z-index: 10;
+			opacity: 1;
+		}	
 
 	</style>
 </head>
-<body>
-	
-	<div class="tabs">
-		<ul>
-			<li><a href="page1.html">在读</a></li>
-			<li><a href="page2.html">读过</a></li>
-			<li class="on"><a href="page3.html">想读</a></li>
-		</ul>		
-	</div>
 
+<body>
+<div class="demo">
+	<div class="tabs">
+
+		<input id="tab-1" class="tab-1" type="radio" name="tab" value="">
+		<label for="tab-1" class="label-1">悯农</label>
+
+		<input id="tab-2" class="tab-2" type="radio" name="tab" value="">
+		<label for="tab-2" class="label-2">静夜思</label>
+
+		<input id="tab-3" class="tab-3" type="radio" name="tab" value="" checked>
+		<label for="tab-3" class="label-3">登鹳雀楼</label>
+
+		<div class="tab-content">
+			
+			<div class="content-1">
+				<p>锄禾日当午，汗滴禾下土。<br>谁知盘中餐，粒粒皆辛苦。</p>
+			</div>
+			
+			<div class="content-2">
+				<p>床前明月光，疑是地上霜。<br>举头望明月，低头思故乡。</p>
+			</div>
+			
+			<div class="content-3">
+				<p>白日依山尽，黄河入海流。<br>欲穷千里目，更上一层楼。</p>
+			</div>
+		</div>
+
+	</div>
+</div>
+	
 </body>
-</html>
+</html>	
+
+
+	
