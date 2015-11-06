@@ -1,6 +1,6 @@
 // bug：切换前的初次进入为空白页，url切换时不变
 // 归档页面的部分内容显示效果
-function showArchive(sectionId) {
+/*function showArchive(sectionId) {
 	var article=document.getElementsByTagName("article")[0];
 	var sections=article.getElementsByTagName("section");
 	for (var i = 0; i < sections.length; i++) {
@@ -28,7 +28,7 @@ function matchArchive() {
 		}
 	}
 }
-addLoadEvent(matchArchive);
+addLoadEvent(matchArchive);*/
 
 // --------------------------------------------------------------------small wheels-------------------------------------------------------------------------------------
 
