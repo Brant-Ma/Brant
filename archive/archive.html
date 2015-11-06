@@ -16,6 +16,9 @@
 	<!--media query css-->	
 	<link type="text/css" rel="stylesheet" href="../style/media-query.css" />
 
+	<!--only for this page css-->
+	<link type="text/css" rel="stylesheet" href="../style/tab.css">
+
 	<!--favicon generator-->
 	<meta name="theme-color" content="#ffffff"/>
 	<meta name="msapplication-TileColor" content="#00aba9"/>
@@ -74,43 +77,59 @@
 			
 			<h3 class="home drawer">Archive</h3>
 
-			<hr />
+			<hr><br>
 
-			<section id="m">
-				<p class="right">获取Mindjet文件：<input id="download" type="button" onclick="download();" value="下载" /></p>
-				<h5>2015年</h5>
-				<ul>
-					<li>[<a class="db" href="http://book.douban.com/subject/25863515/" target="_blank" title="详情">豆瓣8.0</a>] <a href="../picture/mans/m/M004.bmp" target="_blank" title="思维导图">M004 图解HTTP</a></li>
-					<li>[<a class="db" href="http://book.douban.com/subject/26359758/" target="_blank" title="详情">豆瓣8.2</a>] <a href="../picture/mans/m/M003.bmp" target="_blank" title="思维导图">M003 硬派健身</a></li>
-					<li>[<a class="db" href="http://book.douban.com/subject/5394309/" target="_blank" title="详情">豆瓣8.4</a>] <a href="../picture/mans/m/M002.bmp" target="_blank" title="思维导图">M002 简约至上：交互式设计四策略</a></li>
-					<li>[<a class="db" href="http://book.douban.com/subject/1013208/" target="_blank" title="详情">豆瓣8.6</a>] <a href="../picture/mans/m/M001.bmp" target="_blank" title="思维导图">M001 如何阅读一本书</a></li>
-				</ul>	
-			</section>
+			<div class="tabs">
 
-			<section id="a">
-				<h5>2015年</h5>
-				<ul>
-					<li><a href="app/A005.html" target="_blank">A005 Noizio</a></li>				
-					<li><a href="app/A004.html" target="_blank">A004 滴答清单</a></li>
-					<li><a href="app/A003.html" target="_blank">A003 多看阅读</a></li>
-					<li><a href="app/A002.html" target="_blank">A002 Sleep Cycle</a></li>
-					<li><a href="app/A001.html" target="_blank">A001 EverMemo</a></li>
-				</ul>
-			</section>
+				<input id="tab-1" class="tab-1" type="radio" name="tab" value="">
+				<label for="tab-1" class="label-1">Mindmap</label>
 
-			<section id="n">
-				<h5>2015年</h5>
-				<ul>
-					<li><a href="note/N008.html" target="_blank">N008 标准总结：Selectors Level 3</a></li>
-					<li><a href="note/N007.html" target="_blank">N007 正则表达式的18条入门匹配规则</a></li>
-					<li><a href="note/N006.html" target="_blank">N006 中英字体的规则与使用</a></li>
-					<li><a href="note/N005.html" target="_blank">N005 text-decoration与border-bottom的使用</a></li>
-					<li><a href="note/N004.html" target="_blank">N004 私人订制Error Pages</a></li>
-					<li><a href="note/N003.html" target="_blank">N003 初探Page Visibility API</a></li>
-					<li><a href="note/N002.html" target="_blank">N002 关于Favicon图标</a></li>
-					<li><a href="note/N001.html" target="_blank">N001 图片中的alt属性和title属性</a></li>
-				</ul>
-			</section>
+				<input id="tab-2" class="tab-2" type="radio" name="tab" value="">
+				<label for="tab-2" class="label-2">App</label>
+
+				<input id="tab-3" class="tab-3" type="radio" name="tab" value="" checked>
+				<label for="tab-3" class="label-3">Note</label>
+
+				<div class="tab-content">
+					
+					<div class="content-1">
+				        <h5>2015年</h5>
+						<ul>
+							<li>[<a class="db" href="http://book.douban.com/subject/25863515/" target="_blank" title="详情">豆瓣8.0</a>] <a href="../picture/mans/m/M004.bmp" target="_blank" title="思维导图">M004 图解HTTP</a></li>
+							<li>[<a class="db" href="http://book.douban.com/subject/26359758/" target="_blank" title="详情">豆瓣8.2</a>] <a href="../picture/mans/m/M003.bmp" target="_blank" title="思维导图">M003 硬派健身</a></li>
+							<li>[<a class="db" href="http://book.douban.com/subject/5394309/" target="_blank" title="详情">豆瓣8.4</a>] <a href="../picture/mans/m/M002.bmp" target="_blank" title="思维导图">M002 简约至上：交互式设计四策略</a></li>
+							<li>[<a class="db" href="http://book.douban.com/subject/1013208/" target="_blank" title="详情">豆瓣8.6</a>] <a href="../picture/mans/m/M001.bmp" target="_blank" title="思维导图">M001 如何阅读一本书</a></li>
+						</ul>
+					</div>
+					
+					<div class="content-2">
+						<h5>2015年</h5>
+						<ul>
+							<li><a href="app/A005.html" target="_blank">A005 Noizio</a></li>				
+							<li><a href="app/A004.html" target="_blank">A004 滴答清单</a></li>
+							<li><a href="app/A003.html" target="_blank">A003 多看阅读</a></li>
+							<li><a href="app/A002.html" target="_blank">A002 Sleep Cycle</a></li>
+							<li><a href="app/A001.html" target="_blank">A001 EverMemo</a></li>
+						</ul>
+					</div>
+					
+					<div class="content-3">
+						<h5>2015年</h5>
+						<ul>
+							<li><a href="note/N008.html" target="_blank">N008 标准总结：Selectors Level 3</a></li>
+							<li><a href="note/N007.html" target="_blank">N007 正则表达式的18条入门匹配规则</a></li>
+							<li><a href="note/N006.html" target="_blank">N006 中英字体的规则与使用</a></li>
+							<li><a href="note/N005.html" target="_blank">N005 text-decoration与border-bottom的使用</a></li>
+							<li><a href="note/N004.html" target="_blank">N004 私人订制Error Pages</a></li>
+							<li><a href="note/N003.html" target="_blank">N003 初探Page Visibility API</a></li>
+							<li><a href="note/N002.html" target="_blank">N002 关于Favicon图标</a></li>
+							<li><a href="note/N001.html" target="_blank">N001 图片中的alt属性和title属性</a></li>
+						</ul>
+					</div>
+
+				</div>
+
+			</div>
 
 		</article>
 	</div>

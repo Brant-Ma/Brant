@@ -1,0 +1,75 @@
+/* 
+ *  基于demo修改的样式，目前用于archive页面
+ */
+
+/* 设置input标签 */
+.tabs {
+	position: relative;
+	width: 100%; /*容器块的宽度*/
+}
+.tabs input {
+	position: absolute;
+	top: 0;
+	width: 80px;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	cursor: pointer;
+	opacity: 0;  /*隐藏input，label替代*/
+}
+.tabs input.tab-1 { left: 0; }
+.tabs input.tab-2 { left: 80px; }
+.tabs input.tab-3 { left: 160px; }
+
+/* 设置label标签 */
+.tabs label {
+	float: left;
+	width: 80px;
+	height: 30px;
+	margin: 0;
+	padding: 0;
+	border-radius: 2px 16px 0 0;
+	font: bold 75%/30px 'Microsoft Yahei', sans-serif;
+	letter-spacing: .1em;
+	text-transform: uppercase;
+	text-align: center;
+	color: #007e65;
+	background-color: #3cc8ac;	
+	box-shadow: 0 0 1px #007e65;
+	transition: background-color .3s ease .1s;
+		
+}	
+.tabs input:checked + label {
+	z-index: 99;  /* 99层的伪元素可以压掉9层的边色 */
+	position: relative;
+	background-color: #fff;
+}
+.tabs input:checked + label::after {
+	content: "";
+	display: block;
+	width: 100%;
+	height: 1px;
+	background-color: #fff;
+	position: absolute;
+	left: 0;
+	bottom: -1px;
+}
+
+/* 设置内容区域 */
+.tab-content {
+	position: relative;
+	top: 30px;
+	padding: 5%;
+	border-radius: 0 7px 7px 7px;
+	box-shadow: 0 0 1px #007e65;
+}
+.tab-content div {
+	z-index: 9;
+	display: none;
+	transition: all .3s ease-out;
+}
+.tabs input.tab-1:checked ~ div>.content-1,
+.tabs input.tab-2:checked ~ div>.content-2,
+.tabs input.tab-3:checked ~ div>.content-3 {
+	display: block;
+}
