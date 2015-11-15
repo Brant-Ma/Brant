@@ -1,37 +1,28 @@
 // 获取 gulp 和 modules
 var gulp = require('gulp'),
 	uglify = require('gulp-uglify'),
-	minifycss = require('gulp-minify-css'),
-	imagemin = require('gulp-imagemin'),
+	minifycss = require('gulp-minify-css');
 
 // js
 gulp.task('script', function() {
-	gulp.src('script/*.js')
+	gulp.src('work/script/*.js')
 		.pipe(uglify())
-		.pipe(gulp.dest('dist/script'))
-})
+		.pipe(gulp.dest('script'));
+});
 
 // css
 gulp.task('style', function() {
-	gulp.src('style/*.css')
+	gulp.src('work/style/*.css')
 		.pipe(minifycss())
-		.pipe(gulp.dest('dist/style'))
-})
-
-// img
-gulp.task('image', function() {
-	gulp.src('picture/**/*.*')
-		.pipe(imagemin())
-		.pipe(gulp.dest('dist/image'))
-})
+		.pipe(gulp.dest('style'));
+});
 
 // 默认任务
-gulp.task('default', ['script', 'style', 'image', 'watch'])
+gulp.task('default', ['script', 'style', 'watch']);
 
 
 // 监听任务
 gulp.task('watch', function() {
-	gulp.watch('script/*.js', ['script']);
-	gulp.watch('style/*.css', ['style']);
-	gulp.watch('picture/**/*.*', ['image']);
-})
+	gulp.watch('work/script/*.js', ['script']);
+	gulp.watch('work/style/*.css', ['style']);
+});

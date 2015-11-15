@@ -1,0 +1,24 @@
+{
+  "name": "brant",
+  "version": "1.0.0",
+  "description": "brant's blog",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Brant-Ma/Brant.git"
+  },
+  "author": "brant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Brant-Ma/Brant/issues"
+  },
+  "homepage": "https://github.com/Brant-Ma/Brant#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-minify-css": "^1.2.1",
+    "gulp-uglify": "^1.5.1"
+  }
+}
