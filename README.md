@@ -1,7 +1,7 @@
 # Brant
 Click: [Brant's Studio](http://7brant.me)
 ## Main Content
-- **Mindmap**: reading notes by drawing a mindmap.  
+- **Map**: reading notes by drawing a mindmap.  
 - **App**: evaluation on my favorite daily application.
 - **Note**: learning experience about the front-end development.
 - **Lab**: some interesting demo or test page, as well as old page.
