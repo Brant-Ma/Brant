@@ -43,32 +43,19 @@
 	/*-------------------------Demo 1--------------------------*/
 
 	/*空白框*/
-	.bubble {
+	.pure {
 		position: relative;
 		width: 150px;
 		padding: 15px;
 		margin: 3em 0 1em;
-		border: 3px solid #ADD8E6;
+		border: 0;
 		border-radius: 10px;
 		text-align: center;
 		background-color: white;
 	}
 
-	/*绿三角*/
-	.bubble::before {
-		content: "";
-		width: 0;
-		height: 0;
-		display: block; 
-		border: 15px solid;
-		border-color: transparent transparent #ADD8E6 transparent;
-		position: absolute;
-		top: -30px;
-		left: 50px;	  
-	}
-
 	/*白三角*/
-	.bubble::after{
+	.pure::after{
 		content: "";
 	  	width: 0;
 	  	height: 0;
@@ -81,6 +68,78 @@
 	}
 
 	/*-------------------------Demo 2--------------------------*/
+
+	/*空白框*/
+	.line {
+		position: relative;
+		width: 150px;
+		padding: 15px;
+		margin: 3em 0 1em;
+		border: 3px solid #ADD8E6;
+		border-radius: 10px;
+		text-align: center;
+		background-color: white;
+	}
+
+	/*绿三角*/
+	.line::before {
+		content: "";
+		width: 0;
+		height: 0;
+		display: block; 
+		border: 15px solid;
+		border-color: transparent transparent #ADD8E6 transparent;
+		position: absolute;
+		top: -30px;
+		left: 50px;	  
+	}
+
+	/*白三角*/
+	.line::after{
+		content: "";
+	  	width: 0;
+	  	height: 0;
+	  	display: block; 
+	  	border: 15px solid;
+	  	border-color: transparent transparent #fff transparent;
+	  	position: absolute;
+	  	top: -26px;
+	  	left: 50px;	  
+	}
+
+		/*-------------------------Demo 3--------------------------*/
+
+	/*空白框*/
+	.shadow {
+		position: relative;
+		width: 150px;
+		padding: 15px;
+		margin: 3em 0 1em;
+		border: 0;
+		border-radius: 10px;
+		text-align: center;
+		background-color: white;
+	}
+
+	/*白三角*/
+	.shadow::after{
+		content: "";
+	  	width: 0;
+	  	height: 0;
+	  	display: block; 
+	  	border: 15px solid;
+	  	border-color: transparent transparent #fff transparent;
+	  	position: absolute;
+	  	top: -26px;
+	  	left: 50px;	  
+	}
+
+	.shadow {
+		/* box-shadow: 5px 5px 10px gray; 盒子阴影的效果不如投影完全 */
+		filter: drop-shadow(6px 6px 4px gray); 
+	}
+
+	/*-------------------------Demo 4--------------------------*/
 
 	a[tip] {
     	position: relative;
@@ -115,7 +174,7 @@
         visibility: visible;
     }
 
-    /*-------------------------Demo 3--------------------------*/
+    /*-------------------------Demo 5--------------------------*/
 
 	a {
     	position: relative;
@@ -151,6 +210,8 @@
         visibility: visible;
     }
 
+    
+
     </style>
 
 </head>
@@ -158,18 +219,30 @@
 
 	<!--Demo 1-->
 	<div class="demo">
-		<div class="bubble">This is a comment</div>
+		<div class="pure">Pure Bubble</div>
 	</div>	
 
 	<!--Demo 2-->
 	<div class="demo">
-		<p>Hover me to get a <a class="tip" href="#" tip="Can you see me?">text tooltip</a></p>
-	</div>
+		<div class="line">Line Bubble</div>
+	</div>	
 
 	<!--Demo 3-->
 	<div class="demo">
+		<div class="shadow">Shadow Bubble</div>
+	</div>
+
+	<!--Demo 4-->
+	<div class="demo">
+		<p>Hover me to get a <a class="tip" href="#" tip="Can you see me?">text tooltip</a></p>
+	</div>
+
+	<!--Demo 5-->
+	<div class="demo">
 		<p>Hover me to get a <a class="tip" href="#">image tooltip</a></p>
 	</div>
+
+	
 
 </body>
 </html>
