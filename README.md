@@ -1,5 +1,5 @@
 # Brant
-Click: [Brant's Studio](http://7brant.me)
+Click: [Brant's Studio](http://brant.cc)
 ## Main Content
 - **Map**: reading notes by drawing a mindmap.  
 - **App**: evaluation on my favorite daily application.

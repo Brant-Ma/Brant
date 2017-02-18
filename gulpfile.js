@@ -1,5 +1,6 @@
 // 获取 gulp 和 modules
 var gulp = require('gulp'),
+	clean = require('gulp-clean'),
 	uglify = require('gulp-uglify'),
 	minifycss = require('gulp-minify-css');
 
@@ -17,12 +18,19 @@ gulp.task('style', function() {
 		.pipe(gulp.dest('style'));
 });
 
-// 默认任务
-gulp.task('default', ['script', 'style', 'watch']);
-
+// clean
+gulp.task('clean', function(){
+	gulp.src(['./script', './style'])
+		.pipe(clean());
+});
 
 // 监听任务
 gulp.task('watch', function() {
 	gulp.watch('work/script/*.js', ['script']);
 	gulp.watch('work/style/*.css', ['style']);
 });
+
+// 默认任务
+gulp.task('default', ['script', 'style', 'watch']);
+
+
